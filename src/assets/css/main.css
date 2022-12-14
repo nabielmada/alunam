@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
+#app {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcfcff;
+}
+
+#space {
+    margin-top: 11%;
+}
+
+#space-testi {
+    margin-top: 8%;
+}
+
+
+mark {
+    display: inline-block;
+    line-height: 0em;
+    padding-top: 0em;
+    padding-bottom: 0.3em;
+    background-color: #EFF4FF;
+}
+/* Text Size */
+.text-vt {
+    font-size: 14.5px;
+}
+
+/* Text Color */
+.text-color-sage-green{
+    color: #AEFF9C;
+}
+
+.hover-card {
+    transition: all 0.8s;
+    margin-bottom: 10px;
+}
+
+.hover-card:hover {
+    -webkit-box-shadow: 2px 14px 22px -2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 2px 14px 22px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 14px 22px -2px rgba(0, 0, 0, 0.1);
+}
+
+.card-porto {
+    --bs-gutter-x: 0rem;
+}
+
+.avatar-porto {
+    margin-right: 1.5em !important;
+    margin-left: 0em !important;
+}
