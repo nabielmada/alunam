@@ -5,64 +5,71 @@
         <a class="navbar-brand fs-4" href="#">
             <div class="text-primary-m">alunam</div>
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        <!-- <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mx-auto order-0">
                 <li class="nav-item me-4">
                     <a class="nav-link active" aria-current="page" href="#home" >Home</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" v-scroll-to="'#portofolio'" href="#portofolio">Benefit</a>
+                    <a class="nav-link" v-scroll-to="'#benefit'" href="#benefit">Benefit</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" v-scroll-to="'#specialize'" href="#specialize">Katalog</a>
+                    <a class="nav-link" v-scroll-to="'#katalog'" href="#katalog">Katalog</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" v-scroll-to="'#aboutme'" href="#aboutme">Testimoni</a>
+                    <a class="nav-link" v-scroll-to="'#testimoni'" href="#testimoni">Testimoni</a>
                 </li>
             </ul>
-            <div class="d-flex text-muted ">
-                <span class="bi bi-instagram me-3 fs-4"></span>
-                <span class="bi bi-whatsapp me-3 fs-4"></span>
-                <span class="bi bi-envelope me-3 fs-4"></span>
-            </div>
+          </div>
+          <div class="d-flex text-muted ">
+              <span class="bi bi-instagram me-3 fs-4"></span>
+              <span class="bi bi-whatsapp me-3 fs-4"></span>
+              <span class="bi bi-question-lg me-3 fs-4"></span>
           </div>
       </div>
   </nav>
 
-  <header>
+  <div id = "home"></div>
+  <header class = "center-header">
     <div class = "container">
       <div class = "d-flex">
         <div class="row align-items-center">
-          <div class="col-6">
-            <p> 
+          <div class="col-12 col-lg-6">
+            <p class="text-promo-header"> 
               <span class = "bi bi-megaphone me-2"></span> 
               PROMO DESEMBER UP TO 70%
             </p>
-            <h1 class="fw-bold">
+            <h1 class="fw-bold heading-header">
               Sebar Undangan Kamu
               Lebih <mark class="text-primary">Praktis</mark> Dari Sebelumnya
             </h1>
-            <p class="pt-4 text-muted sub-heading sub-heading-resize">
+            <p class="pt-4 text-muted sub-heading sub-heading-resize sub-heading-header">
               Bagikan momen bahagia kamu hanya dengan satu genggaman serta banyak pilihan undangan yang kekinian
             </p>
+            <div class="mt-5">
+            <button type = "button" class="btn btn-primary btn-lg rounded-pill px-4 py-2" v-scroll-to="'#katalog'">
+               <small>Lihat Katalog</small>
+            </button>
+          </div>
           </div>
           <div class="col-6">
-            <img src="/img/cover-header.webp" class="img-fluid" alt="cover-header" loading = "lazy" srcset="">
+            <img src="/img/cover-header.webp" class="cover-header img-fluid" alt="cover-header" loading = "lazy" srcset="">
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <article>
+  <div id = "benefit"></div>
+  <article class="mb-5">
     <div id = "space" class="container">
       <div class="row text-center">
 
-          <div class="col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="card hover-card border-0">
                 <div class="card-body my-2">
                   <p class = "bi bi-lightning-charge-fill text-warning fs-3"></p>
@@ -74,7 +81,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="card hover-card border-0">
                 <div class="card-body my-2">
                   <p class = "bi bi-balloon-heart text-danger fs-3"></p>
@@ -86,7 +93,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="card hover-card border-0">
                 <div class="card-body my-2">
                   <p class = "bi bi-robot text-info fs-3"></p>
@@ -98,13 +105,13 @@
             </div>
           </div>
 
-          <div class="col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="card hover-card border-0">
                 <div class="card-body my-2">
                   <p class = "bi bi-shield-check text-success fs-3"></p>
                   <h5 class="card-title">Menjaga Privasi</h5>
                   <p class="card-text text-muted text-vt">
-                    Kami menjaga privasi kamu agar bisa pakai foto atau tidak di dalam undangan
+                    Kami menjaga privasi kamu bisa pakai foto atau tidak di undangan
                   </p>
                 </div>
             </div>
@@ -114,13 +121,13 @@
       </div>
   </article>
 
-  <section>
+<div id = "katalog"></div>
+  <section class="section-katalog">
     <div id = "space" class="container">
       <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="200"> 
         <h1 class="title"><mark>Katalog</mark> Undangan</h1>
         <p class="text-muted mt-3 sub-title">
-          Silahkan klik gambar dibawah ini untuk melihat contoh <br>
-          dari katalog digital yang kami sediakan 
+          Silahkan klik gambar dibawah ini untuk melihat contoh katalog
         </p>
       </div>
 
@@ -239,7 +246,7 @@
     </div>
   </section>
 
-  <section>
+  <section id = "testimoni">
     <div id = "space-testi" class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-3" data-aos="fade-up" data-aos-delay="200">
@@ -322,14 +329,16 @@
   </section>
 
   <footer id = "space" class="container pb-5">
-    <div class = "d-flex">
-      <div>
+    <div class="row text-center">
+      <div class="col-12 col-lg-6">
         Made with <span class = "bi bi-heart-fill text-danger"></span> Alunam &copy; 2022 
       </div>
-      <div class ="ms-auto text-muted">
-        <span class="me-3">Instagram</span>
-        <span class="me-3">Whatsapp</span>
-        <span class="me-3">Siapa Kami?</span>
+      <div class="col-12 col-lg-6 mt-2">
+        <div class =" text-muted">
+          <span class="me-3">Instagram</span>
+          <span class="me-3">Whatsapp</span>
+          <span class="me-3">Siapa Kami?</span>
+        </div>
       </div>
     </div>
   </footer>

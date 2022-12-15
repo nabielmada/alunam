@@ -55,3 +55,31 @@ mark {
     margin-right: 1.5em !important;
     margin-left: 0em !important;
 }
+
+
+@media only screen 
+and (min-device-width: 320px) and (max-device-width: 980px){
+    .center-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 80vh;
+    }
+    /* .text-promo-header{
+        margin-top: 5%;
+    } */
+    .heading-header{
+        text-align: center;
+    }
+    .sub-heading-header{
+        text-align: center;
+    }
+    .cover-header{
+        display: none;
+    }
+
+    .section-katalog{
+        margin-top: 20%;
+    }
+}
