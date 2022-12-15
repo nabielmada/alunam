@@ -134,7 +134,9 @@
                 </div>
                 <div class="card-body mb-3">
                     <div class="text-center mb-3">
+                      <a href = "/katalog">
                         <img src="/img/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
+                      </a>
                     </div>
                     <div class="mx-3">
                         <div class="card-text mb-1 fw-semibold">
