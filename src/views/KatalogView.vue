@@ -56,24 +56,67 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-          <h5 class="fw-bold mb-5">THE WEDDING OF</h5>
+          <h5 class="fw-bold mb-4">THE WEDDING OF</h5>
           <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
-          <h1 class = "nama-mempelai mt-5">
+          <h1 class = "nama-mempelai mt-4">
             Maulida & Nabiel
           </h1>
-          <p class="mt-5">
+          <p class="mt-4">
             Kami berharap Anda menjadi bagian <br/>
             dari hari istimewa kami!
           </p>
           <p class="mt-4">
             Kamis, 10 Oktober 2022
           </p>
+          <div class = "countdown-date mt-2">
+
+            <div class="row row-cols-4 g-2">
+
+              <div class="col">
+                <div class="card border-0">
+                  <div class="card-body px-0">
+                    <p>12</p>
+                    <small>Hari</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card border-0">
+                  <div class="card-body px-0">
+                    <p>12</p>
+                    <small>Jam</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card border-0">
+                  <div class="card-body px-0">
+                    <p>12</p>
+                    <small>Menit</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card border-0">
+                  <div class="card-body px-0">
+                    <p>12</p>
+                    <small>Detik</small>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id = "detail-mempelai" class = "detail-mempelai container">
+  <section id = "detail-mempelai" class = "detail-mempelai container mt-5">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -106,7 +149,7 @@
     </div>
   </section>
 
-  <section id = "acara" class = "container mt-5 pt-4">
+  <section id = "acara" class = "container my-5 pt-4">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">

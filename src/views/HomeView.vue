@@ -109,7 +109,7 @@
             <div class="card hover-card border-0">
                 <div class="card-body my-2">
                   <p class = "bi bi-shield-check text-success fs-3"></p>
-                  <h5 class="card-title">Menjaga Privasi</h5>
+                  <h5 class="card-title">Privasi</h5>
                   <p class="card-text text-muted text-vt">
                     Kami menjaga privasi kamu bisa pakai foto atau tidak di undangan
                   </p>
