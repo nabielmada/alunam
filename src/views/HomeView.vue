@@ -141,9 +141,9 @@
                 </div>
                 <div class="card-body mb-3">
                     <div class="text-center mb-3">
-                      <a href = "/katalog">
+                      <router-link to = "/katalog">
                         <img src="/img/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
-                      </a>
+                      </router-link>
                     </div>
                     <div class="mx-3">
                         <div class="card-text mb-1 fw-semibold">
