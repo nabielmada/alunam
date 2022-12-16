@@ -36,6 +36,17 @@ mark {
     color: #AEFF9C;
 }
 
+/* Ucapan */
+.scroll-ucapan{
+    overflow:scroll; 
+    height:428px;
+}
+  
+.scroll-ucapan::-webkit-scrollbar {
+    height: 1px;
+    display: none;
+}
+
 .hover-card {
     transition: all 0.8s;
     margin-bottom: 10px;

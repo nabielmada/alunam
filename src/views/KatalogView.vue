@@ -116,7 +116,8 @@
     </div>
   </section>
 
-  <section id = "detail-mempelai" class = "detail-mempelai container mt-5">
+  <div id = "detail-mempelai"></div>
+  <section class = "detail-mempelai container mt-4">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -153,7 +154,8 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-          <h5 class="fw-bold mb-5">SAVE THE DATE</h5>
+          <h5 class="fw-bold">SAVE THE DATE</h5>
+          <p class="mb-5">Indahnya hari yang dinanti</p>
 
           <div class="card mb-4 border-0">
             <div class="card-body m-5">
@@ -220,6 +222,104 @@
             </div>
 
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id = "ucapan" class = "container mt-5 pt-4">
+    <div class="d-flex justify-content-center">
+    <div class="row align-content-center">
+      <div class="col-12 col-sm-12 text-center">
+          <h5 class="fw-bold">UCAPKAN SESUATU</h5>
+          <p class="mb-3">Berikan ucapan dan doa restu.</p>
+
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control form-control-lg border-0" required
+              placeholder="nama">
+              <label for="alamat">Nama</label>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea class="form-control border-0" placeholder="Ucapan" id="ucapan" style="height: 100px"></textarea>
+            <label for="ucapan">Ucapan</label>
+          </div>
+          <div class="form-floating mb-4">
+          <select class="form-select border-0" id="kehadiran" aria-label="Konfirmasi Kehadiran">
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
+          <label for="kehadiran">Konfirmasi Kehadiran</label>
+          </div>
+          <div class = "mb-4">
+            <button type = "button" class="form-control btn btn-primary rounded-pill p-2">Kirim</button>
+          </div>
+
+          <div class="card mb-4 border-0 text-start">
+            <div class="card-body scroll-ucapan">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Nabiel Mada</div>
+                    <div>Selamat menikah kawanku</div>
+                    <small class = "mt-1 text-muted">
+                      <span class = "bi bi-clock-history"></span> 
+                      Baru saja
+                      <!-- <span class = "ms-1">Reply</span> -->
+                    </small>
+                  </div>
+                  <span class="bi bi-patch-check-fill text-success"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Madara Ucihah</div>
+                    <div>Sat set sekali maszeeehh, semoga lancar dan menjadi keluarga yang sakinah mawadah warahmah</div>
+                    <small class = "mt-1 text-muted">
+                      <span class = "bi bi-clock-history"></span> 
+                      2 hari, 20 jam lalu
+                      <!-- <span class = "ms-1">Reply</span> -->
+                    </small>
+                  </div>
+                  <span class="bi bi-x-circle-fill text-danger"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Nabiel Mada</div>
+                    <div>Selamat menikah kawanku</div>
+                    <small class = "mt-1 text-muted">
+                      <span class = "bi bi-clock-history"></span> 
+                      Baru saja
+                      <!-- <span class = "ms-1">Reply</span> -->
+                    </small>
+                  </div>
+                  <span class="bi bi-patch-check-fill text-success"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Nabiel Mada</div>
+                    <div>Selamat menikah kawanku</div>
+                    <small class = "mt-1 text-muted">
+                      <span class = "bi bi-clock-history"></span> 
+                      Baru saja
+                      <!-- <span class = "ms-1">Reply</span> -->
+                    </small>
+                  </div>
+                  <span class="bi bi-patch-check-fill text-success"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Nabiel Mada</div>
+                    <div>Selamat menikah kawanku seperjuangan</div>
+                    <small class = "mt-1 text-muted">
+                      <span class = "bi bi-clock-history"></span> 
+                      Baru saja
+                      <!-- <span class = "ms-1">Reply</span> -->
+                    </small>
+                  </div>
+                  <span class="bi bi-patch-check-fill text-success"></span>
+                </li>
+              </ul>
+            </div>
+          </div>
           
         </div>
       </div>
@@ -269,7 +369,8 @@
     ></audio>
     <div @click="toggleSound()" class="toggle-sound"></div>
   </div>
-  <WindowsBottomNavigation :options="options" v-model="selected"/>
+
+    <WindowsBottomNavigation :options="options" v-model="selected" @click="scrollTo(selected)"/>
   </div>
 
 
@@ -279,18 +380,25 @@
   import { WindowsBottomNavigation } from "bottom-navigation-vue";
   import "bottom-navigation-vue/dist/style.css";
 
+  // import VueSlickCarousel from 'vue-slick-carousel'
+  // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+
   export default {
     name: "KatalogView",
     components: { WindowsBottomNavigation },
     data() {
       return {
-        selected: 1,
+        selected: 'mempelai',
         options: [
-          { id: 1, icon: 'bi-brands bi-heart-fill', color: 'red' },
-          { id: 2, icon: 'bi-solid bi-people-fill', color: '#d2d2d2' },
-          { id: 3, icon: 'bi-brands bi-calendar-event-fill', color: '#d2d2d2' },
-          { id: 4, icon: 'bi-brands bi-images', color: '#d2d2d2' },
-          { id: 5, icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
+          { id: 'mempelai', icon: 'bi-brands bi-heart-fill', color: 'red' },
+          { 
+            id: 'detail-mempelai', 
+            icon: 'bi-solid bi-people-fill', 
+            color: '#d2d2d2',
+          },
+          { id: 'acara', icon: 'bi-brands bi-calendar-event-fill', color: '#d2d2d2' },
+          { id: 'amplop-digital', icon: 'bi-brands bi-images', color: '#d2d2d2' },
+          { id: 'ucapan', icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
         ]
       }
     },
@@ -323,9 +431,16 @@
           document.querySelector(".toggle-sound").classList.add("paused");
         }
       },
+      scrollTo(selected) {
+        selected === 'mempelai' ? document.getElementById('mempelai').scrollIntoView() : false
+        selected === 'detail-mempelai' ? document.getElementById('detail-mempelai').scrollIntoView() : false
+        selected === 'acara' ? document.getElementById('acara').scrollIntoView() : false
+        selected === 'galeri' ? document.getElementById('galeri').scrollIntoView() : false
+        selected === 'ucapan' ? document.getElementById('ucapan').scrollIntoView() : false
+      }
     },
     created() {
-      // 
+      //
     }
   };
 </script>
