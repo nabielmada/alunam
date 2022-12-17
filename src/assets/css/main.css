@@ -67,6 +67,15 @@ mark {
     margin-left: 0em !important;
 }
 
+/* Unlock Wizard From */
+#wizard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    min-height: 82vh;
+}
+
 
 @media only screen 
 and (min-device-width: 320px) and (max-device-width: 980px){

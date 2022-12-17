@@ -1,10 +1,10 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2 shadow sticky-top">
-      <div class="container">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2 shadow sticky-top">
+      <div class="container"> -->
         <!-- <a class="navbar-brand fs-4" href="/">
             <div class="text-primary-m">alunam</div>
         </a> -->
-        <div class = "navbar-toggler text-white border-0 fs-6" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        <!-- <div class = "navbar-toggler text-white border-0 fs-6" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <small>Contoh Katalog Alunam Blue Jeans</small>
         </div>
@@ -25,9 +25,9 @@
           </router-link>
         </div>
         </small>
-
+        
       </div>
-    </nav>
+    </nav> -->
 
   <section id = "cover">
     <div class="d-flex justify-content-center">
@@ -458,7 +458,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 82vh;
+    min-height: 90vh;
   }
   /* Image Bingkai */
   .img-bingkai {
