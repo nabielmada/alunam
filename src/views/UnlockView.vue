@@ -7,7 +7,7 @@
             Alunam Blue Jeans
           </h1>
           <p class = "mt-2 text-center">
-            Tenang, kamu masih bisa melakukan revisi katalog undangan digital dengan kami setelah melakukan pembayaran dan pengisian formulir informasi dari kebutuhan kamu
+            Tenang, kamu masih bisa melakukan revisi undangan setelah melakukan pembayaran dan pengisian formulir informasi berikut ini 
           </p>
           <p class="mt-2">
             <router-link to="katalog">
@@ -27,20 +27,20 @@
             <div class="row mt-2">
               <div class="col-12">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="namaLengkap"
+                    <input type="text" class="form-control  border-0" required v-model="namaLengkap"
                     placeholder="namalengkap">
                     <label for="namalengkap">Nama Lengkap</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="noHp"
+                    <input type="text" class="form-control  border-0" required v-model="noHp"
                     placeholder="noHp">
                     <label for="noHp">No Handphone</label>
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="alamat"
+                <!-- <div class="form-floating mb-3">
+                    <input type="text" class="form-control  border-0" required v-model="alamat"
                     placeholder="alamat">
                     <label for="alamat">Alamat</label>
-                </div>
+                </div> -->
               </div>
             </div>
           <p class="mt-4">
@@ -54,7 +54,7 @@
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
           <h1>
-            Data Calon Mempelai
+            Calon Mempelai
           </h1>
             <div class="row mt-2">
               <div class="col-12">
@@ -62,28 +62,24 @@
                   <label class = "fw-bold mb-3">Mempelai Pria</label>
                 </center>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="namaLengkap"
+                    <input type="text" class="form-control  border-0" required v-model="namaLengkap"
                     placeholder="namalengkap">
                     <label for="namalengkap">Nama Lengkap</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="noHp"
+                    <input type="text" class="form-control  border-0" required v-model="noHp"
                     placeholder="noHp">
                     <label for="noHp">Nama Panggilan</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="alamat"
+                    <input type="text" class="form-control  border-0" required v-model="alamat"
                     placeholder="alamat">
                     <label for="alamat">Nama Lengkap Ayah</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="alamat"
+                    <input type="text" class="form-control  border-0" required v-model="alamat"
                     placeholder="alamat">
                     <label for="alamat">Nama Lengkap Ibu</label>
-                </div>
-                <div class="mb-3">
-                  <label for="formFile" class="form-label">Foto Profile</label>
-                  <input class="form-control" type="file" id="formFile">
                 </div>
               </div>
             </div>
@@ -98,7 +94,7 @@
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
           <h1>
-            Data Calon Mempelai
+            Calon Mempelai
           </h1>
             <div class="row mt-2">
               <div class="col-12">
@@ -106,28 +102,24 @@
                   <label class = "fw-bold mb-3">Mempelai Wanita</label>
                 </center>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="namaLengkap"
+                    <input type="text" class="form-control  border-0" required v-model="namaLengkap"
                     placeholder="namalengkap">
                     <label for="namalengkap">Nama Lengkap</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="noHp"
+                    <input type="text" class="form-control  border-0" required v-model="noHp"
                     placeholder="noHp">
                     <label for="noHp">Nama Panggilan</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="alamat"
+                    <input type="text" class="form-control  border-0" required v-model="alamat"
                     placeholder="alamat">
                     <label for="alamat">Nama Lengkap Ayah</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control form-control-lg border-0" required v-model="alamat"
+                    <input type="text" class="form-control  border-0" required v-model="alamat"
                     placeholder="alamat">
                     <label for="alamat">Nama Lengkap Ibu</label>
-                </div>
-                <div class="mb-3">
-                  <label for="formFile" class="form-label">Foto Profile</label>
-                  <input class="form-control" type="file" id="formFile">
                 </div>
               </div>
             </div>
@@ -142,7 +134,7 @@
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
           <h1>
-            Informasi Data Acara
+            Informasi Acara
           </h1>
             <div class="row mt-2">
               <div class="col-12">
@@ -153,7 +145,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                      <input type="date" class="form-control form-control-lg border-0" required v-model="namaLengkap"
+                      <input type="date" class="form-control  border-0" required v-model="namaLengkap"
                       placeholder="namalengkap">
                       <label for="namalengkap">Tanggal</label>
                     </div>
@@ -161,14 +153,14 @@
 
                   <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input type="time" class="form-control form-control-lg border-0" required v-model="noHp"
+                        <input type="time" class="form-control  border-0" required v-model="noHp"
                         placeholder="noHp">
                         <label for="noHp">Waktu (Mulai)</label>
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input type="time" class="form-control form-control-lg border-0" required v-model="noHp"
+                        <input type="time" class="form-control  border-0" required v-model="noHp"
                         placeholder="noHp">
                         <label for="noHp">Waktu (Selesai)</label>
                     </div>
@@ -206,7 +198,7 @@
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
           <h1>
-            Informasi Data Acara
+            Informasi Acara
           </h1>
             <div class="row mt-2">
               <div class="col-12">
@@ -217,7 +209,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                      <input type="date" class="form-control form-control-lg border-0" required v-model="namaLengkap"
+                      <input type="date" class="form-control  border-0" required v-model="namaLengkap"
                       placeholder="namalengkap">
                       <label for="namalengkap">Tanggal</label>
                     </div>
@@ -225,14 +217,14 @@
 
                   <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input type="time" class="form-control form-control-lg border-0" required v-model="noHp"
+                        <input type="time" class="form-control  border-0" required v-model="noHp"
                         placeholder="noHp">
                         <label for="noHp">Waktu (Mulai)</label>
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input type="time" class="form-control form-control-lg border-0" required v-model="noHp"
+                        <input type="time" class="form-control  border-0" required v-model="noHp"
                         placeholder="noHp">
                         <label for="noHp">Waktu (Selesai)</label>
                     </div>
@@ -266,24 +258,24 @@
         </div>
       </div>
 
-      <div id = "dataAmplopDigital" class = "container mt-4" v-if="dataAmplopDigital === true">
+      <div id = "dataAmplopDigital" class = "container" v-if="dataAmplopDigital === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
           <h1>
-            Data Amplop Digital
+            Amplop Digital
           </h1>
-            <div class="row mt-2">
+            <div class="row mt-3">
               <div class="col-12">
                 <div class="row">
                   
-                  <div class="col-12 mb-3">
+                  <div class="col-12">
                     <label class="fw-bold">BCA</label>
-                    <input type="hidden" class="form-control form-control-lg border-0" readonly v-model="bankBCA" >
+                    <input type="hidden" class="form-control  border-0" readonly v-model="bankBCA" >
                   </div>
 
-                  <div class="col-6">
+                  <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control form-control-lg border-0" required v-model="anBCA"
+                        <input type="text" class="form-control  border-0" required v-model="anBCA"
                         placeholder="noHp">
                         <label for="noHp">Atas Nama</label>
                     </div>
@@ -291,20 +283,20 @@
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control form-control-lg border-0" required v-model="norekBCA"
+                        <input type="text" class="form-control  border-0" required v-model="norekBCA"
                         placeholder="noHp">
                         <label for="noHp">No Rekening</label>
                     </div>
                   </div>
 
-                  <div class="col-12 mb-3">
+                  <div class="col-12">
                     <label class="fw-bold">Mandiri</label>
-                    <input type="hidden" class="form-control form-control-lg border-0" readonly v-model="bankMandiri" >
+                    <input type="hidden" class="form-control  border-0" readonly v-model="bankMandiri" >
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control form-control-lg border-0" required v-model="anMandiri"
+                        <input type="text" class="form-control  border-0" required v-model="anMandiri"
                         placeholder="noHp">
                         <label for="noHp">Atas Nama</label>
                     </div>
@@ -312,20 +304,20 @@
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control form-control-lg border-0" required v-model="norekMandiri"
+                        <input type="text" class="form-control  border-0" required v-model="norekMandiri"
                         placeholder="noHp">
                         <label for="noHp">No Rekening</label>
                     </div>
                   </div>
 
-                  <div class="col-12 mb-3">
+                  <div class="col-12">
                     <label class="fw-bold">Dana</label>
-                    <input type="hidden" class="form-control form-control-lg border-0" readonly v-model="bankDana" >
+                    <input type="hidden" class="form-control  border-0" readonly v-model="bankDana" >
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control form-control-lg border-0" required v-model="anDANA"
+                        <input type="text" class="form-control  border-0" required v-model="anDANA"
                         placeholder="noHp">
                         <label for="noHp">Atas Nama</label>
                     </div>
@@ -333,7 +325,7 @@
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control form-control-lg border-0" required v-model="norekDana"
+                        <input type="text" class="form-control  border-0" required v-model="norekDana"
                         placeholder="noHp">
                         <label for="noHp">No Rekening</label>
                     </div>
@@ -344,7 +336,65 @@
             </div>
           <p class="mt-4">
             <button type="button" class="btn btn-light me-3" @click="backAcaraResepsi()"><small>Sebelumnya</small></button>
-            <button type="button" class="btn btn-primary" @click="nextAcara()"><small>Buat Pesanan</small></button>
+            <button type="button" class="btn btn-primary" @click="nextFotoMempelai()"><small>Selanjutnya</small></button>
+          </p>
+        </div>
+      </div>
+
+      <div id = "dataFotoMempelai" class = "container" v-if="dataFotoMempelai === true">
+        <div class="d-flex flex-column align-items-center">
+          <div class="text-muted">Lengkapi</div>
+          <h1>
+            Foto Mempelai
+          </h1>
+            <div class="row mt-4">
+              <div class="col-12">
+                
+                <div class="row">
+
+                  <div class="col-12 mb-4 px-4">
+                      <label class = "fw-bold">Foto Couple</label>
+                        <input type="file" class="form-control  border-0">
+                  </div>
+
+                  <div class="card mb-3 border-0">
+                    <div class="card-body">
+                      <div class="col-12">
+                        <label>Mempelai Pria</label>
+                      </div>
+                      <div class="col-12 mb-3 fw-bold">
+                            Nabiel Mada Ranu Ramadhan
+                      </div>
+                      <div class="col-12">
+                        <input type="file" class="form-control border-0" >
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card mb-3 border-0">
+                    <div class="card-body">
+                      <div class="col-12">
+                        <label>Mempelai Wanita</label>
+                      </div>
+                      <div class="col-12 mb-3 fw-bold">
+                            Nor Maulida Porwanti
+                      </div>
+                      <div class="col-12">
+                        <input type="file" class="form-control border-0" >
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <center>
+                  <small>Silahkan lewati saja jika kamu tidak ingin menggunakan foto pada undangan</small>
+                </center>
+              </div>
+            </div>
+          <p class="mt-4">
+            <button type="button" class="btn btn-light me-3" @click="backAmplopDigital()"><small>Sebelumnya</small></button>
+            <button type="button" class="btn btn-primary" @click="buatPesanan()"><small>Buat Pesanan</small></button>
           </p>
         </div>
       </div>
@@ -364,6 +414,7 @@
         dataAcaraAkad: false,
         dataAcaraResepsi: false,
         dataAmplopDigital: false,
+        dataFotoMempelai: false,
 
         bankBCA: "BCA",
         bankMandiri: "MANDIRI",
@@ -429,6 +480,19 @@
       backAcaraResepsi(){
         this.dataAcaraResepsi = true;
         this.dataAmplopDigital = false;
+      },
+
+      nextFotoMempelai(){
+        this.dataFotoMempelai = true;
+        this.dataAmplopDigital = false;
+      },
+      backAmplopDigital(){
+        this.dataFotoMempelai = false;
+        this.dataAmplopDigital = true;
+      },
+
+      buatPesanan(){
+        this.$router.push({ name: 'pembayaran' })
       }
     },
     created() {

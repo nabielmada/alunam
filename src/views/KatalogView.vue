@@ -479,9 +479,11 @@
   }
 
   /* Wallpaper */
-  .mempelai{
-    /* background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/img/katalog/katalog-satu/wallpaper-mempelai.png'); */
+  /* #content{
+    background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/img/katalog/katalog-satu/bg-satu.jpg');
+    z-index: -1;
     background-repeat: no-repeat;
     background-size: contain;
-  }
+    background-position: center;
+  } */
 </style>
