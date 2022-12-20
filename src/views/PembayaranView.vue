@@ -57,9 +57,11 @@
 
                 <div class="text-center mt-3">
                     <p><small>Lakukan konfirmasi manual dengan mengirim bukti pembayaran kamu disini yah!</small></p>
-                    <button type = "buttoon" class="btn btn-success p-3"> 
-                        <span class = "bi bi-whatsapp"></span> Konfirmasi 
-                    </button>
+                    <a :href="apiLink" target="_blank">
+                        <button type = "buttoon" class="btn btn-success p-3"> 
+                            <span class = "bi bi-whatsapp"></span> Konfirmasi
+                        </button>
+                    </a>
                 </div>
 
                 </div>
@@ -74,8 +76,21 @@ export default {
     name: 'PembayaranView',
     data() {
         return {
-            
+            myNumber: "+6285727393383",
+            myMessage: "Hai, saya ingin melakukan konfirmasi serta mengirimkan bukti pembayaran dari tagihan berikut ini: %0a",
+            noTrans: "No Transaksi: 2221012081 %0a",
+            namaCust: "Atas Nama: Nabiel Maulida %0a",
+            tagihanCust: "Tagihan: *Rp150.567* %0a",
+            pesananCust: "Pesanan: Alunam Blue Jeans",
+            apiLink: "",
         }
+    },
+    methods: {
+
+    },
+    created() {
+        let message = this.myMessage + this.noTrans + this.namaCust + this.tagihanCust + this.pesananCust;
+        this.apiLink = 'https://api.whatsapp.com/send?phone=' + this.myNumber + '&text=' + message
     },
 }
 </script>
