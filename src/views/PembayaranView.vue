@@ -90,7 +90,7 @@ export default {
     },
     created() {
         let message = this.myMessage + this.noTrans + this.namaCust + this.tagihanCust + this.pesananCust;
-        this.apiLink = 'https://web.whatsapp.com/send?phone=' + this.myNumber + '&text=' + message
+        this.apiLink = 'https://api.whatsapp.com/send?phone=' + this.myNumber + '&text=' + message
     },
 }
 </script>
