@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import KatalogView from '../views/KatalogView.vue'
 import UnlockView from '../views/UnlockView.vue'
 import PembayaranView from '../views/PembayaranView.vue'
+import UndanganView from '../views/UndanganView.vue'
 
 const routes = [
   {
@@ -24,6 +25,14 @@ const routes = [
     path: '/pembayaran',
     name: 'pembayaran',
     component: PembayaranView
+  },
+
+  // Real Invitation
+  {
+    path: '/:q',
+    name: 'Undangan',
+    component: UndanganView,
+    props: (route) => ({ to: route.query.to, mempelai: route.params.q }),  
   }
 ]
 

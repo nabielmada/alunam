@@ -1,50 +1,50 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2 shadow sticky-top">
-      <div class="container">
-        <!-- <a class="navbar-brand fs-4" href="/">
-            <div class="text-primary-m">alunam</div>
-        </a> -->
-        <div class = "navbar-toggler text-white border-0 fs-6" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <small>Contoh Katalog Alunam Blue Jeans</small>
-        </div>
 
-        <small>
-        <div class="collapse navbar-collapse" id="navbarText">
-        <div class = "mx-auto text-white">
-          Saat ini Anda sedang melihat secara uji coba
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-2 shadow sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <div class="bi bi-arrow-left"></div>
+      </a>
+      <div class = "navbar-toggler text-white border-0 fs-6" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <small>Contoh Alunam Blue Love</small>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <div class="navbar-nav text-white">
+          Contoh Katalog Alunam Blue Love
         </div>
-        </div>
-            
-        <div class="d-flex text-muted ">
-          <router-link to="/unlock">
-            <button type = "button" class="btn btn-light rounded-pill">
+      </div>
+      <span class="navbar-text">
+        <router-link to="/unlock">
+            <button type = "button" class="btn btn-sm btn-light rounded-pill">
               <span class = "bi bi-cart"></span> 
               Pesan
             </button>
           </router-link>
-        </div>
-        </small>
-
-      </div>
-    </nav>
+      </span>
+    </div>
+  </nav>
 
   <section id = "cover">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
-          <h1 class = "nama-mempelai mt-5">
+          <h1 class = "nama-mempelai mt-4">
             Maulida & Nabiel
           </h1>
-          <p class="mt-5">
+          <p class="mt-3">
             Kepada Bapak/Ibu/Saudara/i 
           </p>
-          <p class="mt-4">
+          <p class="mt-3 fs-3 fw-bold">
+            MADA RANU 
+          </p>
+          <p class="mt-3">
             Kami mengundang Anda untuk hadir <br/>
             di acara pernikahan kami
           </p>
-          <div class="mt-5">
+          <div class="mt-4">
             <button type = "button" class="btn btn-primary rounded-pill px-4 py-2" @click="bukaUndangan()">
               <span class="bi bi-envelope-paper-heart me-1"></span> <small>Buka Undangan</small>
             </button>
@@ -78,7 +78,7 @@
               <div class="col">
                 <div class="card border-0">
                   <div class="card-body px-0">
-                    <p>12</p>
+                    <div>12</div>
                     <small>Hari</small>
                   </div>
                 </div>
@@ -87,7 +87,7 @@
               <div class="col">
                 <div class="card border-0">
                   <div class="card-body px-0">
-                    <p>12</p>
+                    <div>12</div>
                     <small>Jam</small>
                   </div>
                 </div>
@@ -96,7 +96,7 @@
               <div class="col">
                 <div class="card border-0">
                   <div class="card-body px-0">
-                    <p>12</p>
+                    <div>12</div>
                     <small>Menit</small>
                   </div>
                 </div>
@@ -105,7 +105,7 @@
               <div class="col">
                 <div class="card border-0">
                   <div class="card-body px-0">
-                    <p>12</p>
+                    <div>12</div>
                     <small>Detik</small>
                   </div>
                 </div>
@@ -159,27 +159,29 @@
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <h5 class="fw-bold">SAVE THE DATE</h5>
-          <p class="mb-5">Indahnya hari yang dinanti</p>
+          <p class="mb-4">Indahnya hari yang dinanti</p>
 
           <div class="card mb-4 border-0">
-            <div class="card-body m-5">
+            <div class="card-body m-4">
                 <h3>Akad Nikah</h3>
                 <p class = "fw-semibold">Sabtu, 15 Desember 2022</p>
                 <p>
                   Pukul: 09.00 WIB <br/>
                   Kedalaman Mempelai Wanita
                 </p>
+                <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
             </div>
           </div>
 
           <div class="card border-0">
-            <div class="card-body m-5">
+            <div class="card-body m-4">
                 <h3>Resepsi</h3>
                 <p class = "fw-semibold">Sabtu, 15 Desember 2022</p>
                 <p>
                   Pukul: 09.00 WIB <br/>
                   Kedalaman Mempelai Wanita
                 </p>
+                <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
             </div>
           </div>
           
@@ -244,7 +246,7 @@
               <label for="alamat">Nama</label>
           </div>
           <div class="form-floating mb-3">
-            <textarea class="form-control border-0" placeholder="Ucapan" id="ucapan" style="height: 100px"></textarea>
+            <textarea class="form-control border-0" placeholder="Ucapan" id="ucapan" style="height: 80px"></textarea>
             <label for="ucapan">Ucapan</label>
           </div>
           <div class="form-floating mb-4">
@@ -335,7 +337,7 @@
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
         <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
-          <p class="mt-5 px-2">
+          <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
             apabila Bapak/Ibu/Saudara/i berkenan hadir
             dan memberikan  doa restu. 
@@ -347,7 +349,7 @@
           <p class="mt-4">
             Wassalamu'alaikum Wr. Wb.
           </p>
-          <h1 class = "nama-mempelai mt-5">
+          <h1 class = "nama-mempelai mt-4">
             Maulida & Nabiel
           </h1>
         </div>
@@ -355,7 +357,7 @@
     </div>
   </section>
 
-  <footer class="my-5 py-5 text-center">
+  <footer class="my-5 pb-5 text-center">
     <small>
       Made with <i class = "bi bi-heart-fill text-danger"></i> by 
       <a href = "/">Alunam</a>

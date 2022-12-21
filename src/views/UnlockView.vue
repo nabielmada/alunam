@@ -27,9 +27,9 @@
             <div class="row mt-2">
               <div class="col-12">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="namaLengkap"
-                    placeholder="namalengkap">
-                    <label for="namalengkap">Nama Lengkap</label>
+                    <input type="text" class="form-control  border-0" required v-model="fullName"
+                    placeholder="fullName">
+                    <label for="fullName">Nama Lengkap</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="noHp"
@@ -62,24 +62,24 @@
                   <label class = "fw-bold mb-3">Mempelai Pria</label>
                 </center>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="namaLengkap"
-                    placeholder="namalengkap">
+                    <input type="text" class="form-control  border-0" required v-model="manName"
+                    placeholder="manName">
                     <label for="namalengkap">Nama Lengkap</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="noHp"
-                    placeholder="noHp">
-                    <label for="noHp">Nama Panggilan</label>
+                    <input type="text" class="form-control  border-0" required v-model="manCall"
+                    placeholder="manCall">
+                    <label for="manCall">Nama Panggilan</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="alamat"
-                    placeholder="alamat">
-                    <label for="alamat">Nama Lengkap Ayah</label>
+                    <input type="text" class="form-control  border-0" required v-model="manFather"
+                    placeholder="manFather">
+                    <label for="manFather">Nama Lengkap Ayah</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="alamat"
-                    placeholder="alamat">
-                    <label for="alamat">Nama Lengkap Ibu</label>
+                    <input type="text" class="form-control  border-0" required v-model="manMother"
+                    placeholder="manMother">
+                    <label for="manMother">Nama Lengkap Ibu</label>
                 </div>
               </div>
             </div>
@@ -102,24 +102,24 @@
                   <label class = "fw-bold mb-3">Mempelai Wanita</label>
                 </center>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="namaLengkap"
-                    placeholder="namalengkap">
-                    <label for="namalengkap">Nama Lengkap</label>
+                    <input type="text" class="form-control  border-0" required v-model="womenName"
+                    placeholder="womenName">
+                    <label for="womenName">Nama Lengkap</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="noHp"
-                    placeholder="noHp">
-                    <label for="noHp">Nama Panggilan</label>
+                    <input type="text" class="form-control  border-0" required v-model="womenCall"
+                    placeholder="womenCall">
+                    <label for="womenCall">Nama Panggilan</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="alamat"
-                    placeholder="alamat">
-                    <label for="alamat">Nama Lengkap Ayah</label>
+                    <input type="text" class="form-control  border-0" required v-model="womenFather"
+                    placeholder="womenFather">
+                    <label for="womenFather">Nama Lengkap Ayah</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="alamat"
-                    placeholder="alamat">
-                    <label for="alamat">Nama Lengkap Ibu</label>
+                    <input type="text" class="form-control  border-0" required v-model="womenMother"
+                    placeholder="womenMother">
+                    <label for="womenMother">Nama Lengkap Ibu</label>
                 </div>
               </div>
             </div>
@@ -145,41 +145,41 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                      <input type="date" class="form-control  border-0" required v-model="namaLengkap"
-                      placeholder="namalengkap">
-                      <label for="namalengkap">Tanggal</label>
+                      <input type="date" class="form-control  border-0" required v-model="akadDate"
+                      placeholder="akadDate">
+                      <label for="akadDate">Tanggal</label>
                     </div>
                   </div>
 
                   <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input type="time" class="form-control  border-0" required v-model="noHp"
-                        placeholder="noHp">
-                        <label for="noHp">Waktu (Mulai)</label>
+                        <input type="time" class="form-control  border-0" required v-model="akadStart"
+                        placeholder="akadStart">
+                        <label for="akadStart">Waktu (Mulai)</label>
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input type="time" class="form-control  border-0" required v-model="noHp"
-                        placeholder="noHp">
-                        <label for="noHp">Waktu (Selesai)</label>
+                        <input type="time" class="form-control  border-0" required v-model="akadEnd"
+                        placeholder="akadEnd">
+                        <label for="akadEnd">Waktu (Selesai)</label>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-4">
-                    <select class="form-select border-0" id="kehadiran" aria-label="Konfirmasi Kehadiran">
+                    <select class="form-select border-0" v-model = "akadTimezone" id="akadTimezone" aria-label="akadTimezone">
                       <option value="Hadir">WIB</option>
                       <option value="Tidak Hadir">WIT</option>
                       <option value="Tidak Hadir">WITA</option>
                     </select>
-                    <label for="kehadiran">Waktu Bagian</label>
+                    <label for="akadTimezone">Waktu Bagian</label>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                      <textarea class="form-control border-0" placeholder="Ucapan" id="ucapan" style="height: 100px"></textarea>
+                      <textarea class="form-control border-0" v-model = "akadAddress" placeholder="Ucapan" id="ucapan" style="height: 100px"></textarea>
                       <label for="ucapan">Tempat Alamat</label>
                     </div>
                   </div>
@@ -209,41 +209,41 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                      <input type="date" class="form-control  border-0" required v-model="namaLengkap"
-                      placeholder="namalengkap">
-                      <label for="namalengkap">Tanggal</label>
+                      <input type="date" class="form-control  border-0" required v-model="resepsiDate"
+                      placeholder="resepsiDate">
+                      <label for="resepsiDate">Tanggal</label>
                     </div>
                   </div>
 
                   <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input type="time" class="form-control  border-0" required v-model="noHp"
-                        placeholder="noHp">
-                        <label for="noHp">Waktu (Mulai)</label>
+                        <input type="time" class="form-control  border-0" required v-model="resepsiStart"
+                        placeholder="resepsiStart">
+                        <label for="resepsiStart">Waktu (Mulai)</label>
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="form-floating mb-3">
-                        <input type="time" class="form-control  border-0" required v-model="noHp"
-                        placeholder="noHp">
-                        <label for="noHp">Waktu (Selesai)</label>
+                        <input type="time" class="form-control  border-0" required v-model="resepsiEnd"
+                        placeholder="resepsiEnd">
+                        <label for="resepsiEnd">Waktu (Selesai)</label>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-4">
-                    <select class="form-select border-0" id="kehadiran" aria-label="Konfirmasi Kehadiran">
+                    <select class="form-select border-0" v-model = "resepsiTimezone" id="resepsiTimezone" aria-label="resepsiTimezone">
                       <option value="Hadir">WIB</option>
                       <option value="Tidak Hadir">WIT</option>
                       <option value="Tidak Hadir">WITA</option>
                     </select>
-                    <label for="kehadiran">Waktu Bagian</label>
+                    <label for="resepsiTimezone">Waktu Bagian</label>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                      <textarea class="form-control border-0" placeholder="Ucapan" id="ucapan" style="height: 100px"></textarea>
+                      <textarea class="form-control border-0" v-model = "resepsiAddress" placeholder="Ucapan" id="ucapan" style="height: 100px"></textarea>
                       <label for="ucapan">Tempat Alamat</label>
                     </div>
                   </div>
@@ -276,16 +276,16 @@
                   <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control  border-0" required v-model="anBCA"
-                        placeholder="noHp">
-                        <label for="noHp">Atas Nama</label>
+                        placeholder="anBCA">
+                        <label for="anBCA">Atas Nama</label>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control  border-0" required v-model="norekBCA"
-                        placeholder="noHp">
-                        <label for="noHp">No Rekening</label>
+                        placeholder="norekBCA">
+                        <label for="norekBCA">No Rekening</label>
                     </div>
                   </div>
 
@@ -297,16 +297,16 @@
                   <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control  border-0" required v-model="anMandiri"
-                        placeholder="noHp">
-                        <label for="noHp">Atas Nama</label>
+                        placeholder="anMandiri">
+                        <label for="anMandiri">Atas Nama</label>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control  border-0" required v-model="norekMandiri"
-                        placeholder="noHp">
-                        <label for="noHp">No Rekening</label>
+                        placeholder="norekMandiri">
+                        <label for="norekMandiri">No Rekening</label>
                     </div>
                   </div>
 
@@ -317,17 +317,17 @@
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="anDANA"
-                        placeholder="noHp">
-                        <label for="noHp">Atas Nama</label>
+                        <input type="text" class="form-control  border-0" required v-model="anDana"
+                        placeholder="anDana">
+                        <label for="anDana">Atas Nama</label>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control  border-0" required v-model="norekDana"
-                        placeholder="noHp">
-                        <label for="noHp">No Rekening</label>
+                        placeholder="norekDana">
+                        <label for="norekDana">No Rekening</label>
                     </div>
                   </div>
 
@@ -354,7 +354,7 @@
 
                   <div class="col-12 mb-4 px-4">
                       <label class = "fw-bold">Foto Couple</label>
-                        <input type="file" class="form-control  border-0">
+                        <input type="file" class="form-control border-0">
                   </div>
 
                   <div class="card mb-3 border-0">
@@ -403,6 +403,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
   export default {
     name: "UnlockView",
     data() {
@@ -416,13 +418,53 @@
         dataAmplopDigital: false,
         dataFotoMempelai: false,
 
+        fullName: '',
+        noHp: '',
+        url_params: '',
+        isActive: 'N',
+
+        manName: '',
+        manCall: '',
+        manFather: '',
+        manMother: '',
+
+        womenName: '',
+        womenCall: '',
+        womenFather: '',
+        womenMother: '',
+
+        akadDate: '',
+        akadStart: '',
+        akadEnd: '',
+        akadTimezone: '',
+        akadAddress: '',
+
+        resepsiDate: '',
+        resepsiStart: '',
+        resepsiEnd: '',
+        resepsiTimezone: '',
+        resepsiAddress: '',
+
         bankBCA: "BCA",
+        anBCA: '',
+        norekBCA: '',
+
         bankMandiri: "MANDIRI",
+        anMandiri: '',
+        norekMandiri: '',
+
         bankDana: "DANA",
+        anDana: '',
+        norekDana: '',
+
+        noInvoice: '',
       }
     },
     mounted() {
 
+    },
+    created() {
+      setInterval(this.getNow, 1000);
     },
     methods: {
       isBersedia(){
@@ -491,9 +533,91 @@
         this.dataAmplopDigital = true;
       },
 
-      buatPesanan(){
-        this.$router.push({ name: 'pembayaran' })
-      }
+      getNow: function() {
+        const today = new Date();
+        const date = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate();
+        const time = today.getHours() + "" + today.getMinutes() + "" + today.getSeconds();
+        const dateTime = 'TFR-'+ date +''+ time;
+        this.noInvoice = dateTime;
+      },
+
+      buatPesanan() {
+        let dataBride = {
+          manName: this.manName,
+          manCall: this.manCall,
+          manFather: this.manFather,
+          manMother: this.manMother,
+
+          womenName: this.womenName,
+          womenCall: this.womenCall,
+          womenFather: this.womenFather,
+          womenMother: this.womenMother,
+        }
+
+        let dataEvent = {
+          akadDate: this.akadDate,
+          akadStart: this.akadStart,
+          akadEnd: this.akadEnd,
+          akadTimezone: this.akadTimezone,
+          akadAddress: this.akadAddress,
+
+          resepsiDate: this.resepsiDate,
+          resepsiStart: this.resepsiStart,
+          resepsiEnd: this.resepsiEnd,
+          resepsiTimezone: this.resepsiTimezone,
+          resepsiAddress: this.resepsiAddress,
+        }
+
+        let dataEnvelope = {
+          bankBCA: "BCA",
+          anBCA: this.anBCA,
+          norekBCA: this.norekBCA,
+
+          bankMandiri: "MANDIRI",
+          anMandiri: this.anMandiri,
+          norekMandiri: this.norekMandiri,
+
+          bankDana: "DANA",
+          anDana: this.anDana,
+          norekDana: this.norekDana,
+        }
+
+        let dataInvite = {
+          fullName: this.fullName,
+          noHp: this.noHp,
+          url_params: this.manCall + " & " + this.womenCall,
+          isActive: this.isActive
+        }
+
+        let dataInvoice = {
+          noInvoice: this.noInvoice,
+          nominalBill: this.nominalBill,
+          type: this.type,
+        }
+
+        axios
+          .post('http://localhost:5000/addInvite', dataInvite)
+          .then(() => {
+            axios
+              .post('http://localhost:5000/addBride', dataBride)
+              .then(() => {
+                axios
+                  .post('http://localhost:5000/addEvent', dataEvent)
+                  .then(() => {
+                    axios
+                      .post('http://localhost:5000/addEnvelope', dataEnvelope)
+                      .then(() => {
+                        axios
+                          .post('http://localhost:5000/createInvoice', dataInvoice)
+                          .then(() => {
+                            this.$router.push("/pembayaran");
+                          });
+                      });
+                  });
+              });
+          });
+        
+      },
     },
     created() {
       
