@@ -618,9 +618,7 @@ import axios from 'axios'
           });
         
       },
-    },
-    created() {
-      
-    },
+    }
+    
   };
 </script>
