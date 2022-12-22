@@ -22,7 +22,7 @@ const routes = [
     component: UnlockView
   },
   {
-    path: '/pembayaran',
+    path: '/pembayaran/:noInvoice',
     name: 'pembayaran',
     component: PembayaranView
   },

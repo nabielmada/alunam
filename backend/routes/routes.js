@@ -6,6 +6,8 @@ import { addBride } from "../controllers/addBride.js";
 import { addEvent } from "../controllers/addEvent.js";
 import { addEnvelope } from "../controllers/addEnvelope.js";
 import { addInvite } from "../controllers/addInvite.js";
+import { createInvoice } from "../controllers/createInvoice.js";
+import { getInvoice } from "../controllers/getInvoice.js";
  
 // init express router
 const router = express.Router();
@@ -15,6 +17,8 @@ router.post('/addBride', addBride);
 router.post('/addEvent', addEvent);
 router.post('/addEnvelope', addEnvelope);
 router.post('/addInvite', addInvite);
+router.post('/createInvoice', createInvoice);
+router.get('/getInvoice/:noInvoice', getInvoice);
  
 // export default router
 export default router;

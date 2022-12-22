@@ -458,6 +458,8 @@ import axios from 'axios'
         norekDana: '',
 
         noInvoice: '',
+        nominalBill: '150000',
+        type: 'Alunam Blue Love',
       }
     },
     mounted() {
@@ -537,7 +539,7 @@ import axios from 'axios'
         const today = new Date();
         const date = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate();
         const time = today.getHours() + "" + today.getMinutes() + "" + today.getSeconds();
-        const dateTime = 'TFR-'+ date +''+ time;
+        const dateTime = date +''+ time;
         this.noInvoice = dateTime;
       },
 
@@ -591,6 +593,7 @@ import axios from 'axios'
 
         let dataInvoice = {
           noInvoice: this.noInvoice,
+          customer: this.manCall + " dan " + this.womenCall,
           nominalBill: this.nominalBill,
           type: this.type,
         }
@@ -610,7 +613,8 @@ import axios from 'axios'
                         axios
                           .post('http://localhost:5000/createInvoice', dataInvoice)
                           .then(() => {
-                            this.$router.push("/pembayaran");
+                            // this.$router.push({name: 'pembayaran', params: {invoice: this.noInvoice}})
+                            this.$router.push("/pembayaran/" + this.noInvoice);
                           });
                       });
                   });
@@ -619,6 +623,6 @@ import axios from 'axios'
         
       },
     }
-    
+
   };
 </script>

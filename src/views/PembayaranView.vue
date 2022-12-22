@@ -7,16 +7,16 @@
 
                 <div class = "text-center mb-4">
                 <div class = "bi bi-patch-check-fill fs-5 text-success"></div>
-                <div class="text-muted">Pembayaran Undangan Digital</div>
-                <h5 class="mb-4">Nabiel & Maulida</h5>
+                <div class="text-muted">Pembayaran Undangan Digital {{ pesananCust }}</div>
+                <h5 class="mb-4">{{ namaCust }}</h5>
                 
                 <div class="card border-0">
                     <div class="card-body">
                         <small>
-                        No.Transaksi 2221012081
+                        No.Transaksi {{ noTrans }}
                         <p>Tagihan yang harus di bayarkan:</p>
                         </small>
-                        <h1 class="fw-bold">Rp150.567</h1>
+                        <h1 class="fw-bold">Rp{{ tagihanCust }}</h1>
                         <small class = "fw-bold">Pastikan nominal pembayaran sesuai <br/> dengan 3 digit belakang </small>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="col-8 col-sm-8 col-lg-3">
                     <div>
                         BANK CENTRAL ASIA <br/>
-                        <small>a.n Nor Maulida Porwanti</small>
+                        <small>a.n Nabiel Mada Ranu Ramadhan</small>
                         <p>2221012081</p>
                         <button type = "button" class = "btn btn-light">
                         <small><i class = "bi bi-clipboard"></i> Salin</small>
@@ -72,25 +72,50 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'PembayaranView',
     data() {
         return {
-            myNumber: "+6285727393383",
-            myMessage: "Hai, saya ingin melakukan konfirmasi serta mengirimkan bukti pembayaran dari tagihan berikut ini: %0a",
-            noTrans: "No Transaksi: 2221012081 %0a",
-            namaCust: "Atas Nama: Nabiel Maulida %0a",
-            tagihanCust: "Tagihan: *Rp150.567* %0a",
-            pesananCust: "Pesanan: Alunam Blue Jeans",
-            apiLink: "",
+            myNumber: '+6285727393383',
+            myMessage: 'Hai, saya ingin melakukan konfirmasi serta mengirimkan bukti pembayaran dari tagihan berikut ini: %0a',
+            noTrans: '',
+            namaCust: '',
+            tagihanCust: '',
+            pesananCust: '',
+            apiLink: '',
         }
+    },
+    mounted() {
+        axios
+            .get('http://localhost:5000/getInvoice/'+this.$route.params.noInvoice)
+            .then((response) => {
+
+                let noTrans = response.data.dataInvoice.noinvoice;
+                let namaCust = response.data.dataInvoice.customer;
+                let tagihanCust = response.data.dataInvoice.nominal_bill;
+                let pesananCust = response.data.dataInvoice.type;
+
+                this.noTrans = noTrans;
+                this.namaCust = namaCust;
+                this.tagihanCust = tagihanCust;
+                this.pesananCust = pesananCust;
+
+                let message = this.myMessage + 
+                      "No Transaksi: " + noTrans + "%0a" +
+                      "Atas Nama: " + namaCust + "%0a" +
+                      "Tagihan: " + tagihanCust + "%0a" +
+                      "Pesanan: " + pesananCust;
+
+                this.apiLink = 'https://api.whatsapp.com/send?phone=' + this.myNumber + '&text=' + message
+            });
     },
     methods: {
 
     },
     created() {
-        let message = this.myMessage + this.noTrans + this.namaCust + this.tagihanCust + this.pesananCust;
-        this.apiLink = 'https://api.whatsapp.com/send?phone=' + this.myNumber + '&text=' + message
+        
     },
 }
 </script>
