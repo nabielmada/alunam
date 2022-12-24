@@ -1,11 +1,18 @@
 <template>
+  
+  <div v-if="isActive === 'N'">
+    <div class="d-flex justify-content-center">
+      <h4>Maaf undangan anda di nonaktifkan</h4>
+    </div>
+  </div>
+  <div v-else>
   <section id = "cover">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
-            {{ mempelai }}
+            {{ womenCall }} & {{ manCall }}
           </h1>
           <p class="mt-3">
             Kepada Bapak/Ibu/Saudara/i 
@@ -35,7 +42,7 @@
           <h5 class="fw-bold mb-4">THE WEDDING OF</h5>
           <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
-            {{ mempelai }}
+            {{ womenCall }} & {{ manCall }}
           </h1>
           <p class="mt-4">
             Kami berharap Anda menjadi bagian <br/>
@@ -106,20 +113,20 @@
           </p>
           <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai-detail mt-5">
-            Nor Maulida Porwanti
+            {{ womenName }}
           </h1>
           <p class="mt-3">
-            Putri keempat Bapak Sutega <br/>
-            dan Ibu Sutega
+            Putri keempat Bapak {{ womenFather }} <br/>
+            dan Ibu {{ womenMother }}
           </p>
             <h1 class="my-4">&</h1>
             <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai-detail mt-5">
-            Nabiel Mada Ranu R
+            {{ manName }}
           </h1>
           <p class="mt-3">
-            Putra kedua (Alm) Bapak Masrikan<br/>
-            dan Ibu Danik
+            Putra kedua (Alm) Bapak {{ manFather }}<br/>
+            dan Ibu {{ manMother }}
           </p>
         </div>
       </div>
@@ -139,8 +146,8 @@
                 <h3>Akad Nikah</h3>
                 <p class = "fw-semibold">Sabtu, 15 Desember 2022</p>
                 <p>
-                  Pukul: 09.00 WIB <br/>
-                  Kedalaman Mempelai Wanita
+                  Pukul: {{ akadStart }} {{ akadTimezone }} <br/>
+                  {{ akadAddress }}
                 </p>
                 <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
             </div>
@@ -151,8 +158,8 @@
                 <h3>Resepsi</h3>
                 <p class = "fw-semibold">Sabtu, 15 Desember 2022</p>
                 <p>
-                  Pukul: 09.00 WIB <br/>
-                  Kedalaman Mempelai Wanita
+                  Pukul: {{ resepsiStart }} {{ resepsiTimezone }} <br/>
+                  {{ resepsiAddress }}
                 </p>
                 <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
             </div>
@@ -323,7 +330,7 @@
             Wassalamu'alaikum Wr. Wb.
           </p>
           <h1 class = "nama-mempelai mt-4">
-            {{ mempelai }}
+            {{ womenCall }} & {{ manCall }}
           </h1>
         </div>
       </div>
@@ -352,10 +359,12 @@
     <WindowsBottomNavigation :options="options" v-model="selected" @click="scrollTo(selected)"/>
   </div>
 
-
+</div>
 </template>
 
 <script>
+  import axios from 'axios'
+
   import { WindowsBottomNavigation } from "bottom-navigation-vue";
   import "bottom-navigation-vue/dist/style.css";
 
@@ -388,11 +397,64 @@
           { id: 'acara', icon: 'bi-brands bi-calendar-event-fill', color: '#d2d2d2' },
           { id: 'amplop-digital', icon: 'bi-brands bi-images', color: '#d2d2d2' },
           { id: 'ucapan', icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
-        ]
+        ],
+        manName: '',
+        manCall: '',
+        manFather: '',
+        manMother: '',
+
+        womenName: '',
+        womenCall: '',
+        womenFather: '',
+        womenMother: '',
+
+        akadDate: '',
+        akadStart: '',
+        akadEnd: '',
+        akadTimezone: '',
+        akadAddress: '',
+
+        resepsiDate: '',
+        resepsiStart: '',
+        resepsiEnd: '',
+        resepsiTimezone: '',
+        resepsiAddress: '',
+
+        isActive: '',
       }
     },
     mounted() {
       this.isCover();
+
+      axios
+        .get('http://localhost:5000/getUndangan/'+this.$route.params.url_params)
+        .then((response) => {
+
+          this.isActive = response.data.dataUndangan.isactive;
+
+          this.manName = response.data.dataUndangan.man_name;
+          this.manCall = response.data.dataUndangan.man_call;
+          this.manFather = response.data.dataUndangan.man_father;
+          this.manMother = response.data.dataUndangan.man_mother;
+
+          this.womenName = response.data.dataUndangan.women_name;
+          this.womenCall = response.data.dataUndangan.women_call;
+          this.womenFather = response.data.dataUndangan.women_father;
+          this.womenMother = response.data.dataUndangan.women_mother;
+
+          this.akadDate = response.data.dataUndangan.akad_date;
+          this.akadStart = response.data.dataUndangan.akad_start;
+          this.akadEnd = response.data.dataUndangan.akad_end;
+          this.akadTimezone = response.data.dataUndangan.akad_timezone;
+          this.akadAddress = response.data.dataUndangan.akad_address;
+
+          this.resepsiDate = response.data.dataUndangan.resepsi_date;
+          this.resepsiStart = response.data.dataUndangan.resepsi_start;
+          this.resepsiEnd = response.data.dataUndangan.resepsi_end;
+          this.resepsiTimezone = response.data.dataUndangan.resepsi_timezone;
+          this.resepsiAddress = response.data.dataUndangan.resepsi_address;
+
+        });
     },
     methods: {
       isCover() {

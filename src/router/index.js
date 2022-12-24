@@ -29,10 +29,10 @@ const routes = [
 
   // Real Invitation
   {
-    path: '/:q',
+    path: '/:url_params',
     name: 'Undangan',
     component: UndanganView,
-    props: (route) => ({ to: route.query.to, mempelai: route.params.q }),  
+    props: (route) => ({ mempelai: route.params.url_params, to: route.query.to }),  
   }
 ]
 

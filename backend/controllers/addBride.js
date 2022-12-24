@@ -6,10 +6,12 @@ export const addBride = (req, res) => {
         man_call: req.body.manCall,
         man_father: req.body.manFather,
         man_mother: req.body.manMother,
+        man_child_of: req.body.manChildOf,
         women_name: req.body.womenName,
         women_call: req.body.womenCall,
         women_father: req.body.womenFather,
         women_mother: req.body.womenMother,
+        women_child_of: req.body.womenChildOf,
     }
    
     db.query(`INSERT INTO bride SET ?`, [dataBride], (err, results) => {

@@ -1,11 +1,13 @@
 <template>
     <section id = "wizard" class="container">
       <div id = "sk" v-if="sk === true">
+        <div class="row">
+        <div class="col-12">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Pesan Katalog</div>
-          <h1>
+          <h3>
             Alunam Blue Jeans
-          </h1>
+          </h3>
           <p class = "mt-2 text-center">
             Tenang, kamu masih bisa melakukan revisi undangan setelah melakukan pembayaran dan pengisian formulir informasi berikut ini 
           </p>
@@ -16,14 +18,16 @@
             <button type="button" class="btn btn-primary" @click="isBersedia()"><small>Bersedia</small></button>
           </p>
         </div>
+        </div>
+        </div>
       </div>
 
       <div id = "dataDiri" class = "container" v-if="dataDiri === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
-          <h1>
+          <h3>
             Informasi Data Diri
-          </h1>
+          </h3>
             <div class="row mt-2">
               <div class="col-12">
                 <div class="form-floating mb-3">
@@ -31,19 +35,20 @@
                     placeholder="fullName">
                     <label for="fullName">Nama Lengkap</label>
                 </div>
+              </div>
+              <div class="col-12">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="noHp"
                     placeholder="noHp">
                     <label for="noHp">No Handphone</label>
                 </div>
-                <!-- <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="alamat"
-                    placeholder="alamat">
-                    <label for="alamat">Alamat</label>
-                </div> -->
+              </div>
+              <div class="col-12 mb-3">
+                <label class = "mb-1"><small>Pilih Musik Undangan</small></label>
+                  <input type="file" class="form-control border-0">
               </div>
             </div>
-          <p class="mt-4">
+          <p class="mt-2">
             <button type="button" class="btn btn-light me-3" @click="backBersedia()"><small>Sebelumnya</small></button>
             <button type="button" class="btn btn-primary" @click="nextMempelaiPria()"><small>Selanjutnya</small></button>
           </p>
@@ -53,37 +58,67 @@
       <div id = "dataMempelaiPria" class = "container" v-if="dataMempelaiPria === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
-          <h1>
+          <h3>
             Calon Mempelai
-          </h1>
+          </h3>
             <div class="row mt-2">
               <div class="col-12">
                 <center>
                   <label class = "fw-bold mb-3">Mempelai Pria</label>
                 </center>
+
+                <div class="row">
+                <div class="col-12 col-md-6">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="manName"
                     placeholder="manName">
                     <label for="namalengkap">Nama Lengkap</label>
                 </div>
+                </div>
+
+                <div class="col-12 col-md-6">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="manCall"
                     placeholder="manCall">
                     <label for="manCall">Nama Panggilan</label>
                 </div>
+                </div>
+                <div class="col-12 col-md-12">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="manFather"
                     placeholder="manFather">
                     <label for="manFather">Nama Lengkap Ayah</label>
                 </div>
+                </div>
+
+                <div class="col-12 col-md-12">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="manMother"
                     placeholder="manMother">
                     <label for="manMother">Nama Lengkap Ibu</label>
                 </div>
+                </div>
+
+                <div class="col-12 col-md-12">
+                    <div class="form-floating mb-4">
+                    <select class="form-select border-0" v-model = "manChildOf" id="manChildOf" aria-label="manChildOf">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
+                    <label for="manChildOf">Anak Ke</label>
+                    </div>
+                  </div>
+                  </div>
               </div>
             </div>
-          <p class="mt-4">
+          <p class="mt-2">
             <button type="button" class="btn btn-light me-3" @click="backDataDiri()"><small>Sebelumnya</small></button>
             <button type="button" class="btn btn-primary" @click="nextMempelaiWanita()"><small>Selanjutnya</small></button>
           </p>
@@ -93,37 +128,64 @@
       <div id = "dataMempelaiWanita" class = "container" v-if="dataMempelaiWanita === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
-          <h1>
+          <h3>
             Calon Mempelai
-          </h1>
+          </h3>
             <div class="row mt-2">
               <div class="col-12">
                 <center>
                   <label class = "fw-bold mb-3">Mempelai Wanita</label>
                 </center>
+
+                <div class="row">
+                <div class="col-12 col-md-6">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="womenName"
                     placeholder="womenName">
                     <label for="womenName">Nama Lengkap</label>
                 </div>
+                </div>
+                <div class="col-12 col-md-6">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="womenCall"
                     placeholder="womenCall">
                     <label for="womenCall">Nama Panggilan</label>
                 </div>
+                </div>
+                <div class="col-12 col-md-12">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="womenFather"
                     placeholder="womenFather">
                     <label for="womenFather">Nama Lengkap Ayah</label>
                 </div>
+                </div>
+                <div class="col-12 col-md-12">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="womenMother"
                     placeholder="womenMother">
                     <label for="womenMother">Nama Lengkap Ibu</label>
                 </div>
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="form-floating mb-4">
+                    <select class="form-select border-0" v-model = "womenChildOf" id="womenChildOf" aria-label="womenChildOf">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
+                    <label for="womenChildOf">Anak Ke</label>
+                    </div>
+                  </div>
+              </div>
               </div>
             </div>
-          <p class="mt-4">
+          <p class="mt-2">
             <button type="button" class="btn btn-light me-3" @click="backMempelaiPria()"><small>Sebelumnya</small></button>
             <button type="button" class="btn btn-primary" @click="nextAcaraAkad()"><small>Selanjutnya</small></button>
           </p>
@@ -133,9 +195,9 @@
       <div id = "dataAcaraAkad" class = "container" v-if="dataAcaraAkad === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
-          <h1>
+          <h3>
             Informasi Acara
-          </h1>
+          </h3>
             <div class="row mt-2">
               <div class="col-12">
                 <center>
@@ -167,11 +229,11 @@
                   </div>
 
                   <div class="col-12">
-                    <div class="form-floating mb-4">
+                    <div class="form-floating mb-3">
                     <select class="form-select border-0" v-model = "akadTimezone" id="akadTimezone" aria-label="akadTimezone">
-                      <option value="Hadir">WIB</option>
-                      <option value="Tidak Hadir">WIT</option>
-                      <option value="Tidak Hadir">WITA</option>
+                      <option value="WIB">WIB</option>
+                      <option value="WIT">WIT</option>
+                      <option value="WITA">WITA</option>
                     </select>
                     <label for="akadTimezone">Waktu Bagian</label>
                     </div>
@@ -187,7 +249,7 @@
                 </div>
               </div>
             </div>
-          <p class="mt-4">
+          <p class="mt-2">
             <button type="button" class="btn btn-light me-3" @click="backMempelaiWanita()"><small>Sebelumnya</small></button>
             <button type="button" class="btn btn-primary" @click="nextAcaraResepsi()"><small>Selanjutnya</small></button>
           </p>
@@ -197,9 +259,9 @@
       <div id = "dataAcaraResepsi" class = "container" v-if="dataAcaraResepsi === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
-          <h1>
+          <h3>
             Informasi Acara
-          </h1>
+          </h3>
             <div class="row mt-2">
               <div class="col-12">
                 <center>
@@ -231,7 +293,7 @@
                   </div>
 
                   <div class="col-12">
-                    <div class="form-floating mb-4">
+                    <div class="form-floating mb-3">
                     <select class="form-select border-0" v-model = "resepsiTimezone" id="resepsiTimezone" aria-label="resepsiTimezone">
                       <option value="Hadir">WIB</option>
                       <option value="Tidak Hadir">WIT</option>
@@ -251,7 +313,7 @@
                 </div>
               </div>
             </div>
-          <p class="mt-4">
+          <p class="mt-2">
             <button type="button" class="btn btn-light me-3" @click="backAcaraAkad()"><small>Sebelumnya</small></button>
             <button type="button" class="btn btn-primary" @click="nextAmplopDigital()"><small>Selanjutnya</small></button>
           </p>
@@ -261,80 +323,75 @@
       <div id = "dataAmplopDigital" class = "container" v-if="dataAmplopDigital === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
-          <h1>
+          <h3>
             Amplop Digital
-          </h1>
-            <div class="row mt-3">
+          </h3>
+            <div class="row mt-2">
               <div class="col-12">
                 <div class="row">
+
+                  <div class="col-12 col-md-12">
+                    <div class="form-floating mb-3">
+                    <select class="form-select border-0" v-model="bankOne" id="bankOne" aria-label="bankOne">
+                      <option value="BCA">BCA</option>
+                      <option value="MANDIRI">MANDIRI</option>
+                      <option value="BNI">BNI</option>
+                      <option value="BRI">BRI</option>
+                      <option value="DANA">DANA</option>
+                    </select>
+                    <label for="bankOne">Pilih Bank (Opsi Pertama)</label>
+                    </div>
+                  </div>
                   
-                  <div class="col-12">
-                    <label class="fw-bold">BCA</label>
-                    <input type="hidden" class="form-control  border-0" readonly v-model="bankBCA" >
-                  </div>
-
-                  <div class="col-12">
+                  <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="anBCA"
-                        placeholder="anBCA">
-                        <label for="anBCA">Atas Nama</label>
+                        <input type="text" class="form-control  border-0" required v-model="anOne"
+                        placeholder="anOne">
+                        <label for="anOne">Atas Nama</label>
                     </div>
                   </div>
 
-                  <div class="col-12">
+                  <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="norekBCA"
-                        placeholder="norekBCA">
-                        <label for="norekBCA">No Rekening</label>
+                        <input type="text" class="form-control  border-0" required v-model="norekOne"
+                        placeholder="norekOne">
+                        <label for="norekOne">No Rekening</label>
                     </div>
                   </div>
 
-                  <div class="col-12">
-                    <label class="fw-bold">Mandiri</label>
-                    <input type="hidden" class="form-control  border-0" readonly v-model="bankMandiri" >
-                  </div>
-
-                  <div class="col-12">
+                    <div class="col-12 col-md-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="anMandiri"
-                        placeholder="anMandiri">
-                        <label for="anMandiri">Atas Nama</label>
+                    <select class="form-select border-0" v-model="bankTwo" id="bankTwo" aria-label="bankTwo">
+                      <option value="BCA">BCA</option>
+                      <option value="MANDIRI">MANDIRI</option>
+                      <option value="BNI">BNI</option>
+                      <option value="BRI">BRI</option>
+                      <option value="DANA">DANA</option>
+                    </select>
+                    <label for="bankTwo">Pilih Bank (Opsi Kedua)</label>
                     </div>
                   </div>
 
-                  <div class="col-12">
+                  <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="norekMandiri"
-                        placeholder="norekMandiri">
-                        <label for="norekMandiri">No Rekening</label>
+                        <input type="text" class="form-control  border-0" required v-model="anTwo"
+                        placeholder="anTwo">
+                        <label for="anTwo">Atas Nama</label>
                     </div>
                   </div>
 
-                  <div class="col-12">
-                    <label class="fw-bold">Dana</label>
-                    <input type="hidden" class="form-control  border-0" readonly v-model="bankDana" >
-                  </div>
-
-                  <div class="col-12">
+                  <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="anDana"
-                        placeholder="anDana">
-                        <label for="anDana">Atas Nama</label>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="norekDana"
-                        placeholder="norekDana">
-                        <label for="norekDana">No Rekening</label>
+                        <input type="text" class="form-control  border-0" required v-model="norekTwo"
+                        placeholder="norekTwo">
+                        <label for="norekTwo">No Rekening</label>
                     </div>
                   </div>
 
                 </div>
               </div>
             </div>
-          <p class="mt-4">
+          <p class="mt-2">
             <button type="button" class="btn btn-light me-3" @click="backAcaraResepsi()"><small>Sebelumnya</small></button>
             <button type="button" class="btn btn-primary" @click="nextFotoMempelai()"><small>Selanjutnya</small></button>
           </p>
@@ -344,10 +401,10 @@
       <div id = "dataFotoMempelai" class = "container" v-if="dataFotoMempelai === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
-          <h1>
+          <h3>
             Foto Mempelai
-          </h1>
-            <div class="row mt-4">
+          </h3>
+            <div class="row mt-2">
               <div class="col-12">
                 
                 <div class="row">
@@ -392,7 +449,7 @@
                 </center>
               </div>
             </div>
-          <p class="mt-4">
+          <p class="mt-3">
             <button type="button" class="btn btn-light me-3" @click="backAmplopDigital()"><small>Sebelumnya</small></button>
             <button type="button" class="btn btn-primary" @click="buatPesanan()"><small>Buat Pesanan</small></button>
           </p>
@@ -427,11 +484,13 @@ import axios from 'axios'
         manCall: '',
         manFather: '',
         manMother: '',
+        manChildOf: '',
 
         womenName: '',
         womenCall: '',
         womenFather: '',
         womenMother: '',
+        womenChildOf: '',
 
         akadDate: '',
         akadStart: '',
@@ -445,17 +504,13 @@ import axios from 'axios'
         resepsiTimezone: '',
         resepsiAddress: '',
 
-        bankBCA: "BCA",
-        anBCA: '',
-        norekBCA: '',
+        bankOne: '',
+        anOne: '',
+        norekOne: '',
 
-        bankMandiri: "MANDIRI",
-        anMandiri: '',
-        norekMandiri: '',
-
-        bankDana: "DANA",
-        anDana: '',
-        norekDana: '',
+        bankTwo: '',
+        anTwo: '',
+        norekTwo: '',
 
         noInvoice: '',
         nominalBill: '150000',
@@ -549,11 +604,13 @@ import axios from 'axios'
           manCall: this.manCall,
           manFather: this.manFather,
           manMother: this.manMother,
+          manChildOf: this.manChildOf,
 
           womenName: this.womenName,
           womenCall: this.womenCall,
           womenFather: this.womenFather,
           womenMother: this.womenMother,
+          womenChildOf: this.womenChildOf,
         }
 
         let dataEvent = {
@@ -571,23 +628,19 @@ import axios from 'axios'
         }
 
         let dataEnvelope = {
-          bankBCA: "BCA",
-          anBCA: this.anBCA,
-          norekBCA: this.norekBCA,
+          bankOne: this.bankOne,
+          anOne: this.anOne,
+          norekOne: this.norekOne,
 
-          bankMandiri: "MANDIRI",
-          anMandiri: this.anMandiri,
-          norekMandiri: this.norekMandiri,
-
-          bankDana: "DANA",
-          anDana: this.anDana,
-          norekDana: this.norekDana,
+          bankTwo: this.bankTwo,
+          anTwo: this.anTwo,
+          norekTwo: this.norekTwo,
         }
 
         let dataInvite = {
           fullName: this.fullName,
           noHp: this.noHp,
-          url_params: this.manCall + " & " + this.womenCall,
+          url_params: this.manCall + "&" + this.womenCall,
           isActive: this.isActive
         }
 
