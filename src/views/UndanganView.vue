@@ -10,7 +10,7 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
             {{ womenCall }} & {{ manCall }}
           </h1>
@@ -40,7 +40,7 @@
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <h5 class="fw-bold mb-4">THE WEDDING OF</h5>
-          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
             {{ womenCall }} & {{ manCall }}
           </h1>
@@ -49,7 +49,7 @@
             dari hari istimewa kami!
           </p>
           <p class="mt-4">
-            {{ akadDate}}
+            {{ moment(akadDate).lang("id").format('dddd, Do MMMM YYYY') }}
           </p>
           <div class = "countdown-date mt-2">
 
@@ -104,14 +104,14 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img :src="'/img/katalog/'+url_type+'/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
+        <img :src="'/undangan/'+url_type+'/asset/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
           <p class="mb-3">Assalamu'alaikum Wr. Wb.</p>
           <p class="mb-5"> 
             Tanpa mengurangi rasa hormat. <br/>
             Kami mengundang Bapak/Ibu/Saudara/i <br/>
             sekalian untuk menghadiri acara pernikahan kami:
           </p>
-          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai-detail mt-5">
             {{ womenName }}
           </h1>
@@ -122,7 +122,7 @@
             dan Ibu {{ womenMother }}
           </p>
             <h1 class="my-4">&</h1>
-            <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+            <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai-detail mt-5">
             {{ manName }}
           </h1>
@@ -148,9 +148,13 @@
           <div class="card mb-4 border-0">
             <div class="card-body m-4">
                 <h3>Akad Nikah</h3>
-                <p class = "fw-semibold">{{ akadDate }}</p>
+                <p class = "fw-semibold">
+                  {{ moment(akadDate).lang("id").format('dddd, Do MMMM YYYY') }}
+                </p>
                 <p>
-                  Pukul: {{ akadStart }} {{ akadTimezone }} <br/>
+                  Pukul: 
+                  {{ akadStart }} - {{ akadEnd }}
+                  {{ akadTimezone }} <br/>
                   {{ akadAddress }}
                 </p>
                 <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
@@ -160,9 +164,13 @@
           <div class="card border-0">
             <div class="card-body m-4">
                 <h3>Resepsi</h3>
-                <p class = "fw-semibold">{{ resepsiDate }}</p>
+                <p class = "fw-semibold">
+                  {{ moment(resepsiDate).lang("id").format('dddd, Do MMMM YYYY') }}
+                </p>
                 <p>
-                  Pukul: {{ resepsiStart }} {{ resepsiTimezone }} <br/>
+                  Pukul: 
+                  {{ resepsiStart }} - {{ resepsiEnd }}
+                  {{ resepsiTimezone }} <br/>
                   {{ resepsiAddress }}
                 </p>
                 <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
@@ -183,7 +191,7 @@
           <div class="row g-3 ">
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/img/katalog/'+url_type+'/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/undangan/'+url_type+'/asset/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
@@ -198,7 +206,7 @@
 
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/img/katalog/'+url_type+'/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/undangan/'+url_type+'/asset/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
@@ -320,7 +328,7 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+        <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
             apabila Bapak/Ibu/Saudara/i berkenan hadir
@@ -351,7 +359,7 @@
   <div class="music-player">
     <audio
       ref="audio"
-      :src="'/img/katalog/'+url_type+'/audio/satu.mp3'"
+      :src="'/undangan/'+url_type+'/audio/satu.mp3'"
       preload
       loop
       id="audio"
@@ -368,7 +376,7 @@
 
 <script>
   import axios from 'axios'
-
+  import moment from 'moment'
   import { WindowsBottomNavigation } from "bottom-navigation-vue";
   import "bottom-navigation-vue/dist/style.css";
 
@@ -569,7 +577,7 @@
       }
     },
     created() {
-      //
+      this.moment = moment;
     }
   };
 </script>

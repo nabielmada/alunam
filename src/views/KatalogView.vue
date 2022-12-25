@@ -30,7 +30,7 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
             Maulida & Nabiel
           </h1>
@@ -60,7 +60,7 @@
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <h5 class="fw-bold mb-4">THE WEDDING OF</h5>
-          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
             Maulida & Nabiel
           </h1>
@@ -124,14 +124,14 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img :src="'/img/katalog/'+url_type+'/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
+        <img :src="'/katalog/'+url_type+'/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
           <p class="mb-3">Assalamu'alaikum Wr. Wb.</p>
           <p class="mb-5"> 
             Tanpa mengurangi rasa hormat. <br/>
             Kami mengundang Bapak/Ibu/Saudara/i <br/>
             sekalian untuk menghadiri acara pernikahan kami:
           </p>
-          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai-detail mt-5">
             Nor Maulida Porwanti
           </h1>
@@ -140,7 +140,7 @@
             dan Ibu Sutega
           </p>
             <h1 class="my-4">&</h1>
-            <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+            <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai-detail mt-5">
             Nabiel Mada Ranu R
           </h1>
@@ -199,7 +199,7 @@
           <div class="row g-4 ">
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/img/katalog/'+url_type+'/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/katalog/'+url_type+'/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
@@ -214,7 +214,7 @@
 
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/img/katalog/'+url_type+'/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/katalog/'+url_type+'/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
@@ -336,7 +336,7 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+        <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
             apabila Bapak/Ibu/Saudara/i berkenan hadir
@@ -367,7 +367,7 @@
   <div class="music-player">
     <audio
       ref="audio"
-      :src="'/img/katalog/'+url_type+'/audio/satu.mp3'"
+      :src="'/katalog/'+url_type+'/audio/satu.mp3'"
       preload
       loop
       id="audio"

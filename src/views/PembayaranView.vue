@@ -1,14 +1,17 @@
 <template>
     <div>
-        <section id = "pembayaran" class = "container">
+        <section id = "pembayaran" class = "container mt-3">
             <div class="d-flex justify-content-center">
             <div class="row align-content-center">
             <div class="col-12 col-sm-12">
 
                 <div class = "text-center mb-4">
                 <div class = "bi bi-patch-check-fill fs-5 text-success"></div>
-                <div class="text-muted">Pembayaran Undangan Digital {{ pesananCust }}</div>
-                <h5 class="mb-4">{{ namaCust }}</h5>
+                <div class="text-muted">
+                    Pembayaran Undangan Digital <br/>
+                    {{ pesananCust }}
+                </div>
+                <h5 class="mb-3 mt-2">{{ namaCust }}</h5>
                 
                 <div class="card border-0">
                     <div class="card-body">
@@ -89,7 +92,7 @@ export default {
     },
     mounted() {
         axios
-            .get('http://localhost:5000/getInvoice/'+this.$route.params.noInvoice)
+            .get('http://localhost:5000/getInvoice/'+this.$route.params.no_invoice)
             .then((response) => {
 
                 let noTrans = response.data.dataInvoice.noinvoice;

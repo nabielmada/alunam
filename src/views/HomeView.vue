@@ -57,7 +57,7 @@
           </div>
           </div>
           <div class="col-6">
-            <img src="/img/web/cover-header.webp" class="cover-header img-fluid" alt="cover-header" loading = "lazy" srcset="">
+            <img src="/web/cover-header.webp" class="cover-header img-fluid" alt="cover-header" loading = "lazy" srcset="">
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@
                 <div class="card-body mb-3">
                     <div class="text-center mb-3">
                       <router-link to = "/katalog/alunam-blue-love">
-                        <img src="/img/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
+                        <img src="/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
                       </router-link>
                     </div>
                     <div class="mx-3">
@@ -171,7 +171,7 @@
                 </div>
                 <div class="card-body mb-3">
                     <div class="text-center mb-3">
-                        <img src="/img/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
+                        <img src="/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
                     </div>
                     <div class="mx-3">
                         <div class="card-text mb-1 fw-semibold">
@@ -197,7 +197,7 @@
                 </div>
                 <div class="card-body mb-3">
                     <div class="text-center mb-3">
-                        <img src="/img/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
+                        <img src="/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
                     </div>
                     <div class="mx-3">
                         <div class="card-text mb-1 fw-semibold">
@@ -223,7 +223,7 @@
                 </div>
                 <div class="card-body mb-3">
                     <div class="text-center mb-3">
-                        <img src="/img/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
+                        <img src="/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
                     </div>
                     <div class="mx-3">
                         <div class="card-text mb-1 fw-semibold">
@@ -250,7 +250,7 @@
     <div id = "space-testi" class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-3" data-aos="fade-up" data-aos-delay="200">
-            <img src="/img/web/icon-google.png" draggable="false" class="img-fluid" alt="logo-google" srcset="">
+            <img src="/web/icon-google.png" draggable="false" class="img-fluid" alt="logo-google" srcset="">
         </div>
 
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="250">

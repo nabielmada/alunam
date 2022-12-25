@@ -25,7 +25,7 @@ const routes = [
     props: (route) => ({ url_type: route.params.url_type }),  
   },
   {
-    path: '/pembayaran/:noInvoice',
+    path: '/pembayaran/:no_invoice',
     name: 'pembayaran',
     component: PembayaranView
   },

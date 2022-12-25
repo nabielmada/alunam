@@ -5,6 +5,7 @@ import express from "express";
 import { addBride } from "../controllers/addBride.js";
 import { addEvent } from "../controllers/addEvent.js";
 import { addEnvelope } from "../controllers/addEnvelope.js";
+import { addInviteTo } from "../controllers/addInviteTo.js";
 import { addInvite } from "../controllers/addInvite.js";
 import { createInvoice } from "../controllers/createInvoice.js";
 import { getInvoice } from "../controllers/getInvoice.js";
@@ -17,9 +18,10 @@ const router = express.Router();
 router.post('/addBride', addBride);
 router.post('/addEvent', addEvent);
 router.post('/addEnvelope', addEnvelope);
+router.post('/addInviteTo', addInviteTo);
 router.post('/addInvite', addInvite);
 router.post('/createInvoice', createInvoice);
-router.get('/getInvoice/:noInvoice', getInvoice);
+router.get('/getInvoice/:no_invoice', getInvoice);
 router.get('/getUndangan/:url_params', getUndangan);
  
 // export default router
