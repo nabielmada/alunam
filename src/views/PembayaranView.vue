@@ -25,7 +25,7 @@
                 <div class="row g-3">
                     <div class="col-1"></div>
                     <div class="col-3 col-sm-3 col-lg-2">
-                    <img src="/img/katalog/katalog-satu/bca-logo.png" class = "img-fluid" draggable="false" alt="logo-bca">
+                    <img src="/img/web/bca-logo.png" class = "img-fluid" draggable="false" alt="logo-bca">
                     </div>
                     <div class="col-8 col-sm-8 col-lg-3">
                     <div>
@@ -40,7 +40,7 @@
 
                     <div class="col-1"></div>
                     <div class="col-3 col-sm-3 col-lg-2">
-                    <img src="/img/katalog/katalog-satu/mandiri-logo.png" class = "img-fluid" draggable="false" alt="logo-bca">
+                    <img src="/img/web/mandiri-logo.png" class = "img-fluid" draggable="false" alt="logo-bca">
                     </div>
                     <div class="col-8 col-sm-8 col-lg-3">
                     <div>

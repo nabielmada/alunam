@@ -6,7 +6,7 @@
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Pesan Katalog</div>
           <h3>
-            Alunam Blue Jeans
+            {{ type }} 
           </h3>
           <p class = "mt-2 text-center">
             Tenang, kamu masih bisa melakukan revisi undangan setelah melakukan pembayaran dan pengisian formulir informasi berikut ini 
@@ -42,10 +42,6 @@
                     placeholder="noHp">
                     <label for="noHp">No Handphone</label>
                 </div>
-              </div>
-              <div class="col-12 mb-3">
-                <label class = "mb-1"><small>Pilih Musik Undangan</small></label>
-                  <input type="file" class="form-control border-0">
               </div>
             </div>
           <p class="mt-2">
@@ -464,6 +460,12 @@ import axios from 'axios'
 
   export default {
     name: "UnlockView",
+    props: {
+      url_type: {
+        type: String,
+        default: null,
+      },
+    },
     data() {
       return {
         sk: true,
@@ -513,15 +515,20 @@ import axios from 'axios'
         norekTwo: '',
 
         noInvoice: '',
-        nominalBill: '150000',
-        type: 'Alunam Blue Love',
+        nominalBill: '',
+        type: '',
       }
     },
     mounted() {
 
+      if(this.url_type == 'alunam-blue-love'){
+         this.type = 'Alunam Blue Love';
+         this.nominalBill = '150000'
+      }
+
     },
     created() {
-      setInterval(this.getNow, 1000);
+      setTimeout(this.getNow, 1000);
     },
     methods: {
       isBersedia(){
@@ -640,13 +647,14 @@ import axios from 'axios'
         let dataInvite = {
           fullName: this.fullName,
           noHp: this.noHp,
-          url_params: this.manCall + "&" + this.womenCall,
+          url_type: this.url_type,
+          url_params: this.womenCall + "-" + this.manCall,
           isActive: this.isActive
         }
 
         let dataInvoice = {
           noInvoice: this.noInvoice,
-          customer: this.manCall + " dan " + this.womenCall,
+          customer: this.womenCall + " dan " + this.manCall,
           nominalBill: this.nominalBill,
           type: this.type,
         }

@@ -10,7 +10,7 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-          <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
             {{ womenCall }} & {{ manCall }}
           </h1>
@@ -40,7 +40,7 @@
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <h5 class="fw-bold mb-4">THE WEDDING OF</h5>
-          <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
             {{ womenCall }} & {{ manCall }}
           </h1>
@@ -49,7 +49,7 @@
             dari hari istimewa kami!
           </p>
           <p class="mt-4">
-            Kamis, 10 Oktober 2022
+            {{ akadDate}}
           </p>
           <div class = "countdown-date mt-2">
 
@@ -104,28 +104,32 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img src="/img/katalog/katalog-satu/bismillah.svg" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
+        <img :src="'/img/katalog/'+url_type+'/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
           <p class="mb-3">Assalamu'alaikum Wr. Wb.</p>
           <p class="mb-5"> 
             Tanpa mengurangi rasa hormat. <br/>
             Kami mengundang Bapak/Ibu/Saudara/i <br/>
             sekalian untuk menghadiri acara pernikahan kami:
           </p>
-          <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai-detail mt-5">
             {{ womenName }}
           </h1>
           <p class="mt-3">
-            Putri keempat Bapak {{ womenFather }} <br/>
+            Putri {{ womenChildOf }} 
+
+            Bapak {{ womenFather }} <br/>
             dan Ibu {{ womenMother }}
           </p>
             <h1 class="my-4">&</h1>
-            <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
+            <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai-detail mt-5">
             {{ manName }}
           </h1>
           <p class="mt-3">
-            Putra kedua (Alm) Bapak {{ manFather }}<br/>
+            Putra {{ manChildOf }} 
+
+            Bapak {{ manFather }}<br/>
             dan Ibu {{ manMother }}
           </p>
         </div>
@@ -144,7 +148,7 @@
           <div class="card mb-4 border-0">
             <div class="card-body m-4">
                 <h3>Akad Nikah</h3>
-                <p class = "fw-semibold">Sabtu, 15 Desember 2022</p>
+                <p class = "fw-semibold">{{ akadDate }}</p>
                 <p>
                   Pukul: {{ akadStart }} {{ akadTimezone }} <br/>
                   {{ akadAddress }}
@@ -156,7 +160,7 @@
           <div class="card border-0">
             <div class="card-body m-4">
                 <h3>Resepsi</h3>
-                <p class = "fw-semibold">Sabtu, 15 Desember 2022</p>
+                <p class = "fw-semibold">{{ resepsiDate }}</p>
                 <p>
                   Pukul: {{ resepsiStart }} {{ resepsiTimezone }} <br/>
                   {{ resepsiAddress }}
@@ -176,16 +180,16 @@
       <div class="col-12 col-sm-12">
           <h5 class="fw-bold mb-5 text-center">AMPLOP DIGITAL</h5>
 
-          <div class="row g-4 ">
+          <div class="row g-3 ">
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img src="/img/katalog/katalog-satu/bca-logo.png" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/img/katalog/'+url_type+'/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
-                BANK CENTRAL ASIA <br/>
-                <small>a.n Nabiel Mada Ranu Ramadhan</small>
-                <p>2221012081</p>
+                {{ bankOne }} <br/>
+                <small>a.n {{ anOne }}</small>
+                <p>{{ norekOne }}</p>
                 <button type = "button" class = "btn btn-light">
                   <small><i class = "bi bi-clipboard"></i> Salin</small>
                 </button>
@@ -194,13 +198,13 @@
 
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img src="/img/katalog/katalog-satu/mandiri-logo.png" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/img/katalog/'+url_type+'/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
-                BANK MANDIRI <br/>
-                <small>a.n Nabiel Mada Ranu Ramadhan</small>
-                <p>2221012081</p>
+                {{ bankTwo }} <br/>
+                <small>a.n {{ anTwo }}</small>
+                <p>{{ norekTwo }}</p>
                 <button type = "button" class = "btn btn-light">
                   <small><i class = "bi bi-clipboard"></i> Salin</small>
                 </button>
@@ -316,7 +320,7 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img src="/img/katalog/katalog-satu/foto-bingkai-non.png" class = "img-fluid" draggable="false" alt="foto-bingkai">
+        <img :src="'/img/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
             apabila Bapak/Ibu/Saudara/i berkenan hadir
@@ -347,7 +351,7 @@
   <div class="music-player">
     <audio
       ref="audio"
-      src="/img/katalog/katalog-satu/audio/satu.mp3"
+      :src="'/img/katalog/'+url_type+'/audio/satu.mp3'"
       preload
       loop
       id="audio"
@@ -402,11 +406,13 @@
         manCall: '',
         manFather: '',
         manMother: '',
+        manChildOf: '',
 
         womenName: '',
         womenCall: '',
         womenFather: '',
         womenMother: '',
+        womenChildOf: '',
 
         akadDate: '',
         akadStart: '',
@@ -420,7 +426,15 @@
         resepsiTimezone: '',
         resepsiAddress: '',
 
+        bankOne: '',
+        anOne: '',
+        norekOne: '',
+        bankTwo: '',
+        anTwo: '',
+        norekTwo: '',
+
         isActive: '',
+        url_type: '',
       }
     },
     mounted() {
@@ -431,16 +445,68 @@
         .then((response) => {
 
           this.isActive = response.data.dataUndangan.isactive;
+          this.url_type = response.data.dataUndangan.url_type;
 
           this.manName = response.data.dataUndangan.man_name;
           this.manCall = response.data.dataUndangan.man_call;
           this.manFather = response.data.dataUndangan.man_father;
           this.manMother = response.data.dataUndangan.man_mother;
 
+          let manChildOf = response.data.dataUndangan.man_child_of
+
+          if(manChildOf == '1'){
+            this.manChildOf = 'Pertama'
+          }else if(manChildOf == '2'){
+            this.manChildOf = 'Kedua'
+          }else if(manChildOf == '3'){
+            this.manChildOf = 'Ketiga'
+          }else if(manChildOf == '4'){
+            this.manChildOf = 'Keempat'
+          }else if(manChildOf == '5'){
+            this.manChildOf = 'Kelima'
+          }else if(manChildOf == '6'){
+            this.manChildOf = 'Keenam'
+          }else if(manChildOf == '7'){
+            this.manChildOf = 'Ketujuh'
+          }else if(manChildOf == '8'){
+            this.manChildOf = 'Kedelapan'
+          }else if(manChildOf == '9'){
+            this.manChildOf = 'Kesembilan'
+          }else if(manChildOf == '10'){
+            this.manChildOf = 'Kesepuluh'
+          }else{
+            this.manChildOf = 'Lebih Dari Kesepuluh'
+          }
+
           this.womenName = response.data.dataUndangan.women_name;
           this.womenCall = response.data.dataUndangan.women_call;
           this.womenFather = response.data.dataUndangan.women_father;
           this.womenMother = response.data.dataUndangan.women_mother;
+          let womenChildOf = response.data.dataUndangan.women_child_of;
+
+          if(womenChildOf == '1'){
+            this.womenChildOf = 'Pertama'
+          }else if(womenChildOf == '2'){
+            this.womenChildOf = 'Kedua'
+          }else if(womenChildOf == '3'){
+            this.womenChildOf = 'Ketiga'
+          }else if(womenChildOf == '4'){
+            this.womenChildOf = 'Keempat'
+          }else if(womenChildOf == '5'){
+            this.womenChildOf = 'Kelima'
+          }else if(womenChildOf == '6'){
+            this.womenChildOf = 'Keenam'
+          }else if(womenChildOf == '7'){
+            this.womenChildOf = 'Ketujuh'
+          }else if(womenChildOf === '8'){
+            this.womenChildOf = 'Kedelapan'
+          }else if(womenChildOf == '9'){
+            this.womenChildOf = 'Kesembilan'
+          }else if(womenChildOf == '10'){
+            this.womenChildOf = 'Kesepuluh'
+          }else{
+            this.womenChildOf = 'Lebih Dari Kesepuluh'
+          }
 
           this.akadDate = response.data.dataUndangan.akad_date;
           this.akadStart = response.data.dataUndangan.akad_start;
@@ -454,7 +520,19 @@
           this.resepsiTimezone = response.data.dataUndangan.resepsi_timezone;
           this.resepsiAddress = response.data.dataUndangan.resepsi_address;
 
+          this.bankOne = response.data.dataUndangan.bank_one;
+          this.anOne = response.data.dataUndangan.an_one;
+          this.norekOne = response.data.dataUndangan.norek_one;
+
+          this.bankTwo = response.data.dataUndangan.bank_two;
+          this.anTwo = response.data.dataUndangan.an_two;
+          this.norekTwo = response.data.dataUndangan.norek_two;
         });
+    },
+    computed: {
+      // tglIndonesia() {
+        
+      // }
     },
     methods: {
       isCover() {

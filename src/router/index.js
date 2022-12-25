@@ -4,6 +4,7 @@ import KatalogView from '../views/KatalogView.vue'
 import UnlockView from '../views/UnlockView.vue'
 import PembayaranView from '../views/PembayaranView.vue'
 import UndanganView from '../views/UndanganView.vue'
+// import PageNotFound from '../views/PageNotFound.vue'
 
 const routes = [
   {
@@ -12,28 +13,34 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/katalog',
+    path: '/katalog/:url_type',
     name: 'katalog',
-    component: KatalogView
+    component: KatalogView,
+    props: (route) => ({ url_type: route.params.url_type }),  
   },
   {
-    path: '/unlock',
+    path: '/unlock/:url_type',
     name: 'unlock',
-    component: UnlockView
+    component: UnlockView,
+    props: (route) => ({ url_type: route.params.url_type }),  
   },
   {
     path: '/pembayaran/:noInvoice',
     name: 'pembayaran',
     component: PembayaranView
   },
-
   // Real Invitation
   {
     path: '/:url_params',
     name: 'Undangan',
     component: UndanganView,
     props: (route) => ({ mempelai: route.params.url_params, to: route.query.to }),  
-  }
+  },
+  // Page Not Found
+  // { 
+  //   path: "*", 
+  //   component: PageNotFound 
+  // }
 ]
 
 const router = createRouter({
