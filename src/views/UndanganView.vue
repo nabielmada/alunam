@@ -1,8 +1,12 @@
 <template>
   
   <div v-if="isActive === 'N'">
-    <div class="d-flex justify-content-center">
-      <h4>Maaf undangan anda di nonaktifkan</h4>
+    <div class="d-flex justify-content-center flex-column" id = "nonaktif">
+      <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_cgfdhxgx.json"  background="transparent"  speed="1" style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+      <h4>Maaf undangan tidak ditemukan</h4>
+      <div class ="text-muted mt-2">
+        <small>Silahkan kembali lagi untuk beberapa saat kemudian <br/> atau hubungi admin dengan link undangan yang tertera diatas</small>
+      </div>
     </div>
   </div>
   <div v-else>
@@ -585,6 +589,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
 
+  #nonaktif,
   #cover,
   #mempelai {
     display: flex;
