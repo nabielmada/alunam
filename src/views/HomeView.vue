@@ -34,7 +34,7 @@
   </nav>
 
   <div id = "home"></div>
-  <header class = "center-header">
+  <header class = "center-header" data-aos="fade-up" data-aos-delay="200">
     <div class = "container">
       <div class = "d-flex">
         <div class="row align-items-center">
@@ -50,7 +50,7 @@
             <p class="pt-4 text-muted sub-heading sub-heading-resize sub-heading-header">
               Bagikan momen bahagia kamu hanya dengan satu genggaman serta banyak pilihan undangan yang kekinian
             </p>
-            <div class="mt-5">
+            <div class="mt-5" data-aos="fade-up" data-aos-delay="150">
             <button type = "button" class="btn btn-primary btn-lg rounded-pill px-4 py-2" v-scroll-to="'#katalog'">
                <small>Lihat Katalog</small>
             </button>
@@ -67,11 +67,11 @@
   <div id = "benefit"></div>
   <article class="mb-5">
     <div id = "space" class="container">
-      <div class="row text-center">
+      <div class="row g-3 text-center">
 
           <div class="col-6 col-lg-3">
-            <div class="card hover-card border-0">
-                <div class="card-body my-2">
+            <div class="card hover-card border-0" data-aos="fade-down" data-aos-delay="200">
+                <div class="card-body">
                   <p class = "bi bi-lightning-charge-fill text-warning fs-3"></p>
                   <h5 class="card-title">Cepat</h5>
                   <p class="card-text text-muted text-vt">
@@ -82,8 +82,8 @@
           </div>
 
           <div class="col-6 col-lg-3">
-            <div class="card hover-card border-0">
-                <div class="card-body my-2">
+            <div class="card hover-card border-0" data-aos="fade-down" data-aos-delay="250">
+                <div class="card-body">
                   <p class = "bi bi-balloon-heart text-danger fs-3"></p>
                   <h5 class="card-title">Lovable</h5>
                   <p class="card-text text-muted text-vt">
@@ -94,20 +94,20 @@
           </div>
 
           <div class="col-6 col-lg-3">
-            <div class="card hover-card border-0">
-                <div class="card-body my-2">
+            <div class="card hover-card border-0" data-aos="fade-down" data-aos-delay="300">
+                <div class="card-body">
                   <p class = "bi bi-robot text-info fs-3"></p>
-                  <h5 class="card-title">Optimal</h5>
+                  <h5 class="card-title">Revisi</h5>
                   <p class="card-text text-muted text-vt">
-                    Proses pengerjaan cepat dan optimal serta tersedia lengkap kebutuhan kamu 
+                    Kamu masih bisa melakukan bebas revisi undangan dengan kami 
                   </p>
                 </div>
             </div>
           </div>
 
           <div class="col-6 col-lg-3">
-            <div class="card hover-card border-0">
-                <div class="card-body my-2">
+            <div class="card hover-card border-0" data-aos="fade-down" data-aos-delay="350">
+                <div class="card-body">
                   <p class = "bi bi-shield-check text-success fs-3"></p>
                   <h5 class="card-title">Privasi</h5>
                   <p class="card-text text-muted text-vt">
@@ -134,7 +134,7 @@
 
       <div class="row row-cols-1 row-cols-md-4 g-4 card-porto mt-3">
       
-        <div class="col">
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
             <div class="card hover-card border-0">
                 <div class="text-center">
                     <div class="badge bg-danger w-25 text-white"><small>Promo</small></div>
@@ -165,7 +165,7 @@
             </div>
         </div>
 
-        <div class="col">
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
             <div class="card hover-card border-0">
                 <div class="text-center mt-4">
                 </div>
@@ -190,7 +190,7 @@
             </div>
         </div>
 
-        <div class="col">
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
             <div class="card hover-card border-0">
                 <div class="text-center">
                     <div class="badge bg-success w-25 text-white"><small>Populer</small></div>
@@ -216,7 +216,7 @@
             </div>
         </div>
 
-        <div class="col">
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
             <div class="card hover-card border-0">
                 <div class="text-center">
                     <div class="badge bg-primary w-25 text-white"><small>Baru</small></div>

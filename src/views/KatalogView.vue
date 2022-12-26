@@ -26,10 +26,11 @@
     </div>
   </nav>
 
-  <section id = "cover">
+  <section id = "cover" v-if="cover === true">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
+        <div data-aos="zoom-in" data-aos-delay="200">
           <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
           <h1 class = "nama-mempelai mt-4">
             Maulida & Nabiel
@@ -49,18 +50,21 @@
               <span class="bi bi-envelope-paper-heart me-1"></span> <small>Buka Undangan</small>
             </button>
           </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div id = "content">
+  <div id = "content" v-if="content === true">
   <section id = "mempelai" class = "mempelai container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-          <h5 class="fw-bold mb-4">THE WEDDING OF</h5>
-          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+          <h5 class="fw-bold mb-4" data-aos="fade-down" data-aos-delay="200">THE WEDDING OF</h5>
+          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-down" data-aos-delay="200">
+
+          <div data-aos="fade-up" data-aos-delay="200">
           <h1 class = "nama-mempelai mt-4">
             Maulida & Nabiel
           </h1>
@@ -115,6 +119,8 @@
 
           </div>
         </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -124,6 +130,7 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
+        <div data-aos="fade-up" data-aos-delay="200">
         <img :src="'/katalog/'+url_type+'/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
           <p class="mb-3">Assalamu'alaikum Wr. Wb.</p>
           <p class="mb-5"> 
@@ -131,20 +138,21 @@
             Kami mengundang Bapak/Ibu/Saudara/i <br/>
             sekalian untuk menghadiri acara pernikahan kami:
           </p>
-          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
-          <h1 class = "nama-mempelai-detail mt-5">
+        </div>
+          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+          <h1 class = "nama-mempelai-detail mt-5" data-aos="fade-up" data-aos-delay="250">
             Nor Maulida Porwanti
           </h1>
-          <p class="mt-3">
+          <p class="mt-3" data-aos="fade-up" data-aos-delay="300">
             Putri keempat Bapak Sutega <br/>
             dan Ibu Sutega
           </p>
-            <h1 class="my-4">&</h1>
-            <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
-          <h1 class = "nama-mempelai-detail mt-5">
+            <h1 class="my-4" data-aos="fade-up" data-aos-delay="200">&</h1>
+            <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+          <h1 class = "nama-mempelai-detail mt-5" data-aos="fade-up" data-aos-delay="250">
             Nabiel Mada Ranu R
           </h1>
-          <p class="mt-3">
+          <p class="mt-3" data-aos="fade-up" data-aos-delay="300">
             Putra kedua (Alm) Bapak Masrikan<br/>
             dan Ibu Danik
           </p>
@@ -158,9 +166,12 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
+        <div data-aos="fade-up" data-aos-delay="200">
           <h5 class="fw-bold">SAVE THE DATE</h5>
           <p class="mb-4">Indahnya hari yang dinanti</p>
+        </div>
 
+        <div data-aos="flip-down" data-aos-delay="300">
           <div class="card mb-4 border-0">
             <div class="card-body m-4">
                 <h3>Akad Nikah</h3>
@@ -172,7 +183,9 @@
                 <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
             </div>
           </div>
+        </div>
 
+        <div data-aos="flip-down" data-aos-delay="300">
           <div class="card border-0">
             <div class="card-body m-4">
                 <h3>Resepsi</h3>
@@ -184,6 +197,7 @@
                 <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
             </div>
           </div>
+        </div>
           
         </div>
       </div>
@@ -194,9 +208,9 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12">
-          <h5 class="fw-bold mb-5 text-center">AMPLOP DIGITAL</h5>
+          <h5 class="fw-bold mb-5 text-center" data-aos="fade-up" data-aos-delay="200">AMPLOP DIGITAL</h5>
 
-          <div class="row g-4 ">
+          <div class="row g-3" data-aos="fade-up" data-aos-delay="200">
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
               <img :src="'/katalog/'+url_type+'/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
@@ -233,7 +247,7 @@
     </div>
   </section>
 
-  <section id = "ucapan" class = "container mt-5 pt-4">
+  <section id = "ucapan" class = "container mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -336,7 +350,8 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+        <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="200">
           <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
             apabila Bapak/Ibu/Saudara/i berkenan hadir
@@ -349,7 +364,8 @@
           <p class="mt-4">
             Wassalamu'alaikum Wr. Wb.
           </p>
-          <h1 class = "nama-mempelai mt-4">
+        </div>
+          <h1 class = "nama-mempelai mt-4" data-aos="fade-up" data-aos-delay="200">
             Maulida & Nabiel
           </h1>
         </div>
@@ -368,6 +384,7 @@
     <audio
       ref="audio"
       :src="'/katalog/'+url_type+'/audio/satu.mp3'"
+      autoplay
       preload
       loop
       id="audio"
@@ -400,6 +417,8 @@
     components: { WindowsBottomNavigation },
     data() {
       return {
+        cover: true,
+        content: false,
         selected: 'mempelai',
         options: [
           { id: 'mempelai', icon: 'bi-brands bi-heart-fill', color: 'red' },
@@ -416,22 +435,14 @@
       }
     },
     mounted() {
-      this.isCover();
-
       if(this.url_type == 'alunam-blue-love'){
          this.type = 'Alunam Blue Love';
       }
     },
     methods: {
-      isCover() {
-        document.getElementById("content").style = "display: none";
-      },
       bukaUndangan() {
-        this.$refs.audio.play()
-
-        document.getElementById("cover").style = "display: none";
-        document.getElementById("content").style = "display: block";
-
+        this.cover = false;
+        this.content = true;
       },
       toggleSound() {
         let audio = this.$refs.audio;
@@ -470,7 +481,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
+    /* min-height: 50vh; */
   }
 
   #mempelai {
@@ -478,7 +489,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
   }
   /* Image Bingkai */
   .img-bingkai {
