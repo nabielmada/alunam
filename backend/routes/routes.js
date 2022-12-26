@@ -10,6 +10,8 @@ import { addInvite } from "../controllers/addInvite.js";
 import { createInvoice } from "../controllers/createInvoice.js";
 import { getInvoice } from "../controllers/getInvoice.js";
 import { getUndangan } from "../controllers/getUndangan.js";
+import { addChat } from "../controllers/addChat.js";
+import { getChat } from "../controllers/getChat.js";
  
 // init express router
 const router = express.Router();
@@ -23,6 +25,8 @@ router.post('/addInvite', addInvite);
 router.post('/createInvoice', createInvoice);
 router.get('/getInvoice/:no_invoice', getInvoice);
 router.get('/getUndangan/:url_params', getUndangan);
+router.post('/addChat', addChat);
+router.get('/getChat/:url_params', getChat);
  
 // export default router
 export default router;

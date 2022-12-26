@@ -57,7 +57,7 @@
             dari hari istimewa kami!
           </p>
           <p class="mt-4">
-            {{ moment(akadDate).lang("id").format('dddd, Do MMMM YYYY') }}
+            {{ moment(akadDate).locale("id").format('dddd, Do MMMM YYYY') }}
           </p>
           <div class = "countdown-date mt-2">
 
@@ -164,7 +164,7 @@
             <div class="card-body m-4">
                 <h3>Akad Nikah</h3>
                 <p class = "fw-semibold">
-                  {{ moment(akadDate).lang("id").format('dddd, Do MMMM YYYY') }}
+                  {{ moment(akadDate).locale("id").format('dddd, Do MMMM YYYY') }}
                 </p>
                 <p>
                   Pukul: 
@@ -182,7 +182,7 @@
             <div class="card-body m-4">
                 <h3>Resepsi</h3>
                 <p class = "fw-semibold">
-                  {{ moment(resepsiDate).lang("id").format('dddd, Do MMMM YYYY') }}
+                  {{ moment(resepsiDate).locale("id").format('dddd, Do MMMM YYYY') }}
                 </p>
                 <p>
                   Pukul: 
@@ -250,89 +250,53 @@
           <h5 class="fw-bold">UCAPKAN SESUATU</h5>
           <p class="mb-3">Berikan ucapan dan doa restu.</p>
 
+          <form @submit.prevent="addChat">
           <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-lg border-0" required
+              <input type="text" class="form-control form-control-lg border-0" required v-model = "name_chat"
               placeholder="nama">
               <label for="alamat">Nama</label>
           </div>
           <div class="form-floating mb-3">
-            <textarea class="form-control border-0" placeholder="Ucapan" id="ucapan" style="height: 80px"></textarea>
+            <textarea class="form-control border-0" placeholder="Ucapan" required v-model = "say_chat" id="ucapan" style="height: 80px"></textarea>
             <label for="ucapan">Ucapan</label>
           </div>
           <div class="form-floating mb-4">
-          <select class="form-select border-0" id="kehadiran" aria-label="Konfirmasi Kehadiran">
-            <option value="Hadir">Hadir</option>
-            <option value="Tidak Hadir">Tidak Hadir</option>
+          <select class="form-select border-0" v-model = "iscome" id="kehadiran" required aria-label="Konfirmasi Kehadiran">
+            <option value="Y">Hadir</option>
+            <option value="N">Tidak Hadir</option>
           </select>
           <label for="kehadiran">Konfirmasi Kehadiran</label>
           </div>
           <div class = "mb-4">
-            <button type = "button" class="form-control btn btn-primary rounded-pill p-2">Kirim</button>
+            <button type = "submit" class="form-control btn btn-primary rounded-pill p-2">Kirim</button>
           </div>
+          </form>
+
 
           <div class="card mb-4 border-0 text-start">
             <div class="card-body scroll-ucapan">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-start">
+                
+                <li v-for = "dataChats in dataChat" :key="dataChats.id_chat"
+                    class="list-group-item d-flex justify-content-between align-items-start my-1">
                   <div class="ms-2 me-auto">
-                    <div class="fw-bold">Nabiel Mada</div>
-                    <div>Selamat menikah kawanku</div>
-                    <small class = "mt-1 text-muted">
+                    <div class="fw-bold">{{ dataChats.name_chat }}</div>
+                    <div>{{ dataChats.say_chat }}</div>
+                    <small class = "mt-2 text-muted">
                       <span class = "bi bi-clock-history"></span> 
-                      Baru saja
+                       <!-- moment(dataChats.created_at).lang("id").format('dddd, Do MMMM YYYY').fromNow()  -->
+                      {{ moment(dataChats.created_at).locale("id").calendar() }}
                       <!-- <span class = "ms-1">Reply</span> -->
                     </small>
                   </div>
-                  <span class="bi bi-patch-check-fill text-success"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Madara Ucihah</div>
-                    <div>Sat set sekali maszeeehh, semoga lancar dan menjadi keluarga yang sakinah mawadah warahmah</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      2 hari, 20 jam lalu
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
+                  <div v-if = "dataChats.iscome == 'Y'">
+                    <span class="bi bi-patch-check-fill text-success"></span>
                   </div>
-                  <span class="bi bi-x-circle-fill text-danger"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Nabiel Mada</div>
-                    <div>Selamat menikah kawanku</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      Baru saja
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
+                  <div v-else>
+                    <span class="bi bi-x-circle-fill text-danger"></span>
                   </div>
-                  <span class="bi bi-patch-check-fill text-success"></span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Nabiel Mada</div>
-                    <div>Selamat menikah kawanku</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      Baru saja
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
-                  </div>
-                  <span class="bi bi-patch-check-fill text-success"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Nabiel Mada</div>
-                    <div>Selamat menikah kawanku seperjuangan</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      Baru saja
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
-                  </div>
-                  <span class="bi bi-patch-check-fill text-success"></span>
-                </li>
+
               </ul>
             </div>
           </div>
@@ -351,7 +315,7 @@
           <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
             apabila Bapak/Ibu/Saudara/i berkenan hadir
-            dan memberikan  doa restu. 
+            dan memberikan doa restu. 
           </p>
           <p class="mt-4">
             Atas kehadiran dan doa restunya,<br/>
@@ -466,6 +430,11 @@
 
         isActive: '',
         url_type: '',
+
+        name_chat: '',
+        say_chat: '',
+        iscome: '',
+        dataChat: [],
       }
     },
     mounted() {
@@ -557,6 +526,12 @@
           this.anTwo = response.data.dataUndangan.an_two;
           this.norekTwo = response.data.dataUndangan.norek_two;
         });
+
+        axios
+        .get('http://localhost:5000/getChat/'+this.$route.params.url_params)
+        .then((response) => {
+          this.dataChat = response.data.dataChat
+        });
     },
     computed: {
       //
@@ -587,6 +562,28 @@
         selected === 'acara' ? document.getElementById('acara').scrollIntoView() : false
         selected === 'galeri' ? document.getElementById('galeri').scrollIntoView() : false
         selected === 'ucapan' ? document.getElementById('ucapan').scrollIntoView() : false
+      },
+      addChat(){
+
+        let dataChat = {
+          url_params: this.$route.params.url_params,
+          name_chat: this.name_chat,
+          say_chat: this.say_chat,
+          iscome: this.iscome
+        }
+
+        axios
+          .post('http://localhost:5000/addChat', dataChat)
+          .then(() => {
+            this.name_chat = '';
+            this.say_chat = '';
+            this.iscome = '';
+            axios
+              .get('http://localhost:5000/getChat/'+this.$route.params.url_params)
+              .then((response) => {
+                this.dataChat = response.data.dataChat
+              });
+          });
       }
     },
     created() {
