@@ -10,7 +10,7 @@
     </div>
   </div>
   <div v-else>
-  <section id = "cover" v-if="cover === true">
+  <section id = "cover" class = "wallpaper-cover" v-if="cover === true">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -623,6 +623,11 @@
   }
 
   /* Wallpaper */
+  .wallpaper-cover{
+    /* background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/coba.png'); */
+    background-repeat: no-repeat;
+    background-size:auto;
+  }
   .mempelai{
     /* background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/img/katalog/katalog-satu/wallpaper-mempelai.png'); */
     background-repeat: no-repeat;

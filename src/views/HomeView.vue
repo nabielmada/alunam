@@ -262,7 +262,7 @@
                   <hr/>
                   <div class="row g-0 mx-3 card-review mt-4">
                       <div class="col-lg-2 col-3 text-end">
-                          <img src="/avatar/avatar-7.png" draggable="false" class="h-75" alt="" srcset="">
+                          <img src="/web/avatar/avatar-1.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
                           Irfan Wihatnata <br/>
@@ -283,7 +283,7 @@
                   <hr/>
                   <div class="row g-0 mx-3 card-review mt-4">
                       <div class="col-lg-2 col-3 text-end">
-                          <img src="/avatar/avatar-7.png" draggable="false" class="h-75" alt="" srcset="">
+                          <img src="/web/avatar/avatar-2.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
                           Irfan Wihatnata <br/>
@@ -304,7 +304,7 @@
                   <hr/>
                   <div class="row g-0 mx-3 card-review mt-4">
                       <div class="col-lg-2 col-3 text-end">
-                          <img src="/avatar/avatar-7.png" draggable="false" class="h-75" alt="" srcset="">
+                          <img src="/web/avatar/avatar-3.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
                           Irfan Wihatnata <br/>
@@ -329,7 +329,10 @@
   </section>
 
   <footer id = "space" class="container pb-5">
-    <div class="row text-center">
+    <div class = "text-center">
+      Made with <span class = "bi bi-heart-fill text-danger"></span> Alunam &copy; 2022 
+    </div>
+    <!-- <div class="row text-center">
       <div class="col-12 col-lg-6">
         Made with <span class = "bi bi-heart-fill text-danger"></span> Alunam &copy; 2022 
       </div>
@@ -340,7 +343,7 @@
           <span class="me-3">Siapa Kami?</span>
         </div>
       </div>
-    </div>
+    </div> -->
   </footer>
 
 </template>
