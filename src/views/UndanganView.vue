@@ -243,7 +243,8 @@
     </div>
   </section>
 
-  <section id = "ucapan" class = "container mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
+  <div id = "ucapan"></div>
+  <section class = "container mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -252,7 +253,7 @@
 
           <form @submit.prevent="addChat">
           <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-lg border-0" required v-model = "name_chat"
+              <input type="text" class="form-control border-0" required v-model = "name_chat"
               placeholder="nama">
               <label for="alamat">Nama</label>
           </div>
@@ -272,6 +273,9 @@
           </div>
           </form>
 
+          <p>
+            <small>Total: {{ dataChat.length }} Ucapan</small>
+          </p>
 
           <div class="card mb-4 border-0 text-start">
             <div class="card-body scroll-ucapan">
@@ -281,11 +285,10 @@
                     class="list-group-item d-flex justify-content-between align-items-start my-1">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">{{ dataChats.name_chat }}</div>
-                    <div>{{ dataChats.say_chat }}</div>
+                    <div class = "text-chat">{{ dataChats.say_chat }}</div>
                     <small class = "mt-2 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                       <!-- moment(dataChats.created_at).lang("id").format('dddd, Do MMMM YYYY').fromNow()  -->
-                      {{ moment(dataChats.created_at).locale("id").calendar() }}
+                      <span class = "bi bi-clock-history"></span>  
+                       {{ moment(dataChats.created_at).locale("id").calendar() }}
                       <!-- <span class = "ms-1">Reply</span> -->
                     </small>
                   </div>
@@ -306,7 +309,7 @@
     </div>
   </section>
 
-  <section id = "penutup" class = "container mt-5 pt-4">
+  <section id = "penutup" class = "container mt-5 py-4">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -525,7 +528,13 @@
           this.bankTwo = response.data.dataUndangan.bank_two;
           this.anTwo = response.data.dataUndangan.an_two;
           this.norekTwo = response.data.dataUndangan.norek_two;
+        })
+        .catch((error) => {
+          if(error){
+            this.$router.push({ name: '404', query: {bride: this.$route.params.url_params } })
+          }
         });
+        
 
         axios
         .get('http://localhost:3000/apial/getChat/'+this.$route.params.url_params)

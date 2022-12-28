@@ -1,6 +1,5 @@
 <template>
-    <section id = "wizard" class="container">
-      <div id = "sk" v-if="sk === true">
+      <div id = "sk" class="container" v-if="sk === true">
         <div class="row">
         <div class="col-12">
         <div class="d-flex flex-column align-items-center">
@@ -12,16 +11,17 @@
             Tenang, kamu masih bisa melakukan revisi undangan setelah melakukan pembayaran dan pengisian formulir informasi berikut ini 
           </p>
           <p class="mt-2">
-            <a :href="'/katalog/'+url_type">
+            <!-- <a :href="'/katalog/'+url_type">
               <button type="button" class="btn btn-light me-3"><small>Kembali</small></button>
-            </a>
-            <button type="button" class="btn btn-primary" @click="isBersedia()"><small>Buat Undangan</small></button>
+            </a> -->
+            <button type="button" class="btn btn-primary px-4 py-2 rounded-pill" @click="isBersedia()"><small>Buat Undangan</small></button>
           </p>
         </div>
         </div>
         </div>
       </div>
 
+    <section id = "wizard" >
       <div id = "dataDiri" class = "container" v-if="dataDiri === true">
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
@@ -32,13 +32,13 @@
               <div class="col-12">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="fullName"
-                    placeholder="fullName">
+                    placeholder="fullName" autofocus>
                     <label for="fullName">Nama Lengkap</label>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control  border-0" required v-model="noHp"
+                    <input type="number" class="form-control  border-0" required v-model="noHp"
                     placeholder="noHp">
                     <label for="noHp">No Handphone</label>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="col-12 col-md-6">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="manName"
-                    placeholder="manName">
+                    placeholder="manName" autofocus>
                     <label for="namalengkap">Nama Lengkap</label>
                 </div>
                 </div>
@@ -137,7 +137,7 @@
                 <div class="col-12 col-md-6">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control  border-0" required v-model="womenName"
-                    placeholder="womenName">
+                    placeholder="womenName" autofocus>
                     <label for="womenName">Nama Lengkap</label>
                 </div>
                 </div>
@@ -204,7 +204,7 @@
                   <div class="col-12">
                     <div class="form-floating mb-3">
                       <input type="date" class="form-control  border-0" required v-model="akadDate"
-                      placeholder="akadDate">
+                      placeholder="akadDate" autofocus>
                       <label for="akadDate">Tanggal</label>
                     </div>
                   </div>
@@ -268,7 +268,7 @@
                   <div class="col-12">
                     <div class="form-floating mb-3">
                       <input type="date" class="form-control  border-0" required v-model="resepsiDate"
-                      placeholder="resepsiDate">
+                      placeholder="resepsiDate" autofocus>
                       <label for="resepsiDate">Tanggal</label>
                     </div>
                   </div>
@@ -328,7 +328,7 @@
 
                   <div class="col-12 col-md-12">
                     <div class="form-floating mb-3">
-                    <select class="form-select border-0" v-model="bankOne" id="bankOne" aria-label="bankOne">
+                    <select class="form-select border-0" v-model="bankOne" id="bankOne" aria-label="bankOne" autofocus>
                       <option value="BCA">BCA</option>
                       <option value="MANDIRI">MANDIRI</option>
                       <option value="BNI">BNI</option>
@@ -349,7 +349,7 @@
 
                   <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="norekOne"
+                        <input type="number" class="form-control  border-0" required v-model="norekOne"
                         placeholder="norekOne">
                         <label for="norekOne">No Rekening</label>
                     </div>
@@ -378,7 +378,7 @@
 
                   <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control  border-0" required v-model="norekTwo"
+                        <input type="number" class="form-control  border-0" required v-model="norekTwo"
                         placeholder="norekTwo">
                         <label for="norekTwo">No Rekening</label>
                     </div>
@@ -456,7 +456,7 @@
         <div class="d-flex flex-column align-items-center">
           <div class="text-muted">Lengkapi</div>
           <h3>
-            Daftar & Musik Undangan 
+            Musik & Tamu Undangan 
           </h3>
             <div class="row mt-2">
               <div class="col-12">
@@ -502,6 +502,7 @@
 
 <script>
 import axios from 'axios'
+import { useToast } from "vue-toastification";
 
   export default {
     name: "UnlockView",
@@ -573,6 +574,11 @@ import axios from 'axios'
         // Chrome requires returnValue to be set
         e.returnValue = "";
       });
+
+      const toast = useToast();
+
+      // Make it available inside methods
+      return { toast }
     },
     mounted() {
 
@@ -596,8 +602,13 @@ import axios from 'axios'
       },
 
       nextMempelaiPria(){
-        this.dataMempelaiPria = true;
-        this.dataDiri = false;
+        if(this.fullName == '' || this.noHp == ''){
+          this.toast.error("Silahkan lengkapi data terlebih dahulu");
+            return false
+        }else{
+          this.dataMempelaiPria = true;
+          this.dataDiri = false;
+        }
       },
       backMempelaiPria(){
         this.dataMempelaiPria = true;
@@ -611,8 +622,13 @@ import axios from 'axios'
       },
 
       nextMempelaiWanita(){
-        this.dataMempelaiWanita = true;
-        this.dataMempelaiPria = false;
+        if(this.manName == '' || this.manCall == ''  || this.manFather == ''  || this.manMother == ''  || this.manChildOf == ''){
+          this.toast.error("Silahkan lengkapi data terlebih dahulu");
+            return false
+        }else{
+          this.dataMempelaiWanita = true;
+          this.dataMempelaiPria = false;
+        }
       },
       backMempelaiWanita(){
         this.dataMempelaiWanita = true;
@@ -620,8 +636,13 @@ import axios from 'axios'
       },
 
       nextAcaraAkad(){
-        this.dataAcaraAkad = true;
-        this.dataMempelaiWanita = false;
+        if(this.womenName == '' || this.womenCall == ''  || this.womenFather == ''  || this.womenMother == ''  || this.womenChildOf == ''){
+          this.toast.error("Silahkan lengkapi data terlebih dahulu");
+            return false
+        }else{
+          this.dataAcaraAkad = true;
+          this.dataMempelaiWanita = false;
+        }
       },
 
       backAcaraAkad(){
@@ -629,13 +650,23 @@ import axios from 'axios'
         this.dataAcaraResepsi = false;
       },
       nextAcaraResepsi(){
-        this.dataAcaraResepsi = true;
-        this.dataAcaraAkad = false;
+        if(this.akadDate == '' || this.akadStart == ''  || this.akadEnd == ''  || this.akadTimezone == ''  || this.akadAddress == ''){
+          this.toast.error("Silahkan lengkapi data terlebih dahulu");
+            return false
+        }else{
+          this.dataAcaraResepsi = true;
+          this.dataAcaraAkad = false;
+        }
       },
 
       nextAmplopDigital(){
-        this.dataAmplopDigital = true;
-        this.dataAcaraResepsi = false;
+        if(this.resepsiDate == '' || this.resepsiStart == ''  || this.resepsiEnd == ''  || this.resepsiTimezone == ''  || this.resepsiAddress == ''){
+          this.toast.error("Silahkan lengkapi data terlebih dahulu");
+            return false
+        }else{
+          this.dataAmplopDigital = true;
+          this.dataAcaraResepsi = false;
+        }
       },
 
       backAcaraResepsi(){
@@ -644,8 +675,13 @@ import axios from 'axios'
       },
 
       nextFotoMempelai(){
-        this.dataFotoMempelai = true;
-        this.dataAmplopDigital = false;
+        if(this.bankOne == '' || this.anOne == ''  || this.norekOne == ''  || this.bankTwo == ''  || this.anTwo == '' || this.norekTwo == ''){
+          this.toast.error("Silahkan lengkapi data terlebih dahulu");
+            return false
+        }else{
+          this.dataFotoMempelai = true;
+          this.dataAmplopDigital = false;
+        }
       },
       backAmplopDigital(){
         this.dataFotoMempelai = false;
@@ -670,6 +706,11 @@ import axios from 'axios'
       },
 
       buatPesanan() {
+        if(this.nameTo == ''){
+          this.toast.error("Silahkan lengkapi data terlebih dahulu");
+            return false
+        }
+
         let dataBride = {
           manName: this.manName,
           manCall: this.manCall,

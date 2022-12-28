@@ -4,7 +4,7 @@ import KatalogView from '../views/KatalogView.vue'
 import UnlockView from '../views/UnlockView.vue'
 import PembayaranView from '../views/PembayaranView.vue'
 import UndanganView from '../views/UndanganView.vue'
-// import PageNotFound from '../views/PageNotFound.vue'
+import PageNotFound from '../views/404.vue'
 
 const routes = [
   {
@@ -37,10 +37,11 @@ const routes = [
     props: (route) => ({ mempelai: route.params.url_params, to: route.query.to }),  
   },
   // Page Not Found
-  // { 
-  //   path: "*", 
-  //   component: PageNotFound 
-  // }
+  { 
+    path: '/404',
+    name: '404',
+    component: PageNotFound 
+  }
 ]
 
 const router = createRouter({

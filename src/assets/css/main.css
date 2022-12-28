@@ -31,6 +31,10 @@ mark {
     font-size: 14.5px;
 }
 
+.text-chat {
+    font-size: 15px;
+}
+
 /* Text Color */
 .text-color-sage-green{
     color: #AEFF9C;
@@ -39,7 +43,7 @@ mark {
 /* Ucapan */
 .scroll-ucapan{
     overflow:scroll; 
-    height:428px;
+    height:550px;
 }
   
 .scroll-ucapan::-webkit-scrollbar {
@@ -68,12 +72,16 @@ mark {
 }
 
 /* Unlock Wizard From */
-#wizard {
+#sk {
     display: flex;
     justify-content: center;
     align-items: center;
     /* text-align: center; */
     min-height: 90vh;
+}
+
+#wizard {
+    margin-top: 20%;
 }
 
 

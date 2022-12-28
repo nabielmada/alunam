@@ -5,6 +5,10 @@ import router from './router'
 import bottomNavigationVue from "bottom-navigation-vue";
 import moment from 'moment-timezone'
 
+import Toast from "vue-toastification";
+// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
+
 let VueScrollTo = require('vue-scrollto');
 
 import '/src/assets/css/main.css';
@@ -17,4 +21,5 @@ createApp(App)
     .use(bottomNavigationVue)
     .use(VueScrollTo)
     .use(moment)
+    .use(Toast)
     .mount('#app')

@@ -1,31 +1,5 @@
 <template>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-2 shadow sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="/">
-        <div class="bi bi-arrow-left"></div>
-      </a>
-      <div class = "navbar-toggler text-white border-0 fs-6" data-bs-toggle="collapse" data-bs-target="#navbarText"
-          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <small>Contoh {{ type }}</small>
-      </div>
-
-      <div class="collapse navbar-collapse" id="navbarText">
-        <div class="navbar-nav text-white">
-          Contoh Katalog {{ type }}
-        </div>
-      </div>
-      <span class="navbar-text">
-        <router-link :to="'/unlock/'+url_type">
-            <button type = "button" class="btn btn-sm btn-light rounded-pill">
-              <span class = "bi bi-cart"></span> 
-              Pesan
-            </button>
-          </router-link>
-      </span>
-    </div>
-  </nav>
-
   <section id = "cover" v-if="cover === true">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
@@ -247,7 +221,8 @@
     </div>
   </section>
 
-  <section id = "ucapan" class = "container mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
+  <div id = "ucapan"></div>
+  <section class = "container mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -255,7 +230,7 @@
           <p class="mb-3">Berikan ucapan dan doa restu.</p>
 
           <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-lg border-0" required
+              <input type="text" class="form-control border-0" required
               placeholder="nama">
               <label for="alamat">Nama</label>
           </div>
@@ -274,13 +249,17 @@
             <button type = "button" class="form-control btn btn-primary rounded-pill p-2">Kirim</button>
           </div>
 
+          <p>
+            <small>Total: 40 Ucapan</small>
+          </p>
+
           <div class="card mb-4 border-0 text-start">
             <div class="card-body scroll-ucapan">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">Nabiel Mada</div>
-                    <div>Selamat menikah kawanku</div>
+                    <div class = "text-chat">Selamat menikah kawanku</div>
                     <small class = "mt-1 text-muted">
                       <span class = "bi bi-clock-history"></span> 
                       Baru saja
@@ -292,7 +271,7 @@
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">Madara Ucihah</div>
-                    <div>Sat set sekali maszeeehh, semoga lancar dan menjadi keluarga yang sakinah mawadah warahmah</div>
+                    <div class = "text-chat">Sat set sekali maszeeehh, semoga lancar dan menjadi keluarga yang sakinah mawadah warahmah</div>
                     <small class = "mt-1 text-muted">
                       <span class = "bi bi-clock-history"></span> 
                       2 hari, 20 jam lalu
@@ -304,7 +283,7 @@
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">Nabiel Mada</div>
-                    <div>Selamat menikah kawanku</div>
+                    <div class = "text-chat">Selamat menikah kawanku</div>
                     <small class = "mt-1 text-muted">
                       <span class = "bi bi-clock-history"></span> 
                       Baru saja
@@ -316,7 +295,7 @@
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">Nabiel Mada</div>
-                    <div>Selamat menikah kawanku</div>
+                    <div class = "text-chat">Selamat menikah kawanku</div>
                     <small class = "mt-1 text-muted">
                       <span class = "bi bi-clock-history"></span> 
                       Baru saja
@@ -328,7 +307,7 @@
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">Nabiel Mada</div>
-                    <div>Selamat menikah kawanku seperjuangan</div>
+                    <div class = "text-chat">Selamat menikah kawanku seperjuangan</div>
                     <small class = "mt-1 text-muted">
                       <span class = "bi bi-clock-history"></span> 
                       Baru saja
@@ -346,7 +325,7 @@
     </div>
   </section>
 
-  <section id = "penutup" class = "container mt-5 pt-4">
+  <section id = "penutup" class = "container mt-5 py-4">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
