@@ -439,7 +439,7 @@
     },
     mounted() {
       axios
-        .get('http://localhost:5000/getUndangan/'+this.$route.params.url_params)
+        .get('http://localhost:3000/apial/getUndangan/'+this.$route.params.url_params)
         .then((response) => {
 
           this.isActive = response.data.dataUndangan.isactive;
@@ -528,7 +528,7 @@
         });
 
         axios
-        .get('http://localhost:5000/getChat/'+this.$route.params.url_params)
+        .get('http://localhost:3000/apial/getChat/'+this.$route.params.url_params)
         .then((response) => {
           this.dataChat = response.data.dataChat
         });
@@ -573,13 +573,13 @@
         }
 
         axios
-          .post('http://localhost:5000/addChat', dataChat)
+          .post('http://localhost:3000/apial/addChat', dataChat)
           .then(() => {
             this.name_chat = '';
             this.say_chat = '';
             this.iscome = '';
             axios
-              .get('http://localhost:5000/getChat/'+this.$route.params.url_params)
+              .get('http://localhost:3000/apial/getChat/'+this.$route.params.url_params)
               .then((response) => {
                 this.dataChat = response.data.dataChat
               });
