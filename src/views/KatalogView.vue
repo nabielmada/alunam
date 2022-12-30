@@ -1,6 +1,7 @@
 <template>
 
-  <section id = "cover" v-if="cover === true">
+<div class = "wallpaper-cover" v-if="cover === true">
+  <section id = "cover">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -29,8 +30,10 @@
       </div>
     </div>
   </section>
+</div>
 
-  <div id = "content" v-if="content === true">
+<div id = "content" v-if="content === true">
+  <div class = "wallpaper-mempelai" >
   <section id = "mempelai" class = "mempelai container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
@@ -98,9 +101,11 @@
       </div>
     </div>
   </section>
+</div>
 
   <div id = "detail-mempelai"></div>
-  <section class = "detail-mempelai container mt-4">
+  <div class = "wallpaper-detail-mempelai" >
+  <section class = "detail-mempelai container pt-4">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -134,6 +139,7 @@
       </div>
     </div>
   </section>
+</div>
 
   <div id = "acara"></div>
   <section class = "container my-5 pt-4">
@@ -452,23 +458,17 @@
   };
 </script>
 
-<style>
+<style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
 
-  #cover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* min-height: 50vh; */
-  }
-
+  #nonaktif,
+  #cover,
   #mempelai {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* min-height: 100vh; */
+    min-height: 90vh;
   }
   /* Image Bingkai */
   .img-bingkai {
@@ -489,11 +489,19 @@
   }
 
   /* Wallpaper */
-  /* #content{
-    background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/img/katalog/katalog-satu/bg-satu.jpg');
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  } */
+  .wallpaper-cover{
+    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  .wallpaper-mempelai{
+    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  .wallpaper-detail-mempelai{
+    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
+    background-size: cover;
+    min-height: 100vh;
+  }
 </style>

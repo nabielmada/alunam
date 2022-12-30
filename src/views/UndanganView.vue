@@ -346,7 +346,7 @@
   <div class="music-player">
     <audio
       ref="audio"
-      :src="'/undangan/'+url_type+'/audio/satu.mp3'"
+      :src="'/undangan/'+url_type+'/audio/'+music"
       preload
       autoplay
       loop
@@ -447,6 +447,7 @@
 
           this.isActive = response.data.dataUndangan.isactive;
           this.url_type = response.data.dataUndangan.url_type;
+          this.music = response.data.dataUndangan.music;
 
           this.manName = response.data.dataUndangan.man_name;
           this.manCall = response.data.dataUndangan.man_call;
@@ -601,7 +602,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
 
   #nonaktif,
@@ -611,7 +612,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 90vh;
+    min-height: 100vh;
   }
   /* Image Bingkai */
   .img-bingkai {
@@ -633,9 +634,8 @@
 
   /* Wallpaper */
   .wallpaper-cover{
-    /* background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/coba.png'); */
-    background-repeat: no-repeat;
-    background-size:auto;
+    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
+    background-size: cover;
   }
   .mempelai{
     /* background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/img/katalog/katalog-satu/wallpaper-mempelai.png'); */

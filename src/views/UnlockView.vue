@@ -24,6 +24,7 @@
     <section id = "wizard" >
       <div id = "dataDiri" class = "container" v-if="dataDiri === true">
         <div class="d-flex flex-column align-items-center">
+            <small>1 - 7</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Informasi Data Diri
@@ -53,6 +54,7 @@
 
       <div id = "dataMempelaiPria" class = "container" v-if="dataMempelaiPria === true">
         <div class="d-flex flex-column align-items-center">
+            <small>2 - 7</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Calon Mempelai
@@ -123,6 +125,7 @@
 
       <div id = "dataMempelaiWanita" class = "container" v-if="dataMempelaiWanita === true">
         <div class="d-flex flex-column align-items-center">
+          <small>3 - 7</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Calon Mempelai
@@ -190,6 +193,7 @@
 
       <div id = "dataAcaraAkad" class = "container" v-if="dataAcaraAkad === true">
         <div class="d-flex flex-column align-items-center">
+          <small>4 - 7</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Informasi Acara
@@ -254,6 +258,7 @@
 
       <div id = "dataAcaraResepsi" class = "container" v-if="dataAcaraResepsi === true">
         <div class="d-flex flex-column align-items-center">
+          <small>5 - 7</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Informasi Acara
@@ -318,6 +323,7 @@
 
       <div id = "dataAmplopDigital" class = "container" v-if="dataAmplopDigital === true">
         <div class="d-flex flex-column align-items-center">
+          <small>5 - 7</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Amplop Digital
@@ -396,6 +402,7 @@
 
       <div id = "dataFotoMempelai" class = "container" v-if="dataFotoMempelai === true">
         <div class="d-flex flex-column align-items-center">
+          <small>6 - 7</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Foto Mempelai
@@ -416,7 +423,7 @@
                         <label>Mempelai Pria</label>
                       </div>
                       <div class="col-12 mb-3 fw-bold">
-                            Nabiel Mada Ranu Ramadhan
+                        {{ manName }}
                       </div>
                       <div class="col-12">
                         <input type="file" class="form-control border-0" >
@@ -430,7 +437,7 @@
                         <label>Mempelai Wanita</label>
                       </div>
                       <div class="col-12 mb-3 fw-bold">
-                            Nor Maulida Porwanti
+                        {{ womenName }}
                       </div>
                       <div class="col-12">
                         <input type="file" class="form-control border-0" >
@@ -454,6 +461,7 @@
 
       <div id = "dataDaftarUndangan" class = "container" v-if="dataDaftarUndangan === true">
         <div class="d-flex flex-column align-items-center">
+          <small>7 - 7</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Musik & Tamu Undangan 
@@ -469,7 +477,7 @@
                         <label class = "mb-3">Musik Undangan</label>
                       </div>
                       <div class="col-12">
-                        <input type="file" class="form-control border-0" >
+                        <input type="file" class="form-control border-0" @change="uploadFileSong" id = "fileSong">
                       </div>
                     </div>
                   </div>
@@ -560,6 +568,7 @@ import { useToast } from "vue-toastification";
         anTwo: '',
         norekTwo: '',
 
+        fileSong: '',
         nameTo: '',
 
         noInvoice: '',
@@ -723,6 +732,8 @@ import { useToast } from "vue-toastification";
           womenFather: this.womenFather,
           womenMother: this.womenMother,
           womenChildOf: this.womenChildOf,
+
+          file: document.querySelector('#fileSong').files[0]
         }
 
         let dataEvent = {
@@ -772,7 +783,7 @@ import { useToast } from "vue-toastification";
           .post('http://localhost:3000/apial/addInvite', dataInvite)
           .then(() => {
             axios
-              .post('http://localhost:3000/apial/addBride', dataBride)
+              .postForm('http://localhost:3000/apial/addBride', dataBride)
               .then(() => {
                 axios
                   .post('http://localhost:3000/apial/addEvent', dataEvent)
