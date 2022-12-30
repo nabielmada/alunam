@@ -24,7 +24,7 @@
     <section id = "wizard" >
       <div id = "dataDiri" class = "container" v-if="dataDiri === true">
         <div class="d-flex flex-column align-items-center">
-            <small>1 - 7</small>
+            <small>1 - 8</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Informasi Data Diri
@@ -54,7 +54,7 @@
 
       <div id = "dataMempelaiPria" class = "container" v-if="dataMempelaiPria === true">
         <div class="d-flex flex-column align-items-center">
-            <small>2 - 7</small>
+            <small>2 - 8</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Calon Mempelai
@@ -125,7 +125,7 @@
 
       <div id = "dataMempelaiWanita" class = "container" v-if="dataMempelaiWanita === true">
         <div class="d-flex flex-column align-items-center">
-          <small>3 - 7</small>
+          <small>3 - 8</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Calon Mempelai
@@ -193,7 +193,7 @@
 
       <div id = "dataAcaraAkad" class = "container" v-if="dataAcaraAkad === true">
         <div class="d-flex flex-column align-items-center">
-          <small>4 - 7</small>
+          <small>4 - 8</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Informasi Acara
@@ -258,7 +258,7 @@
 
       <div id = "dataAcaraResepsi" class = "container" v-if="dataAcaraResepsi === true">
         <div class="d-flex flex-column align-items-center">
-          <small>5 - 7</small>
+          <small>5 - 8</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Informasi Acara
@@ -323,7 +323,7 @@
 
       <div id = "dataAmplopDigital" class = "container" v-if="dataAmplopDigital === true">
         <div class="d-flex flex-column align-items-center">
-          <small>5 - 7</small>
+          <small>6 - 8</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Amplop Digital
@@ -402,7 +402,7 @@
 
       <div id = "dataFotoMempelai" class = "container" v-if="dataFotoMempelai === true">
         <div class="d-flex flex-column align-items-center">
-          <small>6 - 7</small>
+          <small>7 - 8</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Foto Mempelai
@@ -461,7 +461,7 @@
 
       <div id = "dataDaftarUndangan" class = "container" v-if="dataDaftarUndangan === true">
         <div class="d-flex flex-column align-items-center">
-          <small>7 - 7</small>
+          <small>8 - 8</small>
           <div class="text-muted">Lengkapi</div>
           <h3>
             Musik & Tamu Undangan 
@@ -477,7 +477,7 @@
                         <label class = "mb-3">Musik Undangan</label>
                       </div>
                       <div class="col-12">
-                        <input type="file" class="form-control border-0" @change="uploadFileSong" id = "fileSong">
+                        <input type="file" class="form-control border-0" @change="uploadFileSong" accept="audio/mp3,audio/*;capture=microphone" id = "fileSong">
                       </div>
                     </div>
                   </div>

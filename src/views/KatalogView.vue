@@ -2,8 +2,7 @@
 
 <div class = "wallpaper-cover" v-if="cover === true">
   <section id = "cover">
-    <div class="d-flex justify-content-center">
-    <div class="row align-content-center">
+    <div class="row">
       <div class="col-12 col-sm-12 text-center">
         <div data-aos="zoom-in" data-aos-delay="200">
           <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
@@ -28,7 +27,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
 </div>
 
@@ -52,49 +50,25 @@
           <p class="mt-4">
             Kamis, 10 Oktober 2022
           </p>
-          <div class = "countdown-date mt-2">
-
-            <div class="row row-cols-4 g-2">
-
-              <div class="col">
-                <div class="card border-0">
-                  <div class="card-body px-0">
-                    <div>12</div>
-                    <small>Hari</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card border-0">
-                  <div class="card-body px-0">
-                    <div>12</div>
-                    <small>Jam</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card border-0">
-                  <div class="card-body px-0">
-                    <div>12</div>
-                    <small>Menit</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card border-0">
-                  <div class="card-body px-0">
-                    <div>12</div>
-                    <small>Detik</small>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
+          
+          <!-- Countdown -->
+          <TimerEvent 
+          :endtime="akad_date" 
+          trans='{  
+          "day":"Hari",
+          "hours":"Jam",
+          "minutes":"Menit",
+          "seconds":"Detik",
+          "expired":"Event has been expired.",
+          "running":"Till the end of event.",
+          "upcoming":"Till start of event.",
+          "status": {
+              "expired":"Expired",
+              "running":"Running",
+              "upcoming":"Future"
+            }}'
+          ></TimerEvent>
+          <!-- End Countdown -->
         </div>
 
         </div>
@@ -104,8 +78,8 @@
 </div>
 
   <div id = "detail-mempelai"></div>
-  <div class = "wallpaper-detail-mempelai" >
-  <section class = "detail-mempelai container pt-4">
+  <div class = "wallpaper-detail-mempelai my-5 pt-4" >
+  <section class = "detail-mempelai container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -388,6 +362,9 @@
   import { WindowsBottomNavigation } from "bottom-navigation-vue";
   import "bottom-navigation-vue/dist/style.css";
 
+  import TimerEvent from '@/components/TimerEvent.vue'
+
+
   // import VueSlickCarousel from 'vue-slick-carousel'
   // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 
@@ -399,7 +376,7 @@
         default: null,
       },
     },
-    components: { WindowsBottomNavigation },
+    components: { WindowsBottomNavigation, TimerEvent },
     data() {
       return {
         cover: true,
@@ -417,12 +394,15 @@
           { id: 'ucapan', icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
         ],
         type: '',
+        akad_date: '',
       }
     },
     mounted() {
       if(this.url_type == 'alunam-blue-love'){
          this.type = 'Alunam Blue Love';
       }
+
+      return this.akad_date = '2023-01-05 16:37';
     },
     methods: {
       bukaUndangan() {
@@ -461,15 +441,21 @@
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
 
-  #nonaktif,
-  #cover,
-  #mempelai {
+  #cover{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 90vh;
+    height: 90vh;
+    width: 100vw;
+    position: fixed;
+    /* margin-top: 10%; */
   }
+  
+  #mempelai {
+    padding-top: 15%;
+  }
+  
   /* Image Bingkai */
   .img-bingkai {
     height: 15%;
@@ -489,19 +475,19 @@
   }
 
   /* Wallpaper */
-  .wallpaper-cover{
-    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
+  /* .wallpaper-cover{
+    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat;
     background-size: cover;
     min-height: 100vh;
-  }
-  .wallpaper-mempelai{
+  } */
+  /* .wallpaper-mempelai{
+    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat;
+    background-size: cover;
+    min-height: 90vh;
+  } */
+  /* .wallpaper-detail-mempelai{
     background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
     background-size: cover;
-    min-height: 100vh;
-  }
-  .wallpaper-detail-mempelai{
-    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
-    background-size: cover;
-    min-height: 100vh;
-  }
+    min-height: 90vh;
+  } */
 </style>

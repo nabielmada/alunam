@@ -59,48 +59,25 @@
           <p class="mt-4">
             {{ moment(akadDate).locale("id").format('dddd, Do MMMM YYYY') }}
           </p>
-          <div class = "countdown-date mt-2">
-
-            <div class="row row-cols-4 g-2">
-
-              <div class="col">
-                <div class="card border-0">
-                  <div class="card-body px-0">
-                    <div>12</div>
-                    <small>Hari</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card border-0">
-                  <div class="card-body px-0">
-                    <div>12</div>
-                    <small>Jam</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card border-0">
-                  <div class="card-body px-0">
-                    <div>12</div>
-                    <small>Menit</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card border-0">
-                  <div class="card-body px-0">
-                    <div>12</div>
-                    <small>Detik</small>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          
+          <!-- Countdown -->
+          <TimerEvent 
+          :endtime="akadDate" 
+          trans='{  
+          "day":"Hari",
+          "hours":"Jam",
+          "minutes":"Menit",
+          "seconds":"Detik",
+          "expired":"Event has been expired.",
+          "running":"Till the end of event.",
+          "upcoming":"Till start of event.",
+          "status": {
+              "expired":"Expired",
+              "running":"Running",
+              "upcoming":"Future"
+            }}'
+          ></TimerEvent>
+          <!-- End Countdown -->
 
           </div>
         </div>
@@ -367,6 +344,7 @@
   import moment from 'moment'
   import { WindowsBottomNavigation } from "bottom-navigation-vue";
   import "bottom-navigation-vue/dist/style.css";
+  import TimerEvent from '@/components/TimerEvent.vue'
 
   // import VueSlickCarousel from 'vue-slick-carousel'
   // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -383,7 +361,7 @@
         default: null,
       }
     },
-    components: { WindowsBottomNavigation },
+    components: { WindowsBottomNavigation, TimerEvent },
     data() {
       return {
         cover: true,
@@ -633,13 +611,13 @@
   }
 
   /* Wallpaper */
-  .wallpaper-cover{
+  /* .wallpaper-cover{
     background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
     background-size: cover;
   }
   .mempelai{
-    /* background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/img/katalog/katalog-satu/wallpaper-mempelai.png'); */
+    background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/img/katalog/katalog-satu/wallpaper-mempelai.png');
     background-repeat: no-repeat;
     background-size: contain;
-  }
+  } */
 </style>

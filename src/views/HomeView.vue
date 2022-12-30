@@ -1,8 +1,9 @@
 <template>
+  <div class="elfsight-app-0ec29a21-1f8f-420b-aaaf-9a73ae80a429"></div>
 
   <nav class="navbar navbar-expand-lg navbar-light py-3">
       <div class="container">
-        <a class="navbar-brand fs-4" href="#">
+        <a class="navbar-brand fs-4" href="/">
             <div class="text-primary-m">alunam</div>
         </a>
         <!-- <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -25,10 +26,16 @@
                 </li>
             </ul>
           </div>
-          <div class="d-flex text-muted ">
-              <span class="bi bi-instagram me-3 fs-4"></span>
-              <span class="bi bi-whatsapp me-3 fs-4"></span>
-              <span class="bi bi-question-lg me-3 fs-4"></span>
+          <div class="d-flex">
+              <a href = "" target = "_blank" class = "text-muted text-decoration-none">
+                <span class="bi bi-instagram me-3 fs-4"></span>
+              </a>
+              <a href = "https://wa.me/6285727393383?text=Hai%20Admin%20Alunam,%20saya%20ingin%20memesan%20undangan%20web%20apakah%20bisa?" target = "_blank" class = "text-muted text-decoration-none">
+                <span class="bi bi-whatsapp me-3 fs-4"></span>
+              </a>
+              <a href = "" target = "_blank" class = "text-muted text-decoration-none">
+                <span class="bi bi-question-lg me-3 fs-4"></span>
+              </a>
           </div>
       </div>
   </nav>
@@ -48,10 +55,10 @@
               Lebih <mark class="text-primary">Praktis</mark> Dari Sebelumnya
             </h1>
             <p class="pt-4 text-muted sub-heading sub-heading-resize sub-heading-header">
-              Bagikan momen bahagia kamu hanya dengan satu genggaman serta banyak pilihan undangan yang kekinian
+              Bagikan momen bahagia kamu hanya dengan satu genggaman serta banyak pilihan undangan web yang kekinian
             </p>
             <div class="mt-5" data-aos="fade-up" data-aos-delay="150">
-            <button type = "button" class="btn btn-primary btn-lg rounded-pill px-4 py-2" v-scroll-to="'#katalog'">
+            <button type = "button" class="btn btn-primary btn-lg rounded-pill px-4 py-2 shadow-lg" v-scroll-to="'#katalog'">
                <small>Lihat Katalog</small>
             </button>
           </div>
@@ -135,25 +142,24 @@
       <div class="row row-cols-1 row-cols-md-4 g-4 card-porto mt-3">
       
         <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <router-link to = "/katalog/alunam-blue-love" class = "text-decoration-none">
             <div class="card hover-card border-0">
                 <div class="text-center">
                     <div class="badge bg-danger w-25 text-white"><small>Promo</small></div>
                 </div>
                 <div class="card-body mb-3">
                     <div class="text-center mb-3">
-                      <router-link to = "/katalog/alunam-blue-love">
                         <img src="/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
-                      </router-link>
                     </div>
                     <div class="mx-3">
-                        <div class="card-text mb-1 fw-semibold">
+                        <div class="card-text mb-1 fw-semibold text-black">
                           Alunam Blue Love
                         </div>
                         
                         <div class="text-danger text-decoration-line-through">
                             <small>Rp330.000</small>
                         </div>
-                        <div class = "d-flex">
+                        <div class = "d-flex text-black">
                           Rp150.000
                           <span class = "ms-auto">
                             <i class="bi bi-star-fill text-warning"></i>
@@ -163,6 +169,7 @@
                     </div>
                 </div>
             </div>
+          </router-link>
         </div>
 
         <div class="col" data-aos="fade-up" data-aos-delay="200">
@@ -265,8 +272,11 @@
                           <img src="/web/avatar/avatar-1.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
-                          Irfan Wihatnata <br/>
-                          Mahasiswa
+                          Dhita & Bagas<br/>
+                          <small class = "text-muted">
+                            <span class = "bi bi-clock-history"></span>  
+                             Baru Saja
+                          </small>
                       </div>
                   </div>
                   </div>
@@ -286,8 +296,11 @@
                           <img src="/web/avatar/avatar-2.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
-                          Irfan Wihatnata <br/>
-                          Mahasiswa
+                          Emyra & Iqbal <br/>
+                          <small class = "text-muted">
+                            <span class = "bi bi-clock-history"></span>  
+                             Baru Saja
+                          </small>
                       </div>
                   </div>
                   </div>
@@ -307,8 +320,11 @@
                           <img src="/web/avatar/avatar-3.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
-                          Irfan Wihatnata <br/>
-                          Mahasiswa
+                          Prily & Riga <br/>
+                          <small class = "text-muted">
+                            <span class = "bi bi-clock-history"></span>  
+                             Baru Saja
+                          </small>
                       </div>
                   </div>
                   </div>
@@ -328,7 +344,7 @@
     </div>
   </section>
 
-  <footer id = "space" class="container pb-5">
+  <footer class="container mt-5 py-5">
     <div class = "text-center">
       Made with <span class = "bi bi-heart-fill text-danger"></span> Alunam &copy; 2022 
     </div>
