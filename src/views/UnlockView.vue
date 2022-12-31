@@ -414,7 +414,7 @@
 
                   <div class="col-12 mb-4 px-4">
                       <label class = "fw-bold">Foto Couple</label>
-                        <input type="file" class="form-control border-0">
+                        <input type="file" class="form-control border-0" @change="uploadFileFotoCouple" id = "fileFotoCouple">
                   </div>
 
                   <div class="card mb-3 border-0">
@@ -426,7 +426,7 @@
                         {{ manName }}
                       </div>
                       <div class="col-12">
-                        <input type="file" class="form-control border-0" >
+                        <input type="file" class="form-control border-0" @change="uploadFileFotoMan" id = "fileFotoMan">
                       </div>
                     </div>
                   </div>
@@ -440,7 +440,7 @@
                         {{ womenName }}
                       </div>
                       <div class="col-12">
-                        <input type="file" class="form-control border-0" >
+                        <input type="file" class="form-control border-0" @change="uploadFileFotoWomen" id = "fileFotoWomen">
                       </div>
                     </div>
                   </div>
@@ -477,7 +477,7 @@
                         <label class = "mb-3">Musik Undangan</label>
                       </div>
                       <div class="col-12">
-                        <input type="file" class="form-control border-0" @change="uploadFileSong" accept="audio/mp3,audio/*;capture=microphone" id = "fileSong">
+                        <input type="file" class="form-control border-0" accept="audio/mp3,audio/*;capture=microphone" id = "fileSong">
                       </div>
                     </div>
                   </div>
@@ -530,6 +530,7 @@ import { useToast } from "vue-toastification";
         dataAcaraResepsi: false,
         dataAmplopDigital: false,
         dataFotoMempelai: false,
+        dataDaftarUndangan: false,
 
         fullName: '',
         noHp: '',
@@ -568,7 +569,10 @@ import { useToast } from "vue-toastification";
         anTwo: '',
         norekTwo: '',
 
-        fileSong: '',
+        fileFotoCouple: {},
+        fileFotoMan: {},
+        fileFotoWomen: {},
+
         nameTo: '',
 
         noInvoice: '',
@@ -591,9 +595,11 @@ import { useToast } from "vue-toastification";
     },
     mounted() {
 
+      var uniqueNum = Math.floor(Math.random() * 900) + 100;
+
       if(this.url_type == 'alunam-blue-love'){
          this.type = 'Alunam Blue Love';
-         this.nominalBill = '150000'
+         this.nominalBill = 150000 + uniqueNum;
       }
 
     },
@@ -698,6 +704,8 @@ import { useToast } from "vue-toastification";
       },
 
       nextDaftarUndangan(){
+        console.log(this.fileFotoCouple)
+
         this.dataDaftarUndangan = true;
         this.dataFotoMempelai = false;
       },
@@ -706,12 +714,24 @@ import { useToast } from "vue-toastification";
         this.dataFotoMempelai = true;
       },
 
-      getNow: function() {
+      getNow() {
         const today = new Date();
         const date = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate();
         const time = today.getHours() + "" + today.getMinutes() + "" + today.getSeconds();
         const dateTime = date +''+ time;
         this.noInvoice = dateTime;
+      },
+
+      uploadFileFotoCouple(){
+        this.fileFotoCouple = document.querySelector('#fileFotoCouple').files[0]
+      },
+
+      uploadFileFotoMan(){
+        this.fileFotoMan = document.querySelector('#fileFotoMan').files[0]
+      },
+
+      uploadFileFotoWomen(){
+        this.fileFotoWomen = document.querySelector('#fileFotoWomen').files[0]
       },
 
       buatPesanan() {
@@ -733,7 +753,10 @@ import { useToast } from "vue-toastification";
           womenMother: this.womenMother,
           womenChildOf: this.womenChildOf,
 
-          file: document.querySelector('#fileSong').files[0]
+          file: document.querySelector('#fileSong').files[0],
+          fileFotoCouple: this.fileFotoCouple,
+          fileFotoMan: this.fileFotoMan,
+          fileFotoWomen: this.fileFotoWomen,
         }
 
         let dataEvent = {

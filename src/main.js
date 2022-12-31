@@ -8,7 +8,7 @@ import moment from 'moment-timezone'
 import Toast from "vue-toastification";
 // Import the CSS or use your own!
 import "vue-toastification/dist/index.css";
-
+import VueNumberFormat from 'vue-number-format'
 let VueScrollTo = require('vue-scrollto');
 
 import '/src/assets/css/main.css';
@@ -22,4 +22,5 @@ createApp(App)
     .use(VueScrollTo)
     .use(moment)
     .use(Toast)
+    .use(VueNumberFormat, {prefix: 'Rp', thousand: '.', isInteger: false})
     .mount('#app')
