@@ -61,8 +61,8 @@
                 <div class="text-center mt-3">
                     <p><small>Lakukan konfirmasi manual dengan mengirim bukti pembayaran kamu disini yah!</small></p>
                     <a :href="apiLink" target="_blank">
-                        <button type = "buttoon" class="btn btn-success p-3"> 
-                            <span class = "bi bi-whatsapp"></span> Konfirmasi
+                        <button type = "buttoon" class="btn btn-success px-4 py-2 "> 
+                            <small><span class = "bi bi-whatsapp"></span> Konfirmasi</small>
                         </button>
                     </a>
                 </div>

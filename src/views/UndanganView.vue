@@ -583,7 +583,6 @@
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
 
-  #nonaktif,
   #cover,
   #mempelai {
     display: flex;

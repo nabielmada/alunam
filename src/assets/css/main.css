@@ -81,7 +81,30 @@ mark {
 }
 
 #wizard {
-    margin-top: 20%;
+    margin-top: 5%;
+}
+
+/* Invitation */
+.frame{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.frame-photo{
+    object-fit: cover;
+    object-position: center 50%;
+    background-repeat: no-repeat;
+}
+
+.frame-bingkai{
+    width: 305px;
+    height: 305px;
+    overflow: hidden;
+    position: relative;
 }
 
 
@@ -108,6 +131,10 @@ and (min-device-width: 320px) and (max-device-width: 980px){
     }
 
     .section-katalog{
+        margin-top: 20%;
+    }
+
+    #wizard {
         margin-top: 20%;
     }
 }

@@ -8,7 +8,7 @@
             {{ type }} 
           </h3>
           <p class = "mt-2 text-center">
-            Tenang, kamu masih bisa melakukan revisi undangan setelah melakukan pembayaran dan pengisian formulir informasi berikut ini 
+            Tenang, kamu masih bisa melakukan revisi undangan setelah melakukan pembayaran <br/> dan pengisian formulir informasi berikut ini 
           </p>
           <p class="mt-2">
             <!-- <a :href="'/katalog/'+url_type">

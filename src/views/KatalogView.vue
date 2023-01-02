@@ -5,7 +5,16 @@
     <div class="row">
       <div class="col-12 col-sm-12 text-center">
         <div data-aos="zoom-in" data-aos-delay="200">
-          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+
+          <!-- this photo bride -->
+          <div class = "d-flex justify-content-center align-items-center">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <div class="frame">
+              <img :src="'/katalog/'+url_type+'/foto/DSCF0107.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            </div>
+          </div>
+          <!-- end this photo bride -->
+
           <h1 class = "nama-mempelai mt-4">
             Maulida & Nabiel
           </h1>
@@ -37,7 +46,15 @@
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <h5 class="fw-bold mb-4" data-aos="fade-down" data-aos-delay="200">THE WEDDING OF</h5>
-          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-down" data-aos-delay="200">
+          <!-- this photo bride -->
+          <div class = "d-flex justify-content-center align-items-center" data-aos="fade-down" data-aos-delay="200">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <div class="frame">
+              <img :src="'/katalog/'+url_type+'/foto/DSCF0139.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            </div>
+          </div>
+          <!-- end this photo bride -->
+          <!-- <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-down" data-aos-delay="200"> -->
 
           <div data-aos="fade-up" data-aos-delay="200">
           <h1 class = "nama-mempelai mt-4">
@@ -47,8 +64,8 @@
             Kami berharap Anda menjadi bagian <br/>
             dari hari istimewa kami!
           </p>
-          <p class="mt-4">
-            Kamis, 10 Oktober 2022
+          <p class="mt-4 fw-semibold">
+            Kamis, 10 Oktober 2023
           </p>
           
           <!-- Countdown -->
@@ -84,7 +101,7 @@
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
         <div data-aos="fade-up" data-aos-delay="200">
-        <img :src="'/katalog/'+url_type+'/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
+        <img :src="'/katalog/'+url_type+'/asset/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
           <p class="mb-3">Assalamu'alaikum Wr. Wb.</p>
           <p class="mb-5"> 
             Tanpa mengurangi rasa hormat. <br/>
@@ -92,21 +109,39 @@
             sekalian untuk menghadiri acara pernikahan kami:
           </p>
         </div>
-          <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+          <!-- this photo bride -->
+          <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <div class="frame">
+              <img :src="'/katalog/'+url_type+'/foto/DSCF0058.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            </div>
+          </div>
+          <!-- end this photo bride -->
+          <!-- <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
+
           <h1 class = "nama-mempelai-detail mt-5" data-aos="fade-up" data-aos-delay="250">
             Nor Maulida Porwanti
           </h1>
           <p class="mt-3" data-aos="fade-up" data-aos-delay="300">
             Putri keempat Bapak Sutega <br/>
-            dan Ibu Sutega
+            dan Ibu Sri Lestari
           </p>
             <h1 class="my-4" data-aos="fade-up" data-aos-delay="200">&</h1>
-            <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+            <!-- this photo bride -->
+            <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+              <div class="frame">
+                <img :src="'/katalog/'+url_type+'/foto/DSCF0115.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              </div>
+            </div>
+            <!-- end this photo bride -->
+            <!-- <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
+
           <h1 class = "nama-mempelai-detail mt-5" data-aos="fade-up" data-aos-delay="250">
             Nabiel Mada Ranu R
           </h1>
           <p class="mt-3" data-aos="fade-up" data-aos-delay="300">
-            Putra kedua (Alm) Bapak Masrikan<br/>
+            Putra kedua Bapak Masrikan<br/>
             dan Ibu Danik
           </p>
         </div>
@@ -129,7 +164,7 @@
           <div class="card mb-4 border-0">
             <div class="card-body m-4">
                 <h3>Akad Nikah</h3>
-                <p class = "fw-semibold">Sabtu, 15 Desember 2022</p>
+                <p class = "fw-semibold">Sabtu, 15 Desember 2023</p>
                 <p>
                   Pukul: 09.00 WIB <br/>
                   Kedalaman Mempelai Wanita
@@ -143,7 +178,7 @@
           <div class="card border-0">
             <div class="card-body m-4">
                 <h3>Resepsi</h3>
-                <p class = "fw-semibold">Sabtu, 15 Desember 2022</p>
+                <p class = "fw-semibold">Sabtu, 15 Desember 2023</p>
                 <p>
                   Pukul: 09.00 WIB <br/>
                   Kedalaman Mempelai Wanita
@@ -167,7 +202,7 @@
           <div class="row g-3" data-aos="fade-up" data-aos-delay="200">
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/katalog/'+url_type+'/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/katalog/'+url_type+'/asset/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
@@ -182,7 +217,7 @@
 
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/katalog/'+url_type+'/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/katalog/'+url_type+'/asset/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
@@ -230,7 +265,7 @@
           </div>
 
           <p>
-            <small>Total: 40 Ucapan</small>
+            <small>Total: 99 Ucapan</small>
           </p>
 
           <div class="card mb-4 border-0 text-start">
@@ -296,6 +331,18 @@
                   </div>
                   <span class="bi bi-patch-check-fill text-success"></span>
                 </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Madara Ucihah</div>
+                    <div class = "text-chat">Sat set sekali maszeeehh, semoga lancar dan menjadi keluarga yang sakinah mawadah warahmah</div>
+                    <small class = "mt-1 text-muted">
+                      <span class = "bi bi-clock-history"></span> 
+                      2 hari, 20 jam lalu
+                      <!-- <span class = "ms-1">Reply</span> -->
+                    </small>
+                  </div>
+                  <span class="bi bi-x-circle-fill text-danger"></span>
+                </li>
               </ul>
             </div>
           </div>
@@ -309,7 +356,15 @@
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img :src="'/katalog/'+url_type+'/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+        <!-- this photo bride -->
+        <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+          <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+          <div class="frame">
+            <img :src="'/katalog/'+url_type+'/foto/DSCF0144.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+          </div>
+        </div>
+        <!-- end this photo bride -->
+        <!-- <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
         <div data-aos="fade-up" data-aos-delay="200">
           <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
@@ -342,7 +397,7 @@
   <div class="music-player">
     <audio
       ref="audio"
-      :src="'/katalog/'+url_type+'/audio/satu.mp3'"
+      :src="'/katalog/'+url_type+'/audio/song.mp3'"
       autoplay
       preload
       loop
@@ -363,7 +418,6 @@
   import "bottom-navigation-vue/dist/style.css";
 
   import TimerEvent from '@/components/TimerEvent.vue'
-
 
   // import VueSlickCarousel from 'vue-slick-carousel'
   // import 'vue-slick-carousel/dist/vue-slick-carousel.css'

@@ -133,9 +133,9 @@
     <div id = "space" class="container">
       <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="200"> 
         <h1 class="title"><mark>Katalog</mark> Undangan</h1>
-        <p class="text-muted mt-3 sub-title">
+        <!-- <p class="text-muted mt-3 sub-title">
           Silahkan klik gambar dibawah ini untuk melihat contoh katalog
-        </p>
+        </p> -->
       </div>
 
 
@@ -272,7 +272,7 @@
                           <img src="/web/avatar/avatar-1.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
-                          Dhita & Bagas<br/>
+                          Dhita & Akbar<br/>
                           <small class = "text-muted">
                             <span class = "bi bi-clock-history"></span>  
                              Baru Saja
