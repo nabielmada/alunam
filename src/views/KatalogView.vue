@@ -1,14 +1,16 @@
 <template>
 
-<div class = "wallpaper-cover" v-if="cover === true">
+<div v-if="cover === true">
   <section id = "cover">
+    <img :src="'/katalog/'+url_type+'/wallpaper/cover.jpg'" class = "wallpaper-cover img-fluid" draggable="false" alt="wallpaper-cover">
+
     <div class="row">
       <div class="col-12 col-sm-12 text-center">
         <div data-aos="zoom-in" data-aos-delay="200">
 
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai rotate img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
               <img :src="'/katalog/'+url_type+'/foto/DSCF0107.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
@@ -29,7 +31,7 @@
             di acara pernikahan kami
           </p>
           <div class="mt-4">
-            <button type = "button" class="btn btn-primary rounded-pill px-4 py-2" @click="bukaUndangan()">
+            <button type = "button" class="btn btn-primary rounded-pill px-4 py-2 shadow" @click="bukaUndangan()">
               <span class="bi bi-envelope-paper-heart me-1"></span> <small>Buka Undangan</small>
             </button>
           </div>
@@ -40,7 +42,7 @@
 </div>
 
 <div id = "content" v-if="content === true">
-  <div class = "wallpaper-mempelai" >
+  <img :src="'/katalog/'+url_type+'/wallpaper/wallpaper.png'" class = "wallpaper img-fluid" draggable="false" alt="wallpaper">
   <section id = "mempelai" class = "mempelai container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
@@ -48,9 +50,9 @@
           <h5 class="fw-bold mb-4" data-aos="fade-down" data-aos-delay="200">THE WEDDING OF</h5>
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center" data-aos="fade-down" data-aos-delay="200">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/DSCF0139.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/katalog/'+url_type+'/foto/DSCF0139.jpg'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
@@ -65,7 +67,7 @@
             dari hari istimewa kami!
           </p>
           <p class="mt-4 fw-semibold">
-            Kamis, 10 Oktober 2023
+            Jum'at, 08 Desember 2023
           </p>
           
           <!-- Countdown -->
@@ -92,11 +94,10 @@
       </div>
     </div>
   </section>
-</div>
 
-  <div id = "detail-mempelai"></div>
-  <div class = "wallpaper-detail-mempelai my-5 pt-4" >
-  <section class = "detail-mempelai container">
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/02_Background-Golden-Blue.png'" class = "wallpaper-detail-mempelai img-fluid" draggable="false" alt="wallpaper-detail-mempelai"> -->
+  <div id = "detail-mempelai">
+  <section class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -111,9 +112,9 @@
         </div>
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/DSCF0058.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/katalog/'+url_type+'/foto/DSCF0058.jpg'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
@@ -129,7 +130,7 @@
             <h1 class="my-4" data-aos="fade-up" data-aos-delay="200">&</h1>
             <!-- this photo bride -->
             <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-              <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
               <div class="frame">
                 <img :src="'/katalog/'+url_type+'/foto/DSCF0115.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
               </div>
@@ -148,10 +149,11 @@
       </div>
     </div>
   </section>
-</div>
+  </div>
 
-  <div id = "acara"></div>
-  <section class = "container my-5 pt-4">
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-acara img-fluid" draggable="false" alt="wallpaper-acara"> -->
+  <div id = "acara">
+  <section class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -164,12 +166,14 @@
           <div class="card mb-4 border-0">
             <div class="card-body m-4">
                 <h3>Akad Nikah</h3>
-                <p class = "fw-semibold">Sabtu, 15 Desember 2023</p>
+                <p class = "fw-semibold">Jum'at, 08 Desember 2023</p>
                 <p>
-                  Pukul: 09.00 WIB <br/>
-                  Kedalaman Mempelai Wanita
+                  Pukul: 08.00 - 09.30 WIB <br/>
+                  Masjid Agung Jawa Tengah (MAJT)
                 </p>
-                <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                <a href = "https://goo.gl/maps/tz2dbStTSaMTdTLi7" class = "text-black text-decoration-none">
+                  <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                </a>
             </div>
           </div>
         </div>
@@ -178,12 +182,14 @@
           <div class="card border-0">
             <div class="card-body m-4">
                 <h3>Resepsi</h3>
-                <p class = "fw-semibold">Sabtu, 15 Desember 2023</p>
+                <p class = "fw-semibold">Jum'at, 08 Desember 2023</p>
                 <p>
-                  Pukul: 09.00 WIB <br/>
-                  Kedalaman Mempelai Wanita
+                  Pukul: 10.00 - 15.00 WIB <br/>
+                  Marina Convention Center Semarang (MCC)
                 </p>
-                <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                <a href = "https://goo.gl/maps/dT2DasPRAAGNsvM77" class = "text-black text-decoration-none">
+                  <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                </a>
             </div>
           </div>
         </div>
@@ -192,8 +198,10 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <section id = "amplop-digital" class = "container mt-5 pt-5">
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-amplop-digital img-fluid" draggable="false" alt="wallpaper-amplop-digital"> -->
+  <section id = "amplop-digital" class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12">
@@ -209,9 +217,15 @@
                 BANK CENTRAL ASIA <br/>
                 <small>a.n Nabiel Mada Ranu Ramadhan</small>
                 <p>2221012081</p>
-                <button type = "button" class = "btn btn-light">
-                  <small><i class = "bi bi-clipboard"></i> Salin</small>
-                </button>
+                
+                  <button type = "button" class = "btn btn-light" @click="copyToClipBoard('2221012081')">
+                    <small>
+                      <span id="myTooltip">
+                        <i class = 'bi bi-clipboard'></i> Salin
+                      </span>
+                    </small>
+                  </button>
+
               </div>
             </div>
 
@@ -223,10 +237,16 @@
               <div>
                 BANK MANDIRI <br/>
                 <small>a.n Nabiel Mada Ranu Ramadhan</small>
-                <p>2221012081</p>
-                <button type = "button" class = "btn btn-light">
-                  <small><i class = "bi bi-clipboard"></i> Salin</small>
-                </button>
+                <p>1350018166007</p>
+                
+                  <button type = "button" class = "btn btn-light" @click="copyToClipBoard2('1350018166007')">
+                    <small>
+                      <span id="myTooltip2">
+                        <i class = 'bi bi-clipboard'></i> Salin
+                      </span>
+                    </small>
+                  </button>
+
               </div>
             </div>
 
@@ -236,131 +256,94 @@
     </div>
   </section>
 
-  <div id = "ucapan"></div>
-  <section class = "container mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="d-flex justify-content-center">
+  <section id = "animation" class = "container-fluid">
+    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_4p4x21lt.json"  background="transparent"  speed="0.8"  class = "img-fluid" loop autoplay></lottie-player>
+    <p class = "text-center mt-4">
+      <small>"Berjumpa dengamu adalah suatu anugerah terindah dalam hidupku dan aku yakin kini kau pun tau. Hidup bersamamu adalah salah satu mimpiku"</small>
+    </p>
+  </section>
+
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/05_Background-Golden-Blue.png'" class = "wallpaper-ucapan img-fluid" draggable="false" alt="wallpaper-ucapan"> -->
+  <div id = "ucapan">
+    <section class = "container" data-aos="fade-up" data-aos-delay="200">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <h5 class="fw-bold">UCAPKAN SESUATU</h5>
           <p class="mb-3">Berikan ucapan dan doa restu.</p>
 
+          <form @submit.prevent="addChat">
           <div class="form-floating mb-3">
-              <input type="text" class="form-control border-0" required
+              <input type="text" class="form-control border-0" required v-model = "name_chat"
               placeholder="nama">
               <label for="alamat">Nama</label>
           </div>
           <div class="form-floating mb-3">
-            <textarea class="form-control border-0" placeholder="Ucapan" id="ucapan" style="height: 80px"></textarea>
+            <textarea class="form-control border-0 scroll-ucapan" placeholder="Ucapan" required v-model = "say_chat" id="ucapan"></textarea>
             <label for="ucapan">Ucapan</label>
           </div>
           <div class="form-floating mb-4">
-          <select class="form-select border-0" id="kehadiran" aria-label="Konfirmasi Kehadiran">
-            <option value="Hadir">Hadir</option>
-            <option value="Tidak Hadir">Tidak Hadir</option>
+          <select class="form-select border-0" v-model = "iscome" id="kehadiran" required aria-label="Konfirmasi Kehadiran">
+            <option value="Y">Hadir</option>
+            <option value="N">Tidak Hadir</option>
           </select>
           <label for="kehadiran">Konfirmasi Kehadiran</label>
           </div>
           <div class = "mb-4">
-            <button type = "button" class="form-control btn btn-primary rounded-pill p-2">Kirim</button>
+            <button type = "submit" class="form-control btn btn-primary rounded-pill p-2">Kirim</button>
           </div>
+          </form>
 
           <p>
-            <small>Total: 99 Ucapan</small>
+            <small>Total: {{ dataChat.length }} Ucapan</small>
           </p>
 
           <div class="card mb-4 border-0 text-start">
-            <div class="card-body scroll-ucapan">
+            <div class="card-body scroll-reply">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-start">
+                
+                <li v-for = "dataChats in visibleChats" :key="dataChats.id_chat"
+                    class="list-group-item d-flex justify-content-between align-items-start my-1">
                   <div class="ms-2 me-auto">
-                    <div class="fw-bold">Nabiel Mada</div>
-                    <div class = "text-chat">Selamat menikah kawanku</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      Baru saja
+                    <div class="fw-bold">{{ dataChats.name_chat }}</div>
+                    <div class = "text-chat">{{ dataChats.say_chat }}</div>
+                    <small class = "mt-2 text-muted">
+                      <span class = "bi bi-clock-history"></span>  
+                       {{ moment(dataChats.created_at).locale("id").calendar() }}
                       <!-- <span class = "ms-1">Reply</span> -->
                     </small>
                   </div>
-                  <span class="bi bi-patch-check-fill text-success"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Madara Ucihah</div>
-                    <div class = "text-chat">Sat set sekali maszeeehh, semoga lancar dan menjadi keluarga yang sakinah mawadah warahmah</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      2 hari, 20 jam lalu
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
+                  <div v-if = "dataChats.iscome == 'Y'">
+                    <span class="bi bi-patch-check-fill text-success"></span>
                   </div>
-                  <span class="bi bi-x-circle-fill text-danger"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Nabiel Mada</div>
-                    <div class = "text-chat">Selamat menikah kawanku</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      Baru saja
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
+                  <div v-else>
+                    <span class="bi bi-x-circle-fill text-danger"></span>
                   </div>
-                  <span class="bi bi-patch-check-fill text-success"></span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Nabiel Mada</div>
-                    <div class = "text-chat">Selamat menikah kawanku</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      Baru saja
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
-                  </div>
-                  <span class="bi bi-patch-check-fill text-success"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Nabiel Mada</div>
-                    <div class = "text-chat">Selamat menikah kawanku seperjuangan</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      Baru saja
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
-                  </div>
-                  <span class="bi bi-patch-check-fill text-success"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Madara Ucihah</div>
-                    <div class = "text-chat">Sat set sekali maszeeehh, semoga lancar dan menjadi keluarga yang sakinah mawadah warahmah</div>
-                    <small class = "mt-1 text-muted">
-                      <span class = "bi bi-clock-history"></span> 
-                      2 hari, 20 jam lalu
-                      <!-- <span class = "ms-1">Reply</span> -->
-                    </small>
-                  </div>
-                  <span class="bi bi-x-circle-fill text-danger"></span>
-                </li>
+
               </ul>
+              <center>
+                  <button type = "button" class="btn btn-sm btn-light mt-3" @click="chatsVisible += step" v-if="chatsVisible < dataChat.length"> 
+                    <small>Lebih Banyak</small>
+                  </button>
+              </center>
             </div>
           </div>
           
         </div>
       </div>
-    </div>
   </section>
+  </div>
 
-  <section id = "penutup" class = "container mt-5 py-4">
-    <div class="d-flex justify-content-center">
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/06_Background-Golden-Blue.png'" class = "wallpaper-penutup img-fluid" draggable="false" alt="wallpaper-penutup"> -->
+  <section id = "penutup">
+    <div class="d-flex justify-content-center container">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
         <!-- this photo bride -->
         <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-          <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-tiga.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+          <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
           <div class="frame">
-            <img :src="'/katalog/'+url_type+'/foto/DSCF0144.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/katalog/'+url_type+'/foto/DSCF0107.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
           </div>
         </div>
         <!-- end this photo bride -->
@@ -414,6 +397,8 @@
 </template>
 
 <script>
+  import axios from 'axios'
+  import moment from 'moment'
   import { WindowsBottomNavigation } from "bottom-navigation-vue";
   import "bottom-navigation-vue/dist/style.css";
 
@@ -444,11 +429,14 @@
             color: '#d2d2d2',
           },
           { id: 'acara', icon: 'bi-brands bi-calendar-event-fill', color: '#d2d2d2' },
-          { id: 'amplop-digital', icon: 'bi-brands bi-images', color: '#d2d2d2' },
+          { id: 'amplop-digital', icon: 'bi-brands bi-gift-fill', color: '#d2d2d2' },
           { id: 'ucapan', icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
         ],
         type: '',
         akad_date: '',
+        dataChat: [],
+        chatsVisible: 4,
+        step: 4,
       }
     },
     mounted() {
@@ -456,12 +444,76 @@
          this.type = 'Alunam Blue Love';
       }
 
-      return this.akad_date = '2023-01-05 16:37';
+      axios
+        .get('https://b.sulungsoft.com/apial/getChatAll')
+        .then((response) => {
+          this.dataChat = response.data.dataChat
+        });
+
+      return this.akad_date = '2023-12-08 08:00';
+    },
+    computed: {
+      visibleChats() {
+        return this.dataChat.slice(0, this.chatsVisible)
+      }
     },
     methods: {
       bukaUndangan() {
         this.cover = false;
         this.content = true;
+      },
+      copyToClipBoard(textToCopy){
+        let tmpTextField = document.createElement("textarea")
+        tmpTextField.textContent = textToCopy
+        tmpTextField.setAttribute("style","position:absolute; right:200%;")
+        document.body.appendChild(tmpTextField)
+        tmpTextField.select()
+        tmpTextField.setSelectionRange(0, 99999) /*For mobile devices*/
+        document.execCommand("copy")
+        tmpTextField.remove()
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "<i class = 'bi bi-clipboard-check'></i> Berhasil disalin";
+
+        var tooltip2 = document.getElementById("myTooltip2");
+        tooltip2.innerHTML = "<i class = 'bi bi-clipboard'></i> Salin";
+      },
+      copyToClipBoard2(textToCopy2){
+        let tmpTextField2 = document.createElement("textarea")
+        tmpTextField2.textContent = textToCopy2
+        tmpTextField2.setAttribute("style","position:absolute; right:200%;")
+        document.body.appendChild(tmpTextField2)
+        tmpTextField2.select()
+        tmpTextField2.setSelectionRange(0, 99999) /*For mobile devices*/
+        document.execCommand("copy")
+        tmpTextField2.remove()
+
+        var tooltip2 = document.getElementById("myTooltip2");
+        tooltip2.innerHTML = "<i class = 'bi bi-clipboard-check'></i> Berhasil disalin";
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "<i class = 'bi bi-clipboard'></i> Salin";
+      },
+      addChat(){
+
+        let dataChat = {
+          name_chat: this.name_chat,
+          say_chat: this.say_chat,
+          iscome: this.iscome
+        }
+
+        axios
+          .post('https://b.sulungsoft.com/apial/addChatAll', dataChat)
+          .then(() => {
+            this.name_chat = '';
+            this.say_chat = '';
+            this.iscome = '';
+            axios
+              .get('https://b.sulungsoft.com/apial/getChatAll')
+              .then((response) => {
+                this.dataChat = response.data.dataChat
+              });
+          });
       },
       toggleSound() {
         let audio = this.$refs.audio;
@@ -482,66 +534,12 @@
         selected === 'mempelai' ? document.getElementById('mempelai').scrollIntoView() : false
         selected === 'detail-mempelai' ? document.getElementById('detail-mempelai').scrollIntoView() : false
         selected === 'acara' ? document.getElementById('acara').scrollIntoView() : false
-        selected === 'galeri' ? document.getElementById('galeri').scrollIntoView() : false
+        selected === 'amplop-digital' ? document.getElementById('amplop-digital').scrollIntoView() : false
         selected === 'ucapan' ? document.getElementById('ucapan').scrollIntoView() : false
       }
     },
     created() {
-      //
-    }
+      this.moment = moment;
+    },
   };
 </script>
-
-<style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
-
-  #cover{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 90vh;
-    width: 100vw;
-    position: fixed;
-    /* margin-top: 10%; */
-  }
-  
-  #mempelai {
-    padding-top: 15%;
-  }
-  
-  /* Image Bingkai */
-  .img-bingkai {
-    height: 15%;
-    width: auto;
-  }
-  .nama-mempelai{
-    font-size: 45px;
-    font-family: 'Birthstone Bounce', cursive;
-  }
-  .nama-mempelai-detail{
-    font-size: 40px;
-    font-family: 'Birthstone Bounce', cursive;
-  }
-  .font-acara{
-    font-size: 40px;
-    font-family: 'Birthstone Bounce', cursive;
-  }
-
-  /* Wallpaper */
-  /* .wallpaper-cover{
-    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-  } */
-  /* .wallpaper-mempelai{
-    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat;
-    background-size: cover;
-    min-height: 90vh;
-  } */
-  /* .wallpaper-detail-mempelai{
-    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
-    background-size: cover;
-    min-height: 90vh;
-  } */
-</style>

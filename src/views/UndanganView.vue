@@ -1,21 +1,38 @@
 <template>
   
   <div v-if="isActive === 'N'">
-    <div class="d-flex justify-content-center flex-column" id = "nonaktif">
+    <div class="mt-5 pt-5">
+    <center>
       <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_cgfdhxgx.json"  background="transparent"  speed="1" style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
-      <h4>Maaf undangan tidak ditemukan</h4>
-      <div class ="text-muted mt-2">
-        <small>Silahkan kembali lagi untuk beberapa saat kemudian <br/> atau hubungi admin dengan link undangan yang tertera diatas</small>
-      </div>
+        <h4>Maaf undangan tidak ditemukan</h4>
+        <div class ="text-muted mt-2">
+            <small>
+                Url Undangan yang Anda berikan tidak ditemukan <br/> 
+                pastikan link yang diberikan sudah sesuai</small>
+        </div>
+    </center>
     </div>
   </div>
   <div v-else>
-  <section id = "cover" class = "wallpaper-cover" v-if="cover === true">
+
+  <div v-if="cover === true">
+  <section id = "cover">
+    <img :src="'/katalog/'+url_type+'/wallpaper/cover.jpg'" class = "wallpaper-cover img-fluid" draggable="false" alt="wallpaper-cover">
+
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
         <div data-aos="zoom-in" data-aos-delay="200">
-          <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai">
+
+          <!-- this photo bride -->
+          <div class = "d-flex justify-content-center align-items-center">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <div class="frame">
+              <img :src="'/katalog/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            </div>
+          </div>
+          <!-- end this photo bride -->
+
           <h1 class = "nama-mempelai mt-4">
             {{ womenCall }} & {{ manCall }}
           </h1>
@@ -39,14 +56,24 @@
       </div>
     </div>
   </section>
+  </div>
 
   <div id = "content" v-if="content === true">
+  <img :src="'/katalog/'+url_type+'/wallpaper/wallpaper.png'" class = "wallpaper img-fluid" draggable="false" alt="wallpaper">
+
   <section id = "mempelai" class = "mempelai container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <h5 class="fw-bold mb-4" data-aos="fade-down" data-aos-delay="200">THE WEDDING OF</h5>
-          <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-down" data-aos-delay="200">
+          <!-- this photo bride -->
+          <div class = "d-flex justify-content-center align-items-center" data-aos="fade-down" data-aos-delay="200">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <div class="frame">
+              <img :src="'/katalog/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            </div>
+          </div>
+          <!-- end this photo bride -->
 
           <div data-aos="fade-up" data-aos-delay="200">
           <h1 class = "nama-mempelai mt-4">
@@ -85,8 +112,9 @@
     </div>
   </section>
 
-  <div id = "detail-mempelai"></div>
-  <section class = "detail-mempelai container mt-4">
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/02_Background-Golden-Blue.png'" class = "wallpaper-detail-mempelai img-fluid" draggable="false" alt="wallpaper-detail-mempelai"> -->
+  <div id = "detail-mempelai">
+  <section class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -100,7 +128,14 @@
             sekalian untuk menghadiri acara pernikahan kami:
           </p>
         </div>
-          <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+          <!-- this photo bride -->
+          <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <div class="frame">
+              <img :src="'/katalog/'+url_type+'/foto/'+womenPic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            </div>
+          </div>
+          <!-- end this photo bride -->
           <h1 class = "nama-mempelai-detail mt-5" data-aos="fade-up" data-aos-delay="250">
             {{ womenName }}
           </h1>
@@ -111,7 +146,14 @@
             dan Ibu {{ womenMother }}
           </p>
             <h1 class="my-4" data-aos="fade-up" data-aos-delay="200">&</h1>
-            <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+            <!-- this photo bride -->
+            <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+              <div class="frame">
+                <img :src="'/katalog/'+url_type+'/foto/'+manPic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              </div>
+            </div>
+            <!-- end this photo bride -->
           <h1 class = "nama-mempelai-detail mt-5" data-aos="fade-up" data-aos-delay="250">
             {{ manName }}
           </h1>
@@ -125,9 +167,11 @@
       </div>
     </div>
   </section>
+</div>
 
-  <div id = "acara"></div>
-  <section class = "container my-5 pt-4">
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-acara img-fluid" draggable="false" alt="wallpaper-acara"> -->
+  <div id = "acara">
+  <section class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -149,7 +193,9 @@
                   {{ akadTimezone }} <br/>
                   {{ akadAddress }}
                 </p>
-                <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                <a :href = "url_gmaps_akad" target = "_blank" class = "text-black text-decoration-none">
+                  <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                </a>
             </div>
           </div>
         </div>
@@ -167,7 +213,9 @@
                   {{ resepsiTimezone }} <br/>
                   {{ resepsiAddress }}
                 </p>
-                <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                <a :href = "url_gmaps_resepsi" target = "_blank" class = "text-black text-decoration-none">
+                  <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                </a>
             </div>
           </div>
         </div>
@@ -176,8 +224,10 @@
       </div>
     </div>
   </section>
+</div>
 
-  <section id = "amplop-digital" class = "container mt-5 pt-5">
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-amplop-digital img-fluid" draggable="false" alt="wallpaper-amplop-digital"> -->
+  <section id = "amplop-digital" class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12">
@@ -186,31 +236,67 @@
           <div class="row g-3 " data-aos="fade-up" data-aos-delay="200">
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/undangan/'+url_type+'/asset/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <span v-if = "bankOne == 'BANK CENTRAL ASIA (BCA)'" >
+                <img :src="'/undangan/'+url_type+'/asset/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              </span>
+              <span v-if = "bankOne == 'BANK MANDIRI'" >
+                <img :src="'/undangan/'+url_type+'/asset/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-mandiri">
+              </span>
+              <span v-if = "bankOne == 'BANK NEGARA INDONESIA (BNI)'" >
+                <img :src="'/undangan/'+url_type+'/asset/bni-logo.png'" class = "img-fluid" draggable="false" alt="logo-bni">
+              </span>
+              <span v-if = "bankOne == 'BANK RAKYAT INDONESIA (BRI)'" >
+                <img :src="'/undangan/'+url_type+'/asset/bri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bri">
+              </span>
+              <span v-if = "bankOne == 'DANA'" >
+                <img :src="'/undangan/'+url_type+'/asset/dana-logo.png'" class = "img-fluid" draggable="false" alt="logo-dana">
+              </span>
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
                 {{ bankOne }} <br/>
                 <small>a.n {{ anOne }}</small>
                 <p>{{ norekOne }}</p>
-                <button type = "button" class = "btn btn-light">
-                  <small><i class = "bi bi-clipboard"></i> Salin</small>
-                </button>
+                  <button type = "button" class = "btn btn-light" @click="copyToClipBoard(norekOne)">
+                    <small>
+                      <span id="myTooltip">
+                        <i class = 'bi bi-clipboard'></i> Salin
+                      </span>
+                    </small>
+                  </button>
               </div>
             </div>
 
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/undangan/'+url_type+'/asset/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <span v-if = "bankTwo == 'BANK CENTRAL ASIA (BCA)'" >
+                <img :src="'/undangan/'+url_type+'/asset/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              </span>
+              <span v-if = "bankTwo == 'BANK MANDIRI'" >
+                <img :src="'/undangan/'+url_type+'/asset/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-mandiri">
+              </span>
+              <span v-if = "bankTwo == 'BANK NEGARA INDONESIA (BNI)'" >
+                <img :src="'/undangan/'+url_type+'/asset/bni-logo.png'" class = "img-fluid" draggable="false" alt="logo-bni">
+              </span>
+              <span v-if = "bankTwo == 'BANK RAKYAT INDONESIA (BRI)'" >
+                <img :src="'/undangan/'+url_type+'/asset/bri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bri">
+              </span>
+              <span v-if = "bankTwo == 'DANA'" >
+                <img :src="'/undangan/'+url_type+'/asset/dana-logo.png'" class = "img-fluid" draggable="false" alt="logo-dana">
+              </span>
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
                 {{ bankTwo }} <br/>
                 <small>a.n {{ anTwo }}</small>
                 <p>{{ norekTwo }}</p>
-                <button type = "button" class = "btn btn-light">
-                  <small><i class = "bi bi-clipboard"></i> Salin</small>
-                </button>
+                  <button type = "button" class = "btn btn-light" @click="copyToClipBoard2(norekTwo)">
+                    <small>
+                      <span id="myTooltip2">
+                        <i class = 'bi bi-clipboard'></i> Salin
+                      </span>
+                    </small>
+                  </button>
               </div>
             </div>
 
@@ -220,9 +306,16 @@
     </div>
   </section>
 
-  <div id = "ucapan"></div>
-  <section class = "container mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="d-flex justify-content-center">
+  <section id = "animation" class = "container-fluid">
+    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_4p4x21lt.json"  background="transparent"  speed="0.8"  class = "img-fluid" loop autoplay></lottie-player>
+    <p class = "text-center mt-4">
+      <small>"Berjumpa dengamu adalah suatu anugerah terindah dalam hidupku dan aku yakin kini kau pun tau. Hidup bersamamu adalah salah satu mimpiku"</small>
+    </p>
+  </section>
+
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/05_Background-Golden-Blue.png'" class = "wallpaper-ucapan img-fluid" draggable="false" alt="wallpaper-ucapan"> -->
+  <div id = "ucapan">
+    <section class = "container" data-aos="fade-up" data-aos-delay="200">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
           <h5 class="fw-bold">UCAPKAN SESUATU</h5>
@@ -235,7 +328,7 @@
               <label for="alamat">Nama</label>
           </div>
           <div class="form-floating mb-3">
-            <textarea class="form-control border-0" placeholder="Ucapan" required v-model = "say_chat" id="ucapan" style="height: 80px"></textarea>
+            <textarea class="form-control border-0 scroll-ucapan" placeholder="Ucapan" required v-model = "say_chat" id="ucapan"></textarea>
             <label for="ucapan">Ucapan</label>
           </div>
           <div class="form-floating mb-4">
@@ -255,10 +348,10 @@
           </p>
 
           <div class="card mb-4 border-0 text-start">
-            <div class="card-body scroll-ucapan">
+            <div class="card-body scroll-reply">
               <ul class="list-group list-group-flush">
                 
-                <li v-for = "dataChats in dataChat" :key="dataChats.id_chat"
+                <li v-for = "dataChats in visibleChats" :key="dataChats.id_chat"
                     class="list-group-item d-flex justify-content-between align-items-start my-1">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">{{ dataChats.name_chat }}</div>
@@ -278,19 +371,32 @@
                 </li>
 
               </ul>
+              <center>
+                  <button type = "button" class="btn btn-sm btn-light mt-3" @click="chatsVisible += step" v-if="chatsVisible < dataChat.length"> 
+                    <small>Lebih Banyak</small>
+                  </button>
+              </center>
             </div>
           </div>
           
         </div>
       </div>
-    </div>
   </section>
+  </div>
 
+  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/06_Background-Golden-Blue.png'" class = "wallpaper-penutup img-fluid" draggable="false" alt="wallpaper-penutup"> -->
   <section id = "penutup" class = "container mt-5 py-4">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
-        <img :src="'/undangan/'+url_type+'/foto/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200">
+         <!-- this photo bride -->
+         <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <div class="frame">
+              <img :src="'/katalog/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            </div>
+          </div>
+          <!-- end this photo bride -->
         <div data-aos="fade-up" data-aos-delay="200">
           <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
@@ -375,7 +481,7 @@
             color: '#d2d2d2',
           },
           { id: 'acara', icon: 'bi-brands bi-calendar-event-fill', color: '#d2d2d2' },
-          { id: 'amplop-digital', icon: 'bi-brands bi-images', color: '#d2d2d2' },
+          { id: 'amplop-digital', icon: 'bi-brands bi-gift-fill', color: '#d2d2d2' },
           { id: 'ucapan', icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
         ],
         manName: '',
@@ -390,17 +496,23 @@
         womenMother: '',
         womenChildOf: '',
 
+        manPic: '',
+        womenic: '',
+        couplePic: '',
+
         akadDate: '',
         akadStart: '',
         akadEnd: '',
         akadTimezone: '',
         akadAddress: '',
+        url_gmaps_akad: '',
 
         resepsiDate: '',
         resepsiStart: '',
         resepsiEnd: '',
         resepsiTimezone: '',
         resepsiAddress: '',
+        url_gmaps_resepsi: '',
 
         bankOne: '',
         anOne: '',
@@ -416,16 +528,22 @@
         say_chat: '',
         iscome: '',
         dataChat: [],
+        chatsVisible: 4,
+        step: 4,
       }
     },
     mounted() {
       axios
-        .get('http://localhost:3000/apial/getUndangan/'+this.$route.params.url_params)
+        .get('https://b.sulungsoft.com/apial/getUndangan/'+this.$route.params.url_params)
         .then((response) => {
 
           this.isActive = response.data.dataUndangan.isactive;
           this.url_type = response.data.dataUndangan.url_type;
           this.music = response.data.dataUndangan.music;
+
+          this.manPic = response.data.dataUndangan.man_pic;
+          this.womenPic = response.data.dataUndangan.women_pic;
+          this.couplePic = response.data.dataUndangan.couple_pic;
 
           this.manName = response.data.dataUndangan.man_name;
           this.manCall = response.data.dataUndangan.man_call;
@@ -493,12 +611,15 @@
           this.akadEnd = response.data.dataUndangan.akad_end;
           this.akadTimezone = response.data.dataUndangan.akad_timezone;
           this.akadAddress = response.data.dataUndangan.akad_address;
+          this.url_gmaps_akad = response.data.dataUndangan.url_gmaps_akad;
 
           this.resepsiDate = response.data.dataUndangan.resepsi_date;
           this.resepsiStart = response.data.dataUndangan.resepsi_start;
           this.resepsiEnd = response.data.dataUndangan.resepsi_end;
           this.resepsiTimezone = response.data.dataUndangan.resepsi_timezone;
           this.resepsiAddress = response.data.dataUndangan.resepsi_address;
+          this.url_gmaps_resepsi = response.data.dataUndangan.url_gmaps_resepsi;
+
 
           this.bankOne = response.data.dataUndangan.bank_one;
           this.anOne = response.data.dataUndangan.an_one;
@@ -516,18 +637,52 @@
         
 
         axios
-        .get('http://localhost:3000/apial/getChat/'+this.$route.params.url_params)
+        .get('https://b.sulungsoft.com/apial/getChat/'+this.$route.params.url_params)
         .then((response) => {
           this.dataChat = response.data.dataChat
         });
     },
     computed: {
-      //
+      visibleChats() {
+        return this.dataChat.slice(0, this.chatsVisible)
+      }
     },
     methods: {
       bukaUndangan() {
         this.cover = false;
         this.content = true;
+      },
+      copyToClipBoard(textToCopy){
+        let tmpTextField = document.createElement("textarea")
+        tmpTextField.textContent = textToCopy
+        tmpTextField.setAttribute("style","position:absolute; right:200%;")
+        document.body.appendChild(tmpTextField)
+        tmpTextField.select()
+        tmpTextField.setSelectionRange(0, 99999) /*For mobile devices*/
+        document.execCommand("copy")
+        tmpTextField.remove()
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "<i class = 'bi bi-clipboard-check'></i> Berhasil disalin";
+
+        var tooltip2 = document.getElementById("myTooltip2");
+        tooltip2.innerHTML = "<i class = 'bi bi-clipboard'></i> Salin";
+      },
+      copyToClipBoard2(textToCopy2){
+        let tmpTextField2 = document.createElement("textarea")
+        tmpTextField2.textContent = textToCopy2
+        tmpTextField2.setAttribute("style","position:absolute; right:200%;")
+        document.body.appendChild(tmpTextField2)
+        tmpTextField2.select()
+        tmpTextField2.setSelectionRange(0, 99999) /*For mobile devices*/
+        document.execCommand("copy")
+        tmpTextField2.remove()
+
+        var tooltip2 = document.getElementById("myTooltip2");
+        tooltip2.innerHTML = "<i class = 'bi bi-clipboard-check'></i> Berhasil disalin";
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "<i class = 'bi bi-clipboard'></i> Salin";
       },
       toggleSound() {
         let audio = this.$refs.audio;
@@ -548,7 +703,7 @@
         selected === 'mempelai' ? document.getElementById('mempelai').scrollIntoView() : false
         selected === 'detail-mempelai' ? document.getElementById('detail-mempelai').scrollIntoView() : false
         selected === 'acara' ? document.getElementById('acara').scrollIntoView() : false
-        selected === 'galeri' ? document.getElementById('galeri').scrollIntoView() : false
+        selected === 'amplop-digital' ? document.getElementById('amplop-digital').scrollIntoView() : false
         selected === 'ucapan' ? document.getElementById('ucapan').scrollIntoView() : false
       },
       addChat(){
@@ -561,13 +716,13 @@
         }
 
         axios
-          .post('http://localhost:3000/apial/addChat', dataChat)
+          .post('https://b.sulungsoft.com/apial/addChat', dataChat)
           .then(() => {
             this.name_chat = '';
             this.say_chat = '';
             this.iscome = '';
             axios
-              .get('http://localhost:3000/apial/getChat/'+this.$route.params.url_params)
+              .get('https://b.sulungsoft.com/apial/getChat/'+this.$route.params.url_params)
               .then((response) => {
                 this.dataChat = response.data.dataChat
               });
@@ -579,44 +734,3 @@
     }
   };
 </script>
-
-<style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
-
-  #cover,
-  #mempelai {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-  }
-  /* Image Bingkai */
-  .img-bingkai {
-    height: 15%;
-    width: auto;
-  }
-  .nama-mempelai{
-    font-size: 45px;
-    font-family: 'Birthstone Bounce', cursive;
-  }
-  .nama-mempelai-detail{
-    font-size: 40px;
-    font-family: 'Birthstone Bounce', cursive;
-  }
-  .font-acara{
-    font-size: 40px;
-    font-family: 'Birthstone Bounce', cursive;
-  }
-
-  /* Wallpaper */
-  /* .wallpaper-cover{
-    background: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/undangan/alunam-blue-love/asset/wallpaper-cover.jpeg') no-repeat center fixed;
-    background-size: cover;
-  }
-  .mempelai{
-    background-image: url('/Applications/XAMPP/xamppfiles/htdocs/alunam/public/img/katalog/katalog-satu/wallpaper-mempelai.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-  } */
-</style>

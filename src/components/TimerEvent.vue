@@ -4,7 +4,7 @@
       <div class = "countdown-date mt-2">
         <div class="row row-cols-4 g-2">
           <div class="col">
-            <div class="card border-0">
+            <div class="card border-0 bg-light-primary">
               <div class="card-body px-0">
                 <div>{{ days }}</div>
                 <small>{{ wordString.day }}</small>
@@ -13,7 +13,7 @@
           </div>
 
           <div class="col">
-            <div class="card border-0">
+            <div class="card border-0 bg-light-primary">
               <div class="card-body px-0">
                 <div>{{ hours }}</div>
                 <small>{{ wordString.hours }}</small>
@@ -22,7 +22,7 @@
           </div>
 
           <div class="col">
-            <div class="card border-0">
+            <div class="card border-0 bg-light-primary">
               <div class="card-body px-0">
                 <div>{{ minutes }}</div>
                 <small>{{ wordString.minutes }}</small>
@@ -31,7 +31,7 @@
           </div>
 
           <div class="col">
-            <div class="card border-0">
+            <div class="card border-0 bg-light-primary">
               <div class="card-body px-0">
                 <div>{{ seconds }}</div>
                 <small>{{ wordString.seconds }}</small>
@@ -117,3 +117,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.bg-light-primary{
+    background-color: #fcfcff;
+  }
+</style>

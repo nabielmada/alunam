@@ -48,7 +48,7 @@
           <div class="col-12 col-lg-6">
             <p class="text-promo-header"> 
               <span class = "bi bi-megaphone me-2"></span> 
-              PROMO DESEMBER UP TO 70%
+              PROMO AWAL TAHUN UP TO 70%
             </p>
             <h1 class="fw-bold heading-header">
               Sebar Undangan Kamu
@@ -64,7 +64,9 @@
           </div>
           </div>
           <div class="col-6">
-            <img src="/web/cover-header.webp" class="cover-header img-fluid" alt="cover-header" loading = "lazy" srcset="">
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_zgkekkkl.json"  background="transparent"  speed="1"  class="cover-header img-fluid"  loop  autoplay></lottie-player>
+            <!-- <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_cvi9bg1a.json"  background="transparent"  speed="1" class="cover-header img-fluid" loop  autoplay></lottie-player> -->
+            <!-- <img src="/web/cover-header.webp" class="cover-header img-fluid" alt="cover-header" loading = "lazy" srcset=""> -->
           </div>
         </div>
       </div>
@@ -116,9 +118,9 @@
             <div class="card hover-card border-0" data-aos="fade-down" data-aos-delay="350">
                 <div class="card-body">
                   <p class = "bi bi-shield-check text-success fs-3"></p>
-                  <h5 class="card-title">Privasi</h5>
+                  <h5 class="card-title">Terpercaya</h5>
                   <p class="card-text text-muted text-vt">
-                    Kami menjaga privasi kamu bisa pakai foto atau tidak di undangan
+                    Menyediakan yang terbaik untuk kebutuhan undangan kamu
                   </p>
                 </div>
             </div>
@@ -272,7 +274,7 @@
                           <img src="/web/avatar/avatar-1.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
-                          Dhita & Akbar<br/>
+                          Dita & Akbar<br/>
                           <small class = "text-muted">
                             <span class = "bi bi-clock-history"></span>  
                              Baru Saja
@@ -296,7 +298,7 @@
                           <img src="/web/avatar/avatar-2.png" draggable="false" class="img-fluid" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
-                          Emyra & Iqbal <br/>
+                          Ajeng & Iqbal <br/>
                           <small class = "text-muted">
                             <span class = "bi bi-clock-history"></span>  
                              Baru Saja

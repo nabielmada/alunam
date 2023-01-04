@@ -92,7 +92,7 @@ export default {
     },
     mounted() {
         axios
-            .get('http://localhost:3000/apial/getInvoice/'+this.$route.params.no_invoice)
+            .get('https://b.sulungsoft.com/apial/getInvoice/'+this.$route.params.no_invoice)
             .then((response) => {
 
                 let noTrans = response.data.dataInvoice.noinvoice;
@@ -108,7 +108,7 @@ export default {
                 let message = this.myMessage + 
                       "No Transaksi: " + noTrans + "%0a" +
                       "Atas Nama: " + namaCust + "%0a" +
-                      "Tagihan: " + tagihanCust + "%0a" +
+                      "Tagihan: *Rp" + tagihanCust + "*%0a" +
                       "Pesanan: " + pesananCust;
 
                 this.apiLink = 'https://api.whatsapp.com/send?phone=' + this.myNumber + '&text=' + message

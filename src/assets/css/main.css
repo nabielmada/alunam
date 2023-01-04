@@ -43,12 +43,22 @@ mark {
 /* Ucapan */
 .scroll-ucapan{
     overflow:scroll; 
-    height:550px;
+    height:100px;
 }
   
 .scroll-ucapan::-webkit-scrollbar {
     height: 1px;
     display: none;
+}
+
+.scroll-reply{
+  overflow:scroll; 
+  height:550px;
+}
+
+.scroll-reply::-webkit-scrollbar {
+  height: 1px;
+  display: none;
 }
 
 .hover-card {
@@ -96,7 +106,7 @@ mark {
 
 .frame-photo{
     object-fit: cover;
-    object-position: center 50%;
+    object-position: center;
     background-repeat: no-repeat;
 }
 
@@ -107,6 +117,167 @@ mark {
     position: relative;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
+
+  #cover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    width: 100vw;
+    position: fixed;
+    /* margin-top: 10%; */
+  }
+  
+  #mempelai {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+  #detail-mempelai {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+  #acara {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+  #amplop-digital {
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+  #animation {
+    padding-bottom: 12%;
+  }
+  #ucapan {
+    padding-top: 10%;
+    padding-bottom: 15%;
+  }
+  #penutup {
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+
+  /* Image Bingkai */
+  .img-bingkai {
+    height: 15%;
+    width: auto;
+  }
+  .rotate {
+    animation: rotation 50s infinite linear;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  .nama-mempelai{
+    font-size: 45px;
+    font-family: 'Birthstone Bounce', cursive;
+  }
+  .nama-mempelai-detail{
+    font-size: 40px;
+    font-family: 'Birthstone Bounce', cursive;
+  }
+  .font-acara{
+    font-size: 40px;
+    font-family: 'Birthstone Bounce', cursive;
+  }
+
+  /* Wallpaper */
+  .wallpaper-cover{
+    background-size: cover;
+    /* min-height: 100vh; */
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .wallpaper{
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-mempelai{
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-detail-mempelai{
+    background-size: cover;
+    min-height: 165vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-acara{
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-amplop-digital{
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-ucapan{
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-penutup{
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .center-header{
+        display: flex;
+        align-items: center;
+        min-height: 85vh;
+    }
 
 @media only screen 
 and (min-device-width: 320px) and (max-device-width: 980px){
