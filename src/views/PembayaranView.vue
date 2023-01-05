@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section id = "pembayaran" class = "container mt-3">
+        <section id = "pembayaran" class = "container mt-1">
             <div class="d-flex justify-content-center">
             <div class="row align-content-center">
             <div class="col-12 col-sm-12">
@@ -19,7 +19,7 @@
                         No.Transaksi {{ noTrans }}
                         <p>Tagihan yang harus di bayarkan:</p>
                         </small>
-                        <h1 class="fw-bold">Rp{{ tagihanCust }}</h1>
+                        <h1 class="fw-bold">Rp{{ formatNum(tagihanCust) }}</h1>
                         <small class = "fw-bold">Pastikan nominal pembayaran sesuai <br/> dengan 3 digit belakang </small>
                     </div>
                 </div>
@@ -32,11 +32,15 @@
                     </div>
                     <div class="col-8 col-sm-8 col-lg-3">
                     <div>
-                        BANK CENTRAL ASIA <br/>
+                        BANK CENTRAL ASIA (BCA)<br/>
                         <small>a.n Nabiel Mada Ranu Ramadhan</small>
                         <p>2221012081</p>
-                        <button type = "button" class = "btn btn-light">
-                        <small><i class = "bi bi-clipboard"></i> Salin</small>
+                        <button type = "button" class = "btn btn-light" @click="copyToClipBoard('2221012081')">
+                            <small>
+                            <span id="myTooltip">
+                                <i class = 'bi bi-clipboard'></i> Salin
+                            </span>
+                            </small>
                         </button>
                     </div>
                     </div>
@@ -49,9 +53,13 @@
                     <div>
                         BANK MANDIRI <br/>
                         <small>a.n Nabiel Mada Ranu Ramadhan</small>
-                        <p>2221012081</p>
-                        <button type = "button" class = "btn btn-light">
-                        <small><i class = "bi bi-clipboard"></i> Salin</small>
+                        <p>1350018166007</p>
+                        <button type = "button" class = "btn btn-light" @click="copyToClipBoard2('1350018166007')">
+                            <small>
+                            <span id="myTooltip2">
+                                <i class = 'bi bi-clipboard'></i> Salin
+                            </span>
+                            </small>
                         </button>
                     </div>
                     </div>
@@ -92,7 +100,7 @@ export default {
     },
     mounted() {
         axios
-            .get('https://b.sulungsoft.com/apial/getInvoice/'+this.$route.params.no_invoice)
+            .get('http://localhost:3000/apial/getInvoice/'+this.$route.params.no_invoice)
             .then((response) => {
 
                 let noTrans = response.data.dataInvoice.noinvoice;
@@ -115,7 +123,42 @@ export default {
             });
     },
     methods: {
+        formatNum(num) {
+            let str = num.toLocaleString('id-ID');
+            return str;
+        },
+        copyToClipBoard(textToCopy){
+        let tmpTextField = document.createElement("textarea")
+        tmpTextField.textContent = textToCopy
+        tmpTextField.setAttribute("style","position:absolute; right:200%;")
+        document.body.appendChild(tmpTextField)
+        tmpTextField.select()
+        tmpTextField.setSelectionRange(0, 99999) /*For mobile devices*/
+        document.execCommand("copy")
+        tmpTextField.remove()
 
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "<i class = 'bi bi-clipboard-check'></i> Berhasil disalin";
+
+        var tooltip2 = document.getElementById("myTooltip2");
+        tooltip2.innerHTML = "<i class = 'bi bi-clipboard'></i> Salin";
+      },
+      copyToClipBoard2(textToCopy2){
+        let tmpTextField2 = document.createElement("textarea")
+        tmpTextField2.textContent = textToCopy2
+        tmpTextField2.setAttribute("style","position:absolute; right:200%;")
+        document.body.appendChild(tmpTextField2)
+        tmpTextField2.select()
+        tmpTextField2.setSelectionRange(0, 99999) /*For mobile devices*/
+        document.execCommand("copy")
+        tmpTextField2.remove()
+
+        var tooltip2 = document.getElementById("myTooltip2");
+        tooltip2.innerHTML = "<i class = 'bi bi-clipboard-check'></i> Berhasil disalin";
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "<i class = 'bi bi-clipboard'></i> Salin";
+      },
     },
     created() {
         

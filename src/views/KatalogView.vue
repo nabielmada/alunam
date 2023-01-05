@@ -432,20 +432,20 @@
           { id: 'amplop-digital', icon: 'bi-brands bi-gift-fill', color: '#d2d2d2' },
           { id: 'ucapan', icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
         ],
-        type: '',
+        // type: '',
         akad_date: '',
         dataChat: [],
-        chatsVisible: 4,
-        step: 4,
+        chatsVisible: 5,
+        step: 5,
       }
     },
     mounted() {
-      if(this.url_type == 'alunam-blue-love'){
-         this.type = 'Alunam Blue Love';
-      }
+      // if(this.url_type == 'alunam-blue-love'){
+      //    this.type = 'Alunam Blue Love';
+      // }
 
       axios
-        .get('https://b.sulungsoft.com/apial/getChatAll')
+        .get('http://localhost:3000/apial/getChatAll')
         .then((response) => {
           this.dataChat = response.data.dataChat
         });
@@ -503,13 +503,13 @@
         }
 
         axios
-          .post('https://b.sulungsoft.com/apial/addChatAll', dataChat)
+          .post('http://localhost:3000/apial/addChatAll', dataChat)
           .then(() => {
             this.name_chat = '';
             this.say_chat = '';
             this.iscome = '';
             axios
-              .get('https://b.sulungsoft.com/apial/getChatAll')
+              .get('http://localhost:3000/apial/getChatAll')
               .then((response) => {
                 this.dataChat = response.data.dataChat
               });

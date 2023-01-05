@@ -17,7 +17,7 @@
 
   <div v-if="cover === true">
   <section id = "cover">
-    <img :src="'/katalog/'+url_type+'/wallpaper/cover.jpg'" class = "wallpaper-cover img-fluid" draggable="false" alt="wallpaper-cover">
+    <img :src="'/undangan/'+url_type+'/wallpaper/cover.jpg'" class = "wallpaper-cover img-fluid" draggable="false" alt="wallpaper-cover">
 
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
@@ -26,9 +26,9 @@
 
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/undangan/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai rotate img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/undangan/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
@@ -59,7 +59,7 @@
   </div>
 
   <div id = "content" v-if="content === true">
-  <img :src="'/katalog/'+url_type+'/wallpaper/wallpaper.png'" class = "wallpaper img-fluid" draggable="false" alt="wallpaper">
+  <img :src="'/undangan/'+url_type+'/wallpaper/wallpaper.png'" class = "wallpaper img-fluid" draggable="false" alt="wallpaper">
 
   <section id = "mempelai" class = "mempelai container">
     <div class="d-flex justify-content-center">
@@ -68,9 +68,9 @@
           <h5 class="fw-bold mb-4" data-aos="fade-down" data-aos-delay="200">THE WEDDING OF</h5>
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center" data-aos="fade-down" data-aos-delay="200">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/undangan/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/undangan/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
@@ -112,7 +112,7 @@
     </div>
   </section>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/02_Background-Golden-Blue.png'" class = "wallpaper-detail-mempelai img-fluid" draggable="false" alt="wallpaper-detail-mempelai"> -->
+  <!-- <img :src="'/undangan/'+url_type+'/wallpaper/02_Background-Golden-Blue.png'" class = "wallpaper-detail-mempelai img-fluid" draggable="false" alt="wallpaper-detail-mempelai"> -->
   <div id = "detail-mempelai">
   <section class = "container">
     <div class="d-flex justify-content-center">
@@ -130,9 +130,9 @@
         </div>
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/undangan/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/'+womenPic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/undangan/'+url_type+'/foto/'+womenPic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
@@ -148,9 +148,9 @@
             <h1 class="my-4" data-aos="fade-up" data-aos-delay="200">&</h1>
             <!-- this photo bride -->
             <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-              <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/undangan/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
               <div class="frame">
-                <img :src="'/katalog/'+url_type+'/foto/'+manPic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+                <img :src="'/undangan/'+url_type+'/foto/'+manPic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
               </div>
             </div>
             <!-- end this photo bride -->
@@ -169,7 +169,7 @@
   </section>
 </div>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-acara img-fluid" draggable="false" alt="wallpaper-acara"> -->
+  <!-- <img :src="'/undangan/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-acara img-fluid" draggable="false" alt="wallpaper-acara"> -->
   <div id = "acara">
   <section class = "container">
     <div class="d-flex justify-content-center">
@@ -226,7 +226,7 @@
   </section>
 </div>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-amplop-digital img-fluid" draggable="false" alt="wallpaper-amplop-digital"> -->
+  <!-- <img :src="'/undangan/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-amplop-digital img-fluid" draggable="false" alt="wallpaper-amplop-digital"> -->
   <section id = "amplop-digital" class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
@@ -313,7 +313,7 @@
     </p>
   </section>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/05_Background-Golden-Blue.png'" class = "wallpaper-ucapan img-fluid" draggable="false" alt="wallpaper-ucapan"> -->
+  <!-- <img :src="'/undangan/'+url_type+'/wallpaper/05_Background-Golden-Blue.png'" class = "wallpaper-ucapan img-fluid" draggable="false" alt="wallpaper-ucapan"> -->
   <div id = "ucapan">
     <section class = "container" data-aos="fade-up" data-aos-delay="200">
     <div class="row align-content-center">
@@ -384,16 +384,16 @@
   </section>
   </div>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/06_Background-Golden-Blue.png'" class = "wallpaper-penutup img-fluid" draggable="false" alt="wallpaper-penutup"> -->
+  <!-- <img :src="'/undangan/'+url_type+'/wallpaper/06_Background-Golden-Blue.png'" class = "wallpaper-penutup img-fluid" draggable="false" alt="wallpaper-penutup"> -->
   <section id = "penutup" class = "container mt-5 py-4">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
          <!-- this photo bride -->
          <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/undangan/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/undangan/'+url_type+'/foto/'+couplePic" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
@@ -456,7 +456,7 @@
   // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 
   export default {
-    name: "KatalogView",
+    name: "UndanganView",
     props: {
       mempelai: {
         type: String,
@@ -534,7 +534,7 @@
     },
     mounted() {
       axios
-        .get('https://b.sulungsoft.com/apial/getUndangan/'+this.$route.params.url_params)
+        .get('http://localhost:3000/apial/getUndangan/'+this.$route.params.url_params)
         .then((response) => {
 
           this.isActive = response.data.dataUndangan.isactive;
@@ -637,7 +637,7 @@
         
 
         axios
-        .get('https://b.sulungsoft.com/apial/getChat/'+this.$route.params.url_params)
+        .get('http://localhost:3000/apial/getChat/'+this.$route.params.url_params)
         .then((response) => {
           this.dataChat = response.data.dataChat
         });
@@ -716,13 +716,13 @@
         }
 
         axios
-          .post('https://b.sulungsoft.com/apial/addChat', dataChat)
+          .post('http://localhost:3000/apial/addChat', dataChat)
           .then(() => {
             this.name_chat = '';
             this.say_chat = '';
             this.iscome = '';
             axios
-              .get('https://b.sulungsoft.com/apial/getChat/'+this.$route.params.url_params)
+              .get('http://localhost:3000/apial/getChat/'+this.$route.params.url_params)
               .then((response) => {
                 this.dataChat = response.data.dataChat
               });

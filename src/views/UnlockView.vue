@@ -364,10 +364,10 @@
                     <div class="col-12 col-md-12">
                     <div class="form-floating mb-3">
                     <select class="form-select border-0" v-model="bankTwo" id="bankTwo" aria-label="bankTwo">
-                      <option value="BCA">BCA</option>
-                      <option value="MANDIRI">MANDIRI</option>
-                      <option value="BNI">BNI</option>
-                      <option value="BRI">BRI</option>
+                      <option value="BANK CENTRAL ASIA (BCA)">BCA</option>
+                      <option value="BANK MANDIRI">MANDIRI</option>
+                      <option value="BANK NEGARA INDONESIA (BNI)">BNI</option>
+                      <option value="BANK RAKYAT INDONESIA (BRI)">BRI</option>
                       <option value="DANA">DANA</option>
                     </select>
                     <label for="bankTwo">Pilih Bank (Opsi Kedua)</label>
@@ -414,9 +414,15 @@
 
                   <div class="col-12 mb-4 px-4">
                       <label class = "fw-bold">Foto Couple</label>
-                        <input type="file" class="form-control border-0" @change="uploadFileFotoCouple" id = "fileFotoCouple">
-                        <input type="hidden" class="form-control border-0" v-model="nameFotoCouple">
+                        <input type="file" class="form-control border-0" @change="uploadFileFotoCouple" accept="image/*" id = "fileFotoCouple">
                   </div>
+
+                  <!-- <div class="col-12 mb-4 px-4">
+                      <label class = "fw-bold">Foto Gallery</label>
+                        <input type="file" class="form-control border-0" @change="uploadFileFotoGallery" multiple accept="image/*" id = "fileFotoGallery">
+                        <input type="hidden" class="form-control border-0" v-model="fileFotoGallery">
+                      <small class = "text-muted mt-2">Maksimal 6 Foto</small>
+                  </div> -->
 
                   <div class="card mb-3 border-0">
                     <div class="card-body">
@@ -427,8 +433,7 @@
                         {{ manName }}
                       </div>
                       <div class="col-12">
-                        <input type="file" class="form-control border-0" @change="uploadFileFotoMan" id = "fileFotoMan">
-                        <input type="hidden" class="form-control border-0" v-model="nameFotoMan" readonly>
+                        <input type="file" class="form-control border-0" @change="uploadFileFotoMan" accept="image/*" id = "fileFotoMan">
                       </div>
                     </div>
                   </div>
@@ -442,8 +447,7 @@
                         {{ womenName }}
                       </div>
                       <div class="col-12">
-                        <input type="file" class="form-control border-0" @change="uploadFileFotoWomen" id = "fileFotoWomen">
-                        <input type="hidden" class="form-control border-0" v-model="nameFotoWomen" readonly>
+                        <input type="file" class="form-control border-0" @change="uploadFileFotoWomen" accept="image/*" id = "fileFotoWomen">
                       </div>
                     </div>
                   </div>
@@ -509,12 +513,18 @@
         </div>
       </div>
 
+       <loading v-model:active="isLoading"
+                       :loader="'dots'"
+                       :is-full-page="fullPage"/>
+
     </section>
 </template>
 
 <script>
 import axios from 'axios'
 import { useToast } from "vue-toastification";
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/css/index.css';
 
   export default {
     name: "UnlockView",
@@ -524,8 +534,14 @@ import { useToast } from "vue-toastification";
         default: null,
       },
     },
+    components: {
+      Loading
+    },
     data() {
       return {
+        isLoading: false,
+        fullPage: true,
+
         sk: true,
         dataDiri: false,
         dataMempelaiPria: false,
@@ -574,6 +590,7 @@ import { useToast } from "vue-toastification";
         norekTwo: '',
 
         fileFotoCouple: {},
+        // fileFotoGallery: {},
         fileFotoMan: {},
         fileFotoWomen: {},
         fileSong: {},
@@ -714,7 +731,7 @@ import { useToast } from "vue-toastification";
       },
 
       nextDaftarUndangan(){
-        if(this.nameFotoCouple == '' || this.nameFotoMan == '' || this.nameFotoWomen == ''){
+        if(this.nameFotoCouple == '' || this.fileFotoGallery == '[object Object]' || this.nameFotoMan == '' || this.nameFotoWomen == ''){
           this.toast.error("Silahkan lengkapi data terlebih dahulu");
             return false
         }else{
@@ -739,7 +756,9 @@ import { useToast } from "vue-toastification";
         this.fileFotoCouple = document.querySelector('#fileFotoCouple').files[0]
         this.nameFotoCouple = document.querySelector('#fileFotoCouple').files[0].name
       },
-
+      // uploadFileFotoGallery(){
+      //   this.fileFotoGallery = document.querySelector('#fileFotoGallery').files
+      // },
       uploadFileFotoMan(){
         this.fileFotoMan = document.querySelector('#fileFotoMan').files[0]
         this.nameFotoMan = document.querySelector('#fileFotoMan').files[0].name
@@ -760,6 +779,8 @@ import { useToast } from "vue-toastification";
           this.toast.error("Silahkan lengkapi data terlebih dahulu");
             return false
         }
+        
+        this.isLoading = true;
 
         let dataBride = {
           manName: this.manName,
@@ -824,22 +845,22 @@ import { useToast } from "vue-toastification";
         }
 
         axios
-          .post('https://b.sulungsoft.com/apial/addInvite', dataInvite)
+          .post('http://localhost:3000/apial/addInvite', dataInvite)
           .then(() => {
             axios
-              .postForm('https://b.sulungsoft.com/apial/addBride', dataBride)
+              .postForm('http://localhost:3000/apial/addBride', dataBride)
               .then(() => {
                 axios
-                  .post('https://b.sulungsoft.com/apial/addEvent', dataEvent)
+                  .post('http://localhost:3000/apial/addEvent', dataEvent)
                   .then(() => {
                     axios
-                      .post('https://b.sulungsoft.com/apial/addEnvelope', dataEnvelope)
+                      .post('http://localhost:3000/apial/addEnvelope', dataEnvelope)
                       .then(() => {
                         axios
-                          .post('https://b.sulungsoft.com/apial/addInviteTo', dataInviteTo)
+                          .post('http://localhost:3000/apial/addInviteTo', dataInviteTo)
                           .then(() => {
                               axios
-                            .post('https://b.sulungsoft.com/apial/createInvoice', dataInvoice)
+                            .post('http://localhost:3000/apial/createInvoice', dataInvoice)
                             .then(() => {
                               this.$router.push("/pembayaran/" + this.noInvoice);
                             });
