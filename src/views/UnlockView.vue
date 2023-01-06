@@ -242,7 +242,7 @@
                   <div class="col-12">
                     <div class="form-floating mb-3">
                       <textarea class="form-control border-0" v-model = "akadAddress" placeholder="Ucapan" id="ucapan" style="height: 100px"></textarea>
-                      <label for="ucapan">Tempat Alamat</label>
+                      <label for="ucapan">Tempat Alamat Lengkap</label>
                     </div>
                   </div>
 
@@ -307,7 +307,7 @@
                   <div class="col-12">
                     <div class="form-floating mb-3">
                       <textarea class="form-control border-0" v-model = "resepsiAddress" placeholder="Ucapan" id="ucapan" style="height: 100px"></textarea>
-                      <label for="ucapan">Tempat Alamat</label>
+                      <label for="ucapan">Tempat Alamat Lengkap</label>
                     </div>
                   </div>
 
@@ -417,12 +417,12 @@
                         <input type="file" class="form-control border-0" @change="uploadFileFotoCouple" accept="image/*" id = "fileFotoCouple">
                   </div>
 
-                  <!-- <div class="col-12 mb-4 px-4">
+                  <div class="col-12 mb-4 px-4">
                       <label class = "fw-bold">Foto Gallery</label>
                         <input type="file" class="form-control border-0" @change="uploadFileFotoGallery" multiple accept="image/*" id = "fileFotoGallery">
-                        <input type="hidden" class="form-control border-0" v-model="fileFotoGallery">
+                        <!-- <input type="hidden" class="form-control border-0" v-model="fileFotoGallery"> -->
                       <small class = "text-muted mt-2">Maksimal 6 Foto</small>
-                  </div> -->
+                  </div>
 
                   <div class="card mb-3 border-0">
                     <div class="card-body">
@@ -484,8 +484,7 @@
                         <label class = "mb-3">Musik Undangan</label>
                       </div>
                       <div class="col-12">
-                        <input type="file" class="form-control border-0" @change="uploadFileSong" accept="audio/mp3,audio/*;capture=microphone" id = "fileSong">
-                        <input type="hidden" class="form-control border-0" v-model="namefileSong" readonly>
+                        <input type="file" class="form-control border-0" @change="uploadFileSong" accept="audio/mp3" id = "fileSong">
                       </div>
                     </div>
                   </div>
@@ -590,7 +589,8 @@ import 'vue-loading-overlay/dist/css/index.css';
         norekTwo: '',
 
         fileFotoCouple: {},
-        // fileFotoGallery: {},
+        fileFotoGallery: [],
+        countFotoGallery: 0,
         fileFotoMan: {},
         fileFotoWomen: {},
         fileSong: {},
@@ -731,8 +731,11 @@ import 'vue-loading-overlay/dist/css/index.css';
       },
 
       nextDaftarUndangan(){
-        if(this.nameFotoCouple == '' || this.fileFotoGallery == '[object Object]' || this.nameFotoMan == '' || this.nameFotoWomen == ''){
+        if(this.nameFotoCouple == '' || this.fileFotoGallery == '' || this.nameFotoMan == '' || this.nameFotoWomen == ''){
           this.toast.error("Silahkan lengkapi data terlebih dahulu");
+            return false
+        }else if(this.countFotoGallery > 6){
+          this.toast.error("Foto gallery max 6 file ");
             return false
         }else{
           this.dataDaftarUndangan = true;
@@ -756,9 +759,15 @@ import 'vue-loading-overlay/dist/css/index.css';
         this.fileFotoCouple = document.querySelector('#fileFotoCouple').files[0]
         this.nameFotoCouple = document.querySelector('#fileFotoCouple').files[0].name
       },
-      // uploadFileFotoGallery(){
-      //   this.fileFotoGallery = document.querySelector('#fileFotoGallery').files
-      // },
+      uploadFileFotoGallery(){
+        let fileFotoGallerys = document.querySelector('#fileFotoGallery').files
+
+        for(let i = 0 ; i < fileFotoGallerys.length; i++){
+          this.fileFotoGallery.push(fileFotoGallerys[i])
+        }
+
+        this.countFotoGallery = fileFotoGallerys.length        
+      },
       uploadFileFotoMan(){
         this.fileFotoMan = document.querySelector('#fileFotoMan').files[0]
         this.nameFotoMan = document.querySelector('#fileFotoMan').files[0].name
@@ -781,6 +790,11 @@ import 'vue-loading-overlay/dist/css/index.css';
         }
         
         this.isLoading = true;
+        
+        let dataFileGallery = {
+          noInvoice: this.noInvoice,
+          fileFotoGallery: this.fileFotoGallery
+        }
 
         let dataBride = {
           manName: this.manName,
@@ -800,6 +814,7 @@ import 'vue-loading-overlay/dist/css/index.css';
           fileFotoMan: this.fileFotoMan,
           fileFotoWomen: this.fileFotoWomen,
         }
+
 
         let dataEvent = {
           akadDate: this.akadDate,
@@ -851,6 +866,9 @@ import 'vue-loading-overlay/dist/css/index.css';
               .postForm('http://localhost:3000/apial/addBride', dataBride)
               .then(() => {
                 axios
+                .postForm('http://localhost:3000/apial/addGallery', dataFileGallery)
+                .then(() => {
+                  axios
                   .post('http://localhost:3000/apial/addEvent', dataEvent)
                   .then(() => {
                     axios
@@ -866,6 +884,7 @@ import 'vue-loading-overlay/dist/css/index.css';
                             });
                           });
                       });
+                    });
                   });
               });
           });
