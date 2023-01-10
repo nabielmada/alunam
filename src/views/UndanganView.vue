@@ -59,7 +59,21 @@
   </div>
 
   <div id = "content" v-if="content === true">
-  <img :src="'/undangan/'+url_type+'/wallpaper/wallpaper.png'" class = "wallpaper img-fluid" draggable="false" alt="wallpaper">
+    <div class="music-player">
+    <audio
+      ref="audio"
+      :src="'/undangan/'+url_type+'/audio/'+music"
+      preload
+      autoplay
+      loop
+      id="audio"
+      
+    ></audio>
+    <div @click="toggleSound()" class="toggle-sound"></div>
+  </div>
+
+  <img :src="'/undangan/'+url_type+'/asset/asset-atas.png'" class = "asset-atas img-fluid" draggable="false" alt="asset-atas">
+  <!-- <img :src="'/undangan/'+url_type+'/wallpaper/wallpaper.png'" class = "wallpaper img-fluid" draggable="false" alt="wallpaper"> -->
 
   <section id = "mempelai" class = "mempelai container">
     <div class="d-flex justify-content-center">
@@ -83,7 +97,7 @@
             Kami berharap Anda menjadi bagian <br/>
             dari hari istimewa kami!
           </p>
-          <p class="mt-4">
+          <p class="mt-4 fw-semibold">
             {{ moment(akadDate).locale("id").format('dddd, Do MMMM YYYY') }}
           </p>
           
@@ -145,7 +159,11 @@
             Bapak {{ womenFather }} <br/>
             dan Ibu {{ womenMother }}
           </p>
-            <h1 class="my-4" data-aos="fade-up" data-aos-delay="200">&</h1>
+            
+          <div class="my-5" data-aos="fade-up" data-aos-delay="200">
+            <img :src="'/undangan/'+url_type+'/asset/batas-mempelai.png'" class = "w-75 h-75" draggable="false" alt="batas-mempelai">
+          </div>
+
             <!-- this photo bride -->
             <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
               <img :src="'/undangan/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
@@ -169,6 +187,10 @@
   </section>
 </div>
 
+  <center>
+    <img :src="'/undangan/'+url_type+'/asset/batas-detail.png'" class = "w-25 h-25" draggable="false" alt="batas-detail">
+  </center>
+
   <!-- <img :src="'/undangan/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-acara img-fluid" draggable="false" alt="wallpaper-acara"> -->
   <div id = "acara">
   <section class = "container">
@@ -182,7 +204,9 @@
 
         <div data-aos="flip-down" data-aos-delay="300">
           <div class="card mb-4 border-0">
-            <div class="card-body m-4">
+            <img :src="'/undangan/'+url_type+'/asset/card-date.png'" class="card-img" alt="card-image">
+
+            <div class="card-img-overlay m-4">
                 <h3>Akad Nikah</h3>
                 <p class = "fw-semibold">
                   {{ moment(akadDate).locale("id").format('dddd, Do MMMM YYYY') }}
@@ -191,10 +215,10 @@
                   Pukul: 
                   {{ akadStart }} - {{ akadEnd }}
                   {{ akadTimezone }} <br/>
-                  {{ akadAddress }}
+                  <b>{{ akadAddress }}</b>
                 </p>
                 <a :href = "url_gmaps_akad" target = "_blank" class = "text-black text-decoration-none">
-                  <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                  <button type = "button" class="btn btn-light px-4 rounded-pill"><span class = "bi bi-geo-alt"></span> Lokasi</button>
                 </a>
             </div>
           </div>
@@ -202,7 +226,8 @@
 
         <div data-aos="flip-down" data-aos-delay="300">
           <div class="card border-0">
-            <div class="card-body m-4">
+            <img :src="'/undangan/'+url_type+'/asset/card-date.png'" class="card-img" alt="card-image">
+            <div class="card-img-overlay m-4">
                 <h3>Resepsi</h3>
                 <p class = "fw-semibold">
                   {{ moment(resepsiDate).locale("id").format('dddd, Do MMMM YYYY') }}
@@ -211,10 +236,10 @@
                   Pukul: 
                   {{ resepsiStart }} - {{ resepsiEnd }}
                   {{ resepsiTimezone }} <br/>
-                  {{ resepsiAddress }}
+                  <b>{{ resepsiAddress }}</b>
                 </p>
                 <a :href = "url_gmaps_resepsi" target = "_blank" class = "text-black text-decoration-none">
-                  <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                  <button type = "button" class="btn btn-light px-4 rounded-pill"><span class = "bi bi-geo-alt"></span> Lokasi</button>
                 </a>
             </div>
           </div>
@@ -225,6 +250,10 @@
     </div>
   </section>
 </div>
+
+  <center>
+    <img :src="'/undangan/'+url_type+'/asset/batas-save-atas.png'" class = "w-75 h-75" draggable="false" alt="batas-save-atas">
+  </center>
 
   <!-- <img :src="'/undangan/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-amplop-digital img-fluid" draggable="false" alt="wallpaper-amplop-digital"> -->
   <section id = "amplop-digital" class = "container">
@@ -255,7 +284,7 @@
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
                 {{ bankOne }} <br/>
-                <small>a.n {{ anOne }}</small>
+                <small>{{ anOne }}</small>
                 <p>{{ norekOne }}</p>
                   <button type = "button" class = "btn btn-light" @click="copyToClipBoard(norekOne)">
                     <small>
@@ -288,7 +317,7 @@
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
                 {{ bankTwo }} <br/>
-                <small>a.n {{ anTwo }}</small>
+                <small>{{ anTwo }}</small>
                 <p>{{ norekTwo }}</p>
                   <button type = "button" class = "btn btn-light" @click="copyToClipBoard2(norekTwo)">
                     <small>
@@ -306,11 +335,37 @@
     </div>
   </section>
 
-  <section id = "animation" class = "container-fluid">
-    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_4p4x21lt.json"  background="transparent"  speed="0.8"  class = "img-fluid" loop autoplay></lottie-player>
-    <p class = "text-center mt-4">
-      <small>"Berjumpa dengamu adalah suatu anugerah terindah dalam hidupku dan aku yakin kini kau pun tau. Hidup bersamamu adalah salah satu mimpiku"</small>
-    </p>
+  <center>
+    <img :src="'/undangan/'+url_type+'/asset/batas-save-bawah.png'" class = "w-75 h-75" draggable="false" alt="batas-save-bawah">
+  </center>
+
+  <section id = "gallery">
+    <h5 class="fw-bold text-center pb-5" data-aos="fade-up" data-aos-delay="200">GALERI FOTO KAMI</h5>
+  
+      <Carousel :autoplay="5000" :itemsToShow="1.55" :wrapAround="true" :transition="500">
+        <Slide v-for="dataGallerys in dataGallery" :key="dataGallerys.id_gallery">
+          <div class="carousel__item">
+            <img :src="'/undangan/'+url_type+'/gallery/'+dataGallerys.photo_gallery" class = "img-fluid rounded-4" draggable="false" alt="foto-gallery">
+          </div>
+        </Slide>
+
+        <template #addons>
+          <navigation />
+          <pagination />
+        </template>
+      </Carousel>
+
+      <figure class = "pt-5 px-4 text-center">
+        <blockquote class="blockquote">
+          <p class = "fs-6">
+            "Berjumpa denganmu adalah suatu anugerah terindah dalam hidupku dan aku yakin kini kau pun tau. Hidup bersamamu adalah salah satu mimpiku"
+          </p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          by <cite title="Source Title">Secret Admirer</cite>
+        </figcaption>
+      </figure>
+
   </section>
 
   <!-- <img :src="'/undangan/'+url_type+'/wallpaper/05_Background-Golden-Blue.png'" class = "wallpaper-ucapan img-fluid" draggable="false" alt="wallpaper-ucapan"> -->
@@ -384,8 +439,12 @@
   </section>
   </div>
 
+  <center>
+    <img :src="'/undangan/'+url_type+'/asset/batas-ucapan.png'" class = "w-75 h-75" draggable="false" alt="batas-ucapan">
+  </center>
+
   <!-- <img :src="'/undangan/'+url_type+'/wallpaper/06_Background-Golden-Blue.png'" class = "wallpaper-penutup img-fluid" draggable="false" alt="wallpaper-penutup"> -->
-  <section id = "penutup" class = "container mt-5 py-4">
+  <section id = "penutup">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
@@ -410,6 +469,7 @@
           <p class="mt-4">
             Wassalamu'alaikum Wr. Wb.
           </p>
+          <img :src="'/undangan/'+url_type+'/asset/asset-bawah.png'" class = "asset-bawah img-fluid" draggable="false" alt="asset-bawah">
         </div>
           <h1 class = "nama-mempelai mt-4" data-aos="fade-up" data-aos-delay="200">
             {{ womenCall }} & {{ manCall }}
@@ -417,27 +477,15 @@
         </div>
       </div>
     </div>
+
+
+    <footer class="my-5 pb-5 text-center">
+      <small>
+        Made with <i class = "bi bi-heart-fill text-danger"></i> by 
+        <a href = "/">Alunam</a>
+      </small>
+    </footer>
   </section>
-
-  <footer class="my-5 pb-5 text-center">
-    <small>
-      Made with <i class = "bi bi-heart-fill text-danger"></i> by 
-      <a href = "/">Alunam</a>
-    </small>
-  </footer>
-
-  <div class="music-player">
-    <audio
-      ref="audio"
-      :src="'/undangan/'+url_type+'/audio/'+music"
-      preload
-      autoplay
-      loop
-      id="audio"
-      
-    ></audio>
-    <div @click="toggleSound()" class="toggle-sound"></div>
-  </div>
 
     <WindowsBottomNavigation :options="options" v-model="selected" @click="scrollTo(selected)"/>
   </div>
@@ -448,9 +496,11 @@
 <script>
   import axios from 'axios'
   import moment from 'moment'
-  import { WindowsBottomNavigation } from "bottom-navigation-vue";
-  import "bottom-navigation-vue/dist/style.css";
   import TimerEvent from '@/components/TimerEvent.vue'
+  import "bottom-navigation-vue/dist/style.css";
+  import 'vue3-carousel/dist/carousel.css'
+  import { WindowsBottomNavigation } from "bottom-navigation-vue";
+  import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
   // import VueSlickCarousel from 'vue-slick-carousel'
   // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -467,7 +517,14 @@
         default: null,
       }
     },
-    components: { WindowsBottomNavigation, TimerEvent },
+    components: { 
+      WindowsBottomNavigation, 
+      TimerEvent,
+      Carousel,
+      Slide,
+      Pagination,
+      Navigation
+    },
     data() {
       return {
         cover: true,
@@ -481,7 +538,7 @@
             color: '#d2d2d2',
           },
           { id: 'acara', icon: 'bi-brands bi-calendar-event-fill', color: '#d2d2d2' },
-          { id: 'amplop-digital', icon: 'bi-brands bi-gift-fill', color: '#d2d2d2' },
+          { id: 'gallery', icon: 'bi-brands bi-images', color: '#d2d2d2' },
           { id: 'ucapan', icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
         ],
         manName: '',
@@ -527,12 +584,18 @@
         name_chat: '',
         say_chat: '',
         iscome: '',
+        dataGallery: [],
         dataChat: [],
         chatsVisible: 4,
         step: 4,
       }
     },
     mounted() {
+      axios
+        .get('http://localhost:3000/apial/getGallery/'+this.$route.params.url_params)
+        .then((response) => {
+          this.dataGallery = response.data.dataGallery
+        });
       axios
         .get('http://localhost:3000/apial/getUndangan/'+this.$route.params.url_params)
         .then((response) => {
@@ -703,7 +766,7 @@
         selected === 'mempelai' ? document.getElementById('mempelai').scrollIntoView() : false
         selected === 'detail-mempelai' ? document.getElementById('detail-mempelai').scrollIntoView() : false
         selected === 'acara' ? document.getElementById('acara').scrollIntoView() : false
-        selected === 'amplop-digital' ? document.getElementById('amplop-digital').scrollIntoView() : false
+        selected === 'gallery' ? document.getElementById('gallery').scrollIntoView() : false
         selected === 'ucapan' ? document.getElementById('ucapan').scrollIntoView() : false
       },
       addChat(){

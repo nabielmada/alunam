@@ -420,18 +420,18 @@
                   <div class="col-12 mb-4 px-4">
                       <label class = "fw-bold">Foto Gallery</label>
                         <input type="file" class="form-control border-0" @change="uploadFileFotoGallery" multiple accept="image/*" id = "fileFotoGallery">
-                        <!-- <input type="hidden" class="form-control border-0" v-model="fileFotoGallery"> -->
-                      <small class = "text-muted mt-2">Maksimal 6 Foto</small>
+                      <small class = "text-muted mt-1">Maksimal 6 Foto</small>
                   </div>
 
                   <div class="card mb-3 border-0">
                     <div class="card-body">
                       <div class="col-12">
-                        <label>Mempelai Pria</label>
+                        <span>Foto Pria: </span>
+                        <span class = "fw-bold">{{ manName }}</span>
                       </div>
-                      <div class="col-12 mb-3 fw-bold">
+                      <!-- <div class="col-12 mb-3 fw-bold">
                         {{ manName }}
-                      </div>
+                      </div> -->
                       <div class="col-12">
                         <input type="file" class="form-control border-0" @change="uploadFileFotoMan" accept="image/*" id = "fileFotoMan">
                       </div>
@@ -441,11 +441,12 @@
                   <div class="card mb-3 border-0">
                     <div class="card-body">
                       <div class="col-12">
-                        <label>Mempelai Wanita</label>
+                        <span>Foto Wanita: </span>
+                        <span class = "fw-bold">{{ womenName }}</span>
                       </div>
-                      <div class="col-12 mb-3 fw-bold">
+                      <!-- <div class="col-12 mb-3 fw-bold">
                         {{ womenName }}
-                      </div>
+                      </div> -->
                       <div class="col-12">
                         <input type="file" class="form-control border-0" @change="uploadFileFotoWomen" accept="image/*" id = "fileFotoWomen">
                       </div>
@@ -454,9 +455,9 @@
 
                 </div>
 
-                <!-- <center>
-                  <small>Silahkan lewati saja jika kamu tidak ingin menggunakan foto pada undangan</small>
-                </center> -->
+                <center>
+                  <small>Diutamakan foto berjenis potrait agar hasil lebih maksimal</small>
+                </center>
               </div>
             </div>
           <p class="mt-3">

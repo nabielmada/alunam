@@ -96,8 +96,8 @@ mark {
 
 /* Invitation */
 .frame{
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
@@ -111,8 +111,8 @@ mark {
 }
 
 .frame-bingkai{
-    width: 305px;
-    height: 305px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     position: relative;
 }
@@ -136,7 +136,7 @@ mark {
   }
   #detail-mempelai {
     padding-top: 15%;
-    padding-bottom: 15%;
+    padding-bottom: 12%;
   }
   #acara {
     padding-top: 15%;
@@ -144,9 +144,10 @@ mark {
   }
   #amplop-digital {
     padding-top: 15%;
-    padding-bottom: 5%;
+    padding-bottom: 15%;
   }
-  #animation {
+  #gallery {
+    padding-top: 15%;
     padding-bottom: 12%;
   }
   #ucapan {
@@ -164,7 +165,7 @@ mark {
     width: auto;
   }
   .rotate {
-    animation: rotation 50s infinite linear;
+    animation: rotation 100s infinite linear;
   }
   @keyframes rotation {
     from {
@@ -187,7 +188,29 @@ mark {
     font-family: 'Birthstone Bounce', cursive;
   }
 
-  /* Wallpaper */
+  /* ASSET VECTOR */
+  .asset-atas{
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .asset-bawah{
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* WALLPAPER */
   .wallpaper-cover{
     background-size: cover;
     min-height: 100vh;
@@ -196,6 +219,39 @@ mark {
     z-index: -1;
   }
   .wallpaper{
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-top{
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-body{
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .wallpaper-bottom{
     background-size: cover;
     min-height: 100vh;
     overflow: hidden;
@@ -277,7 +333,48 @@ mark {
         display: flex;
         align-items: center;
         min-height: 85vh;
-    }
+  }
+
+  /* Caraousel */
+  .carousel__slide {
+    padding: 5px;
+  }
+  
+  .carousel__viewport {
+    perspective: 2000px;
+  }
+  
+  .carousel__track {
+    transform-style: preserve-3d;
+  }
+  
+  .carousel__slide--sliding {
+    transition: 0.5s;
+  }
+  
+  .carousel__slide {
+    opacity: 0.9;
+    transform: rotateY(-20deg) scale(0.9);
+  }
+  
+  .carousel__slide--active ~ .carousel__slide {
+    transform: rotateY(20deg) scale(0.9);
+  }
+  
+  .carousel__slide--prev {
+    opacity: 1;
+    transform: rotateY(-10deg) scale(0.95);
+  }
+  
+  .carousel__slide--next {
+    opacity: 1;
+    transform: rotateY(10deg) scale(0.95);
+  }
+  
+  .carousel__slide--active {
+    opacity: 1;
+    transform: rotateY(0) scale(1.1);
+  }
 
 @media only screen 
 and (min-device-width: 320px) and (max-device-width: 980px){

@@ -13,10 +13,10 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/katalog/:url_type',
+    path: '/katalog/:url_type_katalog',
     name: 'katalog',
     component: KatalogView,
-    props: (route) => ({ url_type: route.params.url_type }),  
+    props: (route) => ({ url_type_katalog: route.params.url_type_katalog }),  
   },
   {
     path: '/unlock/:url_type',

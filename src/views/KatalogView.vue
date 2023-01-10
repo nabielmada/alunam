@@ -2,7 +2,7 @@
 
 <div v-if="cover === true">
   <section id = "cover">
-    <img :src="'/katalog/'+url_type+'/wallpaper/cover.jpg'" class = "wallpaper-cover img-fluid" draggable="false" alt="wallpaper-cover">
+    <img :src="'/katalog/'+url_type_katalog+'/wallpaper/cover.jpg'" class = "wallpaper-cover img-fluid" draggable="false" alt="wallpaper-cover">
 
     <div class="row">
       <div class="col-12 col-sm-12 text-center">
@@ -10,9 +10,9 @@
 
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai rotate img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai.png'" class = "frame-bingkai rotate img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/DSCF0107.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/katalog/'+url_type_katalog+'/foto/DSCF0107.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
@@ -42,7 +42,21 @@
 </div>
 
 <div id = "content" v-if="content === true">
-  <img :src="'/katalog/'+url_type+'/wallpaper/wallpaper.png'" class = "wallpaper img-fluid" draggable="false" alt="wallpaper">
+  <div class="music-player">
+    <audio
+      ref="audio"
+      :src="'/katalog/'+url_type_katalog+'/audio/song.mp3'"
+      autoplay
+      preload
+      loop
+      id="audio"
+      
+    ></audio>
+    <div @click="toggleSound()" class="toggle-sound"></div>
+  </div>
+
+  <img :src="'/katalog/'+url_type_katalog+'/asset/asset-atas.png'" class = "asset-atas img-fluid" draggable="false" alt="asset-atas">
+  <!-- <img :src="'/katalog/'+url_type_katalog+'/wallpaper/wallpaper-top.png'" class = "wallpaper-top img-fluid" draggable="false" alt="wallpaper"> -->
   <section id = "mempelai" class = "mempelai container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
@@ -50,13 +64,13 @@
           <h5 class="fw-bold mb-4" data-aos="fade-down" data-aos-delay="200">THE WEDDING OF</h5>
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center" data-aos="fade-down" data-aos-delay="200">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/DSCF0139.jpg'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/katalog/'+url_type_katalog+'/foto/DSCF0139.jpg'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
-          <!-- <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-down" data-aos-delay="200"> -->
+          <!-- <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-down" data-aos-delay="200"> -->
 
           <div data-aos="fade-up" data-aos-delay="200">
           <h1 class = "nama-mempelai mt-4">
@@ -69,7 +83,6 @@
           <p class="mt-4 fw-semibold">
             Jum'at, 08 Desember 2023
           </p>
-          
           <!-- Countdown -->
           <TimerEvent 
           :endtime="akad_date" 
@@ -95,14 +108,14 @@
     </div>
   </section>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/02_Background-Golden-Blue.png'" class = "wallpaper-detail-mempelai img-fluid" draggable="false" alt="wallpaper-detail-mempelai"> -->
+  <!-- <img :src="'/katalog/'+url_type_katalog+'/wallpaper/wallpaper-body.png'" class = "wallpaper-body img-fluid" draggable="false" alt="wallpaper-detail-mempelai"> -->
   <div id = "detail-mempelai">
   <section class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
         <div data-aos="fade-up" data-aos-delay="200">
-        <img :src="'/katalog/'+url_type+'/asset/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
+        <img :src="'/katalog/'+url_type_katalog+'/asset/bismillah.svg'" class = "img-fluid mb-3" draggable="false" alt="foto-bingkai">
           <p class="mb-3">Assalamu'alaikum Wr. Wb.</p>
           <p class="mb-5"> 
             Tanpa mengurangi rasa hormat. <br/>
@@ -112,13 +125,13 @@
         </div>
           <!-- this photo bride -->
           <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-            <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
             <div class="frame">
-              <img :src="'/katalog/'+url_type+'/foto/DSCF0058.jpg'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/katalog/'+url_type_katalog+'/foto/DSCF0058.jpg'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
             </div>
           </div>
           <!-- end this photo bride -->
-          <!-- <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
+          <!-- <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
 
           <h1 class = "nama-mempelai-detail mt-5" data-aos="fade-up" data-aos-delay="250">
             Nor Maulida Porwanti
@@ -127,19 +140,23 @@
             Putri keempat Bapak Sutega <br/>
             dan Ibu Sri Lestari
           </p>
-            <h1 class="my-4" data-aos="fade-up" data-aos-delay="200">&</h1>
+
+          <div class="my-5" data-aos="fade-up" data-aos-delay="200">
+            <img :src="'/katalog/'+url_type_katalog+'/asset/batas-mempelai.png'" class = "w-75 h-75" draggable="false" alt="batas-mempelai">
+          </div>
+
             <!-- this photo bride -->
             <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-              <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+              <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
               <div class="frame">
-                <img :src="'/katalog/'+url_type+'/foto/DSCF0115.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+                <img :src="'/katalog/'+url_type_katalog+'/foto/DSCF0115.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
               </div>
             </div>
             <!-- end this photo bride -->
-            <!-- <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
+            <!-- <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
 
           <h1 class = "nama-mempelai-detail mt-5" data-aos="fade-up" data-aos-delay="250">
-            Nabiel Mada Ranu R
+            Nabiel Mada Ranu Ramadhan
           </h1>
           <p class="mt-3" data-aos="fade-up" data-aos-delay="300">
             Putra kedua Bapak Masrikan<br/>
@@ -151,10 +168,15 @@
   </section>
   </div>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-acara img-fluid" draggable="false" alt="wallpaper-acara"> -->
+  <center>
+    <img :src="'/katalog/'+url_type_katalog+'/asset/batas-detail.png'" class = "w-25 h-25" draggable="false" alt="batas-detail">
+  </center>
+
+  <!-- <img :src="'/katalog/'+url_type_katalog+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-acara img-fluid" draggable="false" alt="wallpaper-acara"> -->
   <div id = "acara">
   <section class = "container">
     <div class="d-flex justify-content-center">
+
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
         <div data-aos="fade-up" data-aos-delay="200">
@@ -164,15 +186,16 @@
 
         <div data-aos="flip-down" data-aos-delay="300">
           <div class="card mb-4 border-0">
-            <div class="card-body m-4">
+            <img :src="'/katalog/'+url_type_katalog+'/asset/card-date.png'" class="card-img" alt="card-image">
+            <div class="card-img-overlay m-4">
                 <h3>Akad Nikah</h3>
                 <p class = "fw-semibold">Jum'at, 08 Desember 2023</p>
                 <p>
                   Pukul: 08.00 - 09.30 WIB <br/>
-                  Masjid Agung Jawa Tengah (MAJT)
+                  <b>Masjid Agung Jawa Tengah (MAJT)</b>
                 </p>
                 <a href = "https://goo.gl/maps/tz2dbStTSaMTdTLi7" class = "text-black text-decoration-none">
-                  <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                  <button type = "button" class="btn btn-light px-4 rounded-pill"><span class = "bi bi-geo-alt"></span> Lokasi</button>
                 </a>
             </div>
           </div>
@@ -180,15 +203,16 @@
 
         <div data-aos="flip-down" data-aos-delay="300">
           <div class="card border-0">
-            <div class="card-body m-4">
+            <img :src="'/katalog/'+url_type_katalog+'/asset/card-date.png'" class="card-img" alt="card-image">
+            <div class="card-img-overlay m-4">
                 <h3>Resepsi</h3>
                 <p class = "fw-semibold">Jum'at, 08 Desember 2023</p>
                 <p>
                   Pukul: 10.00 - 15.00 WIB <br/>
-                  Marina Convention Center Semarang (MCC)
+                  <b>Marina Convention Center (MCC)</b>
                 </p>
                 <a href = "https://goo.gl/maps/dT2DasPRAAGNsvM77" class = "text-black text-decoration-none">
-                  <button type = "button" class="btn btn-light"><span class = "bi bi-geo-alt"></span> Lokasi</button>
+                  <button type = "button" class="btn btn-light px-4 rounded-pill"><span class = "bi bi-geo-alt"></span> Lokasi</button>
                 </a>
             </div>
           </div>
@@ -200,7 +224,11 @@
   </section>
   </div>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-amplop-digital img-fluid" draggable="false" alt="wallpaper-amplop-digital"> -->
+  <center>
+    <img :src="'/katalog/'+url_type_katalog+'/asset/batas-save-atas.png'" class = "w-75 h-75" draggable="false" alt="batas-save-atas">
+  </center>
+
+  <!-- <img :src="'/katalog/'+url_type_katalog+'/wallpaper/04_Background-Golden-Blue.png'" class = "wallpaper-amplop-digital img-fluid" draggable="false" alt="wallpaper-amplop-digital"> -->
   <section id = "amplop-digital" class = "container">
     <div class="d-flex justify-content-center">
     <div class="row align-content-center">
@@ -210,12 +238,12 @@
           <div class="row g-3" data-aos="fade-up" data-aos-delay="200">
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/katalog/'+url_type+'/asset/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/katalog/'+url_type_katalog+'/asset/bca-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
                 BANK CENTRAL ASIA <br/>
-                <small>a.n Nabiel Mada Ranu Ramadhan</small>
+                <small>Nor Maulida Porwanti</small>
                 <p>2221012081</p>
                 
                   <button type = "button" class = "btn btn-light" @click="copyToClipBoard('2221012081')">
@@ -231,12 +259,12 @@
 
             <div class="col-1"></div>
             <div class="col-3 col-sm-3 col-lg-2">
-              <img :src="'/katalog/'+url_type+'/asset/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-bca">
+              <img :src="'/katalog/'+url_type_katalog+'/asset/mandiri-logo.png'" class = "img-fluid" draggable="false" alt="logo-mandiri">
             </div>
             <div class="col-8 col-sm-8 col-lg-3">
               <div>
                 BANK MANDIRI <br/>
-                <small>a.n Nabiel Mada Ranu Ramadhan</small>
+                <small>Nabiel Mada Ranu Ramadhan</small>
                 <p>1350018166007</p>
                 
                   <button type = "button" class = "btn btn-light" @click="copyToClipBoard2('1350018166007')">
@@ -256,14 +284,40 @@
     </div>
   </section>
 
-  <section id = "animation" class = "container-fluid">
-    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_4p4x21lt.json"  background="transparent"  speed="0.8"  class = "img-fluid" loop autoplay></lottie-player>
-    <p class = "text-center mt-4">
-      <small>"Berjumpa dengamu adalah suatu anugerah terindah dalam hidupku dan aku yakin kini kau pun tau. Hidup bersamamu adalah salah satu mimpiku"</small>
-    </p>
+  <center>
+    <img :src="'/katalog/'+url_type_katalog+'/asset/batas-save-bawah.png'" class = "w-75 h-75" draggable="false" alt="batas-save-bawah">
+  </center>
+
+  <section id = "gallery">
+    <h5 class="fw-bold text-center pb-5" data-aos="fade-up" data-aos-delay="200">GALERI FOTO KAMI</h5>
+  
+      <Carousel :autoplay="5000" :itemsToShow="1.55" :wrapAround="true" :transition="500">
+        <Slide v-for="dataGalleryAlls in dataGalleryAll" :key="dataGalleryAlls.id_gallery">
+          <div class="carousel__item">
+            <img :src="'/katalog/'+url_type_katalog+'/gallery/'+dataGalleryAlls.photo_gallery" class = "img-fluid rounded-4" draggable="false" alt="foto-gallery">
+          </div>
+        </Slide>
+
+        <template #addons>
+          <navigation />
+          <pagination />
+        </template>
+      </Carousel>
+
+      <figure class = "pt-5 px-4 text-center">
+        <blockquote class="blockquote">
+          <p class = "fs-6">
+            "Berjumpa denganmu adalah suatu anugerah terindah dalam hidupku dan aku yakin kini kau pun tau. Hidup bersamamu adalah salah satu mimpiku"
+          </p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          by <cite title="Source Title">Secret Admirer</cite>
+        </figcaption>
+      </figure>
+
   </section>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/05_Background-Golden-Blue.png'" class = "wallpaper-ucapan img-fluid" draggable="false" alt="wallpaper-ucapan"> -->
+  <!-- <img :src="'/katalog/'+url_type_katalog+'/wallpaper/05_Background-Golden-Blue.png'" class = "wallpaper-ucapan img-fluid" draggable="false" alt="wallpaper-ucapan"> -->
   <div id = "ucapan">
     <section class = "container" data-aos="fade-up" data-aos-delay="200">
     <div class="row align-content-center">
@@ -334,20 +388,24 @@
   </section>
   </div>
 
-  <!-- <img :src="'/katalog/'+url_type+'/wallpaper/06_Background-Golden-Blue.png'" class = "wallpaper-penutup img-fluid" draggable="false" alt="wallpaper-penutup"> -->
+  <center>
+    <img :src="'/katalog/'+url_type_katalog+'/asset/batas-ucapan.png'" class = "w-75 h-75" draggable="false" alt="batas-ucapan">
+  </center>
+  
+  <!-- <img :src="'/katalog/'+url_type_katalog+'/wallpaper/wallpaper-bottom.jpg'" class = "wallpaper-bottom img-fluid" draggable="false" alt="wallpaper-penutup"> -->
   <section id = "penutup">
     <div class="d-flex justify-content-center container">
     <div class="row align-content-center">
       <div class="col-12 col-sm-12 text-center">
         <!-- this photo bride -->
         <div class = "d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-          <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
+          <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai.png'" class = "frame-bingkai img-fluid" draggable="false" alt="foto-bride">
           <div class="frame">
-            <img :src="'/katalog/'+url_type+'/foto/DSCF0107.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
+            <img :src="'/katalog/'+url_type_katalog+'/foto/DSCF0107.JPG'" class = "frame-photo img-fluid" draggable="false" alt="foto-bride">
           </div>
         </div>
         <!-- end this photo bride -->
-        <!-- <img :src="'/katalog/'+url_type+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
+        <!-- <img :src="'/katalog/'+url_type_katalog+'/bingkai/foto-bingkai-non.png'" class = "img-fluid" draggable="false" alt="foto-bingkai" data-aos="fade-up" data-aos-delay="200"> -->
         <div data-aos="fade-up" data-aos-delay="200">
           <p class="mt-4 px-2">
             Suatu kehormatan dan kebahagiaan <br/>
@@ -361,6 +419,7 @@
           <p class="mt-4">
             Wassalamu'alaikum Wr. Wb.
           </p>
+          <img :src="'/katalog/'+url_type_katalog+'/asset/asset-bawah.png'" class = "asset-bawah img-fluid" draggable="false" alt="asset-bawah">
         </div>
           <h1 class = "nama-mempelai mt-4" data-aos="fade-up" data-aos-delay="200">
             Maulida & Nabiel
@@ -368,27 +427,15 @@
         </div>
       </div>
     </div>
-  </section>
 
-  <footer class="my-5 pb-5 text-center">
-    <small>
-      Made with <i class = "bi bi-heart-fill text-danger"></i> by 
-      <a href = "/">Alunam</a>
-    </small>
-  </footer>
-
-  <div class="music-player">
-    <audio
-      ref="audio"
-      :src="'/katalog/'+url_type+'/audio/song.mp3'"
-      autoplay
-      preload
-      loop
-      id="audio"
-      
-    ></audio>
-    <div @click="toggleSound()" class="toggle-sound"></div>
-  </div>
+        
+    <footer class="pt-5 text-center">
+      <small>
+        Made with <i class = "bi bi-heart-fill text-danger"></i> by 
+        <a href = "/">Alunam</a>
+      </small>
+    </footer>
+  </section>  
 
     <WindowsBottomNavigation :options="options" v-model="selected" @click="scrollTo(selected)"/>
   </div>
@@ -399,23 +446,28 @@
 <script>
   import axios from 'axios'
   import moment from 'moment'
-  import { WindowsBottomNavigation } from "bottom-navigation-vue";
-  import "bottom-navigation-vue/dist/style.css";
-
   import TimerEvent from '@/components/TimerEvent.vue'
-
-  // import VueSlickCarousel from 'vue-slick-carousel'
-  // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  import "bottom-navigation-vue/dist/style.css";
+  import 'vue3-carousel/dist/carousel.css'
+  import { WindowsBottomNavigation } from "bottom-navigation-vue";
+  import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
   export default {
     name: "KatalogView",
     props: {
-      url_type: {
+      url_type_katalog: {
         type: String,
         default: null,
       },
     },
-    components: { WindowsBottomNavigation, TimerEvent },
+    components: { 
+      WindowsBottomNavigation, 
+      TimerEvent,
+      Carousel,
+      Slide,
+      Pagination,
+      Navigation
+    },
     data() {
       return {
         cover: true,
@@ -429,21 +481,27 @@
             color: '#d2d2d2',
           },
           { id: 'acara', icon: 'bi-brands bi-calendar-event-fill', color: '#d2d2d2' },
-          { id: 'amplop-digital', icon: 'bi-brands bi-gift-fill', color: '#d2d2d2' },
+          { id: 'gallery', icon: 'bi-brands bi-images', color: '#d2d2d2' },
           { id: 'ucapan', icon: 'bi-brands bi-chat-heart-fill', color: '#d2d2d2' }
         ],
         // type: '',
         akad_date: '',
+        dataGalleryAll: [],
         dataChat: [],
         chatsVisible: 5,
         step: 5,
       }
     },
     mounted() {
-      // if(this.url_type == 'alunam-blue-love'){
+      // if(this.url_type_katalog == 'alunam-blue-love'){
       //    this.type = 'Alunam Blue Love';
       // }
 
+      axios
+        .get('http://localhost:3000/apial/getGalleryAll')
+        .then((response) => {
+          this.dataGalleryAll = response.data.dataGalleryAll
+        });
       axios
         .get('http://localhost:3000/apial/getChatAll')
         .then((response) => {
@@ -534,7 +592,7 @@
         selected === 'mempelai' ? document.getElementById('mempelai').scrollIntoView() : false
         selected === 'detail-mempelai' ? document.getElementById('detail-mempelai').scrollIntoView() : false
         selected === 'acara' ? document.getElementById('acara').scrollIntoView() : false
-        selected === 'amplop-digital' ? document.getElementById('amplop-digital').scrollIntoView() : false
+        selected === 'gallery' ? document.getElementById('gallery').scrollIntoView() : false
         selected === 'ucapan' ? document.getElementById('ucapan').scrollIntoView() : false
       }
     },

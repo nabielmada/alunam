@@ -27,14 +27,14 @@
             </ul>
           </div>
           <div class="d-flex">
-              <a href = "" target = "_blank" class = "text-muted text-decoration-none">
+              <a href = "https://instagram.com/alunam.id" target = "_blank" class = "text-muted text-decoration-none">
                 <span class="bi bi-instagram me-3 fs-4"></span>
               </a>
               <a href = "https://wa.me/6285727393383?text=Hai%20Admin%20Alunam,%20saya%20ingin%20memesan%20undangan%20web%20apakah%20bisa?" target = "_blank" class = "text-muted text-decoration-none">
                 <span class="bi bi-whatsapp me-3 fs-4"></span>
               </a>
               <a href = "" target = "_blank" class = "text-muted text-decoration-none">
-                <span class="bi bi-question-lg me-3 fs-4"></span>
+                <span class="bi bi-headset me-3 fs-4"></span>
               </a>
           </div>
       </div>
@@ -55,7 +55,7 @@
               Lebih <mark class="text-primary">Praktis</mark> Dari Sebelumnya
             </h1>
             <p class="pt-4 text-muted sub-heading sub-heading-resize sub-heading-header">
-              Bagikan momen bahagia kamu hanya dengan satu genggaman serta banyak pilihan undangan web yang kekinian
+              Bagikan momen bahagia kamu hanya dengan satu genggaman serta pilihan undangan web yang kekinian
             </p>
             <div class="mt-5" data-aos="fade-up" data-aos-delay="150">
             <button type = "button" class="btn btn-primary btn-lg rounded-pill px-4 py-2 shadow-lg" v-scroll-to="'#katalog'">
@@ -151,7 +151,7 @@
                 </div>
                 <div class="card-body mb-3">
                     <div class="text-center mb-3">
-                        <img src="/web/cover-katalog-satu.jpeg" draggable="false" class="card-img-top" alt="...">
+                        <img src="/web/thumb/thumb-alunam-blue-love.png" draggable="false" class="card-img-top" alt="...">
                     </div>
                     <div class="mx-3">
                         <div class="card-text mb-1 fw-semibold text-black">
@@ -159,10 +159,10 @@
                         </div>
                         
                         <div class="text-danger text-decoration-line-through">
-                            <small>Rp330.000</small>
+                            <small>Rp380.000</small>
                         </div>
                         <div class = "d-flex text-black">
-                          Rp150.000
+                          Rp149.000
                           <span class = "ms-auto">
                             <i class="bi bi-star-fill text-warning"></i>
                             (10)
@@ -266,12 +266,14 @@
           <div class="card hover-card border-0">
               <div class="card-body">
                   <div class="text-muted p-3">
-                      Easy to use, got way more and way better designs that I expected and very happy with the end result.
-                      Fast service with 1 weeks only. So crazy!
+                    <small>
+                      Mantap lebih mudah si karna gue bisa input data sendiri kapanpun dimanapun, yang gokil lagi bisa masukin musik pilihan gue sendiri dong.
+                      Semoga next bisa lebih banyak katalog nya yang lebih bagus2 hehe
+                    </small>
                   <hr/>
                   <div class="row g-0 mx-3 card-review mt-4">
-                      <div class="col-lg-2 col-3 text-end">
-                          <img src="/web/avatar/avatar-1.png" draggable="false" class="img-fluid" alt="" srcset="">
+                      <div class="col-lg-2 col-3">
+                          <img src="/web/avatar/ajeng-iqbal.jpg" draggable="false" class="img-fluid rounded-circle" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
                           Dita & Akbar<br/>
@@ -290,12 +292,14 @@
           <div class="card hover-card border-0">
               <div class="card-body">
                   <div class="text-muted p-3">
-                      Easy to use, got way more and way better designs that I expected and very happy with the end result.
-                      Fast service with 1 weeks only. So crazy!
+                    <small>
+                      Mudah digunakan, desain yang simple tapi bagus tapi informasinya juga bisa tersampaikan dengan jelas, gimana ya intinya sangat senang dengan hasilnya. 
+                      Pelayanan juga cepat hanya sekitar beberapa hari
+                    </small>
                   <hr/>
                   <div class="row g-0 mx-3 card-review mt-4">
-                      <div class="col-lg-2 col-3 text-end">
-                          <img src="/web/avatar/avatar-2.png" draggable="false" class="img-fluid" alt="" srcset="">
+                      <div class="col-lg-2 col-3">
+                          <img src="/web/avatar/ajeng-iqbal.jpg" draggable="false" class="img-fluid rounded-circle" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
                           Ajeng & Iqbal <br/>
@@ -314,18 +318,21 @@
           <div class="card hover-card border-0">
               <div class="card-body">
                   <div class="text-muted p-3">
-                      Easy to use, got way more and way better designs that I expected and very happy with the end result.
-                      Fast service with 1 weeks only. So crazy!
+                    <small>
+                      Gatau ni harganya kok bisa murah padahal looks nya keliatan mahal. 
+                      btw bukan saya yang pesan min tapi saya sudah nemu undagan yang cocok disini,
+                      tinggal pasangannya aja yang belum nemu min wkwk
+                    </small>
                   <hr/>
                   <div class="row g-0 mx-3 card-review mt-4">
-                      <div class="col-lg-2 col-3 text-end">
-                          <img src="/web/avatar/avatar-3.png" draggable="false" class="img-fluid" alt="" srcset="">
+                      <div class="col-lg-2 col-3">
+                          <img src="/web/avatar/ajeng-iqbal.jpg" draggable="false" class="img-fluid rounded-circle" alt="" srcset="">
                       </div>
                       <div class="col col card-name-review mx-4">
                           Prily & Riga <br/>
                           <small class = "text-muted">
                             <span class = "bi bi-clock-history"></span>  
-                             Baru Saja
+                             Kemarin
                           </small>
                       </div>
                   </div>
@@ -346,7 +353,7 @@
     </div>
   </section>
 
-  <footer class="container mt-5 py-5">
+  <footer class="container mt-2 mb-5 py-5">
     <div class = "text-center">
       Made with <span class = "bi bi-heart-fill text-danger"></span> Alunam &copy; 2022 
     </div>
